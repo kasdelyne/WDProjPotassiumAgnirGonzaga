@@ -1,0 +1,146 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title> About the Page !?</title>
+        <!-- Add a favicon -->
+        <style>
+            body {
+                background: #735292;
+                background: linear-gradient(180deg, rgba(115, 82, 146, 1) 0%, rgba(205, 133, 143, 1) 100%);
+                color: #ffeab3;
+                display: flex;
+                flex-direction: column;
+                align-items: center;
+                min-height: 100vh;
+                text-align: center;
+            }
+
+            header {
+                padding: 60px 20px;
+            }
+
+            header h1 {
+                font-size: 3em;
+                color: #ffeab3;
+            }
+
+            header p {
+                font-size: 1.2em;
+                margin-top: 15px;
+                color: #ffeab3;
+                max-width: 600px;
+            }
+
+            .about-section {
+                margin-top: 60px;
+                width: 90%;
+                max-width: 900px;
+                display: flex;
+                flex-direction: column;
+                align-items: center;
+                gap: 40px;
+            }
+
+            .about-title {
+                font-size: 2em;
+                font-weight: bold;
+                text-align: center;
+                color: #ffeab3;
+                margin-bottom: 30px;
+            }
+
+            .card-container {
+                display: flex;
+                justify-content: center;
+                flex-wrap: wrap;
+                gap: 40px;
+                width: 100%;
+            }
+
+            .about-card {
+                background-color: #504b83;
+                border-radius: 10px;
+                transition: all 0.4s ease;
+                width: 250px;
+                padding: 20px;
+                display: flex;
+                flex-direction: column;
+                align-items: flex-start;
+                font-size: 1.1em;
+                font-weight: 500;
+                box-shadow: 0 4px 8px rgba(230, 121, 121, 0.96);
+                cursor: pointer;
+                float: left; /* REFERENCE: https://www.w3schools.com/css/css_float_examples.asp */
+            }
+
+            .about-card:hover {
+                width: 500px;
+                height: 100px;
+                background: #735292;
+            }
+
+            .extra {
+                max-height: 0;
+                opacity: 0;
+                overflow: hidden;
+                transition: all 0.4s ease;
+                font-size: 0.95em;
+                color: #ffeab3;
+                margin-top: 10px;
+            }
+
+            .about-card:hover .extra {
+                max-height: 1000px;
+                opacity: 1;
+            }
+
+            @media (max-width: 600px) {
+                .about-card {
+                    width: 100%;
+                }
+                .about-card:hover {
+                    width: 100%;
+                }
+            }
+            ul{
+                justify-items: left;
+            }
+        </style>
+    </head>
+
+    <body>
+        <h1> what's taskonaut about??</h1>
+            <p>A productivity and note-taking app for Pisay scholars. It is designed to make your academic experience organized and clean throughout the School Year.</p>
+            <p> Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
+          <!-- Continue the description-->  
+            <section class="about-section">
+        <div class="about-title> About the Developers </div>
+
+        <div class="card-container">
+            <div class="about-card">
+                <span> Kas Agnir </span>
+                    <div class="extra">
+                        <ul>
+                            <li> Name: AGNIR, Kacey Adelyne O. </li>
+                            <li> Class No.: K02</li>
+                            <li>School: Philippine Science High School</li>
+                            <li>Email: b2029kaoagnir@pshs.edu.ph </li>
+                        </ul>
+                    </div>
+            </div>
+
+            <div class="about-card">
+                <span> Naj Gonzaga </span>
+                    <div class="extra">
+                        <ul>
+                            <li>Name: GONZAGA, Germione Naj</li>
+                            <li>Class No.: K15</li>
+                            <li>School: Philippine Science High School</li>
+                            <li>Email: b2029gnggonzaga@pshs.edu.ph</li>
+                        </ul>
+                    </div>
+            </div>
+        </div>
+    </section>
+    </body>
+</html>
