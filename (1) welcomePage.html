@@ -1,0 +1,189 @@
+<!DOCTYPE html>
+<html>
+<head>
+<style>
+            
+body {
+  background-image: linear-gradient(110deg  ,#d54f9fdf, #7a5196, #f89cc8);
+  background-size: 200% 200%;
+  animation: gradient-bg 15s ease infinite;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  margin: 0;
+  }
+  @keyframes gradient-bg {
+   0% { background-position: 0% 50%; }
+  50% { background-position: 100% 50%; }
+  100% { background-position: 0% 50%; }
+  }
+.card {
+  position: relative;
+  width: 75%;
+  max-width: 950px;
+  height: 520px;
+  border-radius: 30px;
+  background: linear-gradient(135deg,#f89cc8, #7a5196, #d54f9fdf);
+  background-size: 300% 300%;
+  animation: card-gradient 8s ease infinite;
+  border: 3px solid white;
+  box-shadow: 0 0 20px rgba(255, 255, 255, 0.4);
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  padding-top: 60px; 
+}
+.card::before {
+  content: "";
+  position: absolute;
+  top: 70px; /* pushes down inner box */
+  left: 30px;
+  right: 30px;
+  bottom: 30px;
+  background: rgba(255, 255, 255, 0.25);
+  border-radius: 20px;
+  backdrop-filter: blur(6px);
+  -webkit-backdrop-filter: blur(6px);
+  pointer-events: none;
+}
+@keyframes card-gradient {
+  0% { background-position: 0% 50%; }
+  50% { background-position: 100% 50%; }
+  100% { background-position: 0% 50%; }
+} 
+/* Top area*/ /* NEED HELP FIXING */
+.header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 15px 30px;
+}
+
+.header-left {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+.small-logo {
+  z-index: 2;
+  width: 50px;
+  height: 50px;
+  border-radius: 50%;
+  background-image: url('https://i.pinimg.com/736x/87/56/60/8756608139a5a2869dd30e351d0a1697.jpg'); /*will change to actual logo*/
+  background-size:cover;
+}
+
+.site-title {
+  z-index: 2;
+  font-size: 50px;
+  font-weight: bold;
+  color: #fff7b0;
+  text-shadow: 0 0 5px #a67bff;
+}
+
+.about-link { 
+  z-index: 2;
+  font-size: 25px;
+  font-weight: bold;
+  color: #fff7b0;
+  text-shadow: 0 0 5px #a67bff;
+  cursor: pointer;
+}
+/*Content area*/
+.inner-box {
+  width: 80%;
+  height: 45%;
+  margin: auto;
+  z-index: 2;
+  display: flex;
+  justify-content: space-between;
+}
+.left-section {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 10px;
+}
+.nickname-label {
+  font-size: 30px;
+  font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
+  color: #8b5cac;
+  text-shadow:
+    0 0 6px #cbaaff,
+    0 0 12px #be82ff,
+    0 0 25px #a253f7,
+    0 0 40px #8ab2f7;
+}
+.nickname-input {
+  width: 250px;
+  padding: 12px 18px;
+  font-size: 1rem;
+  border-radius: 25px;
+  border: 2px solid #8b5cac;
+  background: rgba(252, 203, 255, 0.6);
+  box-shadow: 0 0 20px #be82ff;
+  outline: none;
+  color: #fff7b0;
+}
+.proceed-btn {
+  margin-top: 25px;
+  margin-left: 80px;
+  font-size: 15px;
+  background: #fff2d0;
+  border: none;
+  border-radius: 15px;
+  padding: 10px 25px;
+  color: #8b5cac;
+  box-shadow: 0 0 20px #fcf29a;
+  cursor: pointer;
+  font-weight: bold;
+  transition: transform 0.2s ease;
+}
+.proceed-btn:hover {
+  transform: scale(1.05);
+}
+.logo-circle { 
+  width: 300px;
+  height: 300px;
+  border-radius: 50%;
+  background-image: url('https://i.pinimg.com/736x/87/56/60/8756608139a5a2869dd30e351d0a1697.jpg'); /*will change to actual logo*/
+  background-size:cover;
+  border: 1px solid white;
+  object-fit: cover;
+  box-shadow: 0 0 15px rgba(255, 255, 255, 0.5);
+}
+
+</style>
+</head>
+<body>
+
+<div class="card">
+  
+  <div class="header">
+    <div class="header-left">
+      <div class="small-logo"></div>
+      <div class="site-title">Task-o-naut</div>
+    </div>
+    <div class="about-link">About & Creators</div>
+  </div>
+
+  <div class="divider1a">Tᜑᜒᜐ᜔ ᜁᜐ᜔ ᜋᜇᜒ ᜊ᜔ᜌ᜔ Kᜀᜐ᜔ Aᜄ᜔ᜈᜒᜍ᜔ ᜀᜈ᜔ᜇ᜔ Nᜀj ᜅᜓᜈ᜔zᜀᜄ ᜂᜉ᜔ 9-Pᜂᜆᜐ᜔ᜐᜒᜂᜋ᜔</div>
+  <div class="divider2a">✧ ✦ ✧ ✦ ✧ ✦ ✧ ✦ ✧</div>
+  <div class="divider1b">✧ ✦ ✧ ✦ ✧ ✦ ✧ ✦ ✧</div>
+  <div class="divider2b">Tᜑᜒᜐ᜔ ᜁᜐ᜔ ᜋᜇᜒ ᜊ᜔ᜌ᜔ Kᜀᜐ᜔ Aᜄ᜔ᜈᜒᜍ᜔ ᜀᜈ᜔ᜇ᜔ Nᜀj ᜅᜓᜈ᜔zᜀᜄ ᜂᜉ᜔ 9-Pᜂᜆᜐ᜔ᜐᜒᜂᜋ᜔</div>
+
+  <div class="inner-box">
+    <div class="left-section">
+      <label for="nickname" class="nickname-label">✧ Nickname</label>
+      <input type="text" id="nickname" maxlength="10" placeholder="Maximum 10 letters..." class="nickname-input">
+      <button class="proceed-btn">proceed >></button>
+    </div>
+
+    <img src="logo-placeholder.png" alt="Logo" class="logo-circle">
+  </div>
+</div>
+
+</body>
+</html>
