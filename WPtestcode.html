@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html>
+<head>
+<style>
+    body {
+  background-image: linear-gradient(110deg  ,#d54f9fdf, #7a5196, #f89cc8);
+  background-size: 200% 200%;
+  animation: gradient-bg 15s ease infinite;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  margin: 0;
+  }
+  @keyframes gradient-bg {
+   0% { background-position: 0% 50%; }
+  50% { background-position: 100% 50%; }
+  100% { background-position: 0% 50%; }
+  }
+  .card1 {
+  width: 100%;
+  max-width: 750px;
+  height: 500px;
+  border-radius: 30px;
+  background: linear-gradient(135deg,#f89cc8, #7a5196, #d54f9fdf);
+  background-size: 300% 300%;
+  animation: card-gradient 8s ease infinite;
+  border: 3px solid white;
+  box-shadow: 0 0 20px rgba(255, 255, 255, 0.4);
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  padding-top: 60px; 
+  }
+  .card::before {
+  content: "";
+  position: absolute;
+  top: 70px; 
+  left: 30px;
+  right: 30px;
+  bottom: 30px;
+  background: rgba(255, 255, 255, 0.25);
+  border-radius: 20px;
+  backdrop-filter: blur(6px);
+  -webkit-backdrop-filter: blur(6px);
+  pointer-events: none;
+}
+@keyframes card-gradient {
+  0% { background-position: 0% 50%; }
+  50% { background-position: 100% 50%; }
+  100% { background-position: 0% 50%; }
+} 
+.site-title {
+  margin-left: 75px;
+  font-size: 50px;
+}
+
+  .card2 {
+    z-index: 1;
+  }
+</style>
+</head>
+<body>
+
+<div class="card1">
+  
+  <div class="header">
+    <div class="header-left">
+      <div class="small-logo"></div>
+      <div class="site-title">Task-o-naut</div>
+    </div>
+    <div class="about-link">About & Creators</div>
+  </div>
+</div>
+
+
+
+</body>
+</html>
