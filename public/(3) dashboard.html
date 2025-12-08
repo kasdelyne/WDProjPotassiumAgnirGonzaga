@@ -1,6 +1,7 @@
 <!DOCTYPE html>
 <html>
     <head>
+        <!-- Meta thingy-->
         <title> Main Page</title>
         <!-- Add a favicon -->
         <!-- References in APA:
@@ -8,7 +9,7 @@
         https://www.w3schools.com/cssref/pr_grid-template-columns.php
         -->
         <!-- Naj you handle the type of genres-->
-        <link rel="stylesheet" href="(3) dashboard.js">
+        <link rel="stylesheet" href="(3) dashboard.css">
     </head>
     <body>
         <button id="navtoggle" onclick="toggleNavBar()"> < </button>
@@ -17,7 +18,7 @@
             <ul>
                 <li> <a href="dashboard.html"> Dashboard </a></li>
                 <li> <a href="calendar.html"> Calendar</a></li>
-                <li> <a href="activerecall.html"> Active Recall </a></li>
+                <li> <a href="activeRecall.html"> Active Recall </a></li>
 
                 <li class="has-submenu">
                 <li> <a href="games.html"> Games</a></li>
@@ -36,13 +37,17 @@
             <div class="column left">
                 <h2> hello there !</h2>
                 <h2> to - do list</h2>
+
+                <input type="text" id="task-input" placeholder="enter new task !">
+                <button onclick="addTask()"> Add Task </button>
+
                 <ul id="todo-list">
-                    <li> <input type="checkbox"> Task 1</li>
+
                 </ul>
 
                 <h3> Progress</h3>
                 <div class="progress-container">
-                    <div class="progress-bar"></div>
+                    <div class="progress-bar" id="progress-bar"></div>
                 </div>
                 <button onclick="moreProgress()"> + Progress</button>
             </div>
