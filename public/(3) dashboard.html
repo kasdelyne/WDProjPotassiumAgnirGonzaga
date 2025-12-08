@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title> Main Page</title>
+        <!-- Add a favicon -->
+        <!-- References in APA:
+        https://www.w3schools.com/cssref/css3_pr_overflow-x.php 
+        https://www.w3schools.com/cssref/pr_grid-template-columns.php
+        -->
+        <!-- Naj you handle the type of genres-->
+        <link rel="stylesheet" href="(3) dashboard.js">
+    </head>
+    <body>
+        <button id="navtoggle" onclick="toggleNavBar()"> < </button>
+        
+        <nav id="sidebar">
+            <ul>
+                <li> <a href="dashboard.html"> Dashboard </a></li>
+                <li> <a href="calendar.html"> Calendar</a></li>
+                <li> <a href="activerecall.html"> Active Recall </a></li>
+
+                <li class="has-submenu">
+                <li> <a href="games.html"> Games</a></li>
+                <ul class="submenu"
+                    <li> <a href="dressUp.html"> Dress-Up </li>
+                    <li> <a href="coffeeMaker.html"> Coffee Maker</a></li>
+                </li>
+
+                <li> <a href="calculator.html"> Calculator</a></li>
+                <li> <a href="settings.html"> Settings </a></li>
+            </ul>
+        </nav>
+
+        <div class="container">
+
+            <div class="column left">
+                <h2> hello there !</h2>
+                <h2> to - do list</h2>
+                <ul id="todo-list">
+                    <li> <input type="checkbox"> Task 1</li>
+                </ul>
+
+                <h3> Progress</h3>
+                <div class="progress-container">
+                    <div class="progress-bar"></div>
+                </div>
+                <button onclick="moreProgress()"> + Progress</button>
+            </div>
+
+            <div class="column middle">
+                <h2> Whiteboard</h2>
+                <div class="whiteboard">
+                </div>
+
+                <h2> Calendar</h2>
+                <div class="calendar">
+                </div>
+            </div>
+
+            <div class="column right">
+                <h2> Spotify </h2>
+                <p> vibe: </p>
+                <select id="genreSelect">
+                    <option value=".."> .. </option>
+                </select>
+            </div>
+        </div>
+        
+        <script src="(3) dashboard.js"></script>
+    </body>
+</html>
