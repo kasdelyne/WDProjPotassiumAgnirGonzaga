@@ -146,9 +146,14 @@
     </div>
 
     <script>
-        const themeToggle = getElementById('themeToggle')
-
-        /* same for themeTable, soundToggle, soundLabel, timerDisplay, decreaseTimer, increaseTimer, resetBtn */
+        const themeToggle = getElementById('themeToggle');
+        const themeTable = getElementById('themeTable');
+        const soundToggle = getElementById('soundToggle');
+        const soundLabel = getElementById('soundLabel');
+        const timerDisplay = getElementById('timerDisplay');
+        const decreaseTimer = getElementById('decreaseTimer');
+        const increaseTimer = getElementById('increaseTimer');
+        const resetBtn = getElementById('resetBtn');
 
         function saveSetting(key, value);
             localstorage.setItem(key, value);
@@ -179,7 +184,7 @@
             if(time>1){
                 time-=1;
                 timerDisplay.textContent=time;
-                saveSetting('timer, time');
+                saveSetting('timer', time);
             }
         });
 
