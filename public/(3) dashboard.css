@@ -1,9 +1,11 @@
             /* Navigation Bar*/
+            
             body{
                 overflow-x: hidden;
                 background: linear-gradient(180deg, rgba(115, 82, 146, 1) 0%, #cd858f 100%);
                 color:#ffeab3;
                 position: relative;
+                font-family: 'Times New Roman', Times, serif;
             }
 
             #navtoggle{
@@ -13,20 +15,24 @@
                 z-index: 1000;
                 padding: 10px 15px;
                 cursor: pointer;
+                border-radius: 5px;
             }
 
             .navbar{
-                width: 250;
+                width: 250px;
                 position: fixed;
                 top: 0;
                 left: -250px;
                 height: 100%;
-                background-color: rgba(255, 255, 255, 0.509);
+                background-color: rgba(254, 192, 192, 0.584);
                 color: #746c7f;
             }
 
             .navbar.open{
                 left: 0;
+                border-radius: 20px;
+                margin-left: 5px;
+                font-size: 16px;
             }
 
             #navbar ul{
@@ -40,8 +46,27 @@
             }
 
             #navbar ul li a{
-                color: white;
+                color: #746c7f;;
                 text-decoration: none;
+                font-weight: bold;
+            }
+
+            #navbar ul li a:hover{
+                background: linear-gradient(180deg, rgba(115, 82, 146, 1) 0%, #cd858f 100%);
+                color: #ffeab3;
+                padding: 10px 15px;
+                border-radius: 15px;
+                display: block;
+                transition: 0.3s ease-in-out;
+            }
+
+            #navbar ul li a.active{
+                background: linear-gradient(180deg, rgba(115, 82, 146, 1) 0%, #cd858f 100%);
+                color: #ffeab3;
+                padding: 10px 15px;
+                border-radius: 15px;
+                display: block;
+                font-weight: bold;
             }
 
             .submenu{

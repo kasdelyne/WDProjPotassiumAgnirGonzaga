@@ -1,34 +1,35 @@
 <!DOCTYPE html>
 <html>
-    <head>
+    <head>  
         <!-- Meta thingy-->
         <title> Main Page</title>
         <!-- Add a favicon -->
         <!-- References in APA:
         https://www.w3schools.com/cssref/css3_pr_overflow-x.php 
         https://www.w3schools.com/cssref/pr_grid-template-columns.php
+        https://www.youtube.com/watch?v=G0jO8kUrg-I
         -->
         <!-- Naj you handle the type of genres-->
         <link rel="stylesheet" href="(3) dashboard.css">
     </head>
     <body>
-        <button id="navtoggle" onclick="toggleNavBar()"> < </button>
+        <div id="navtoggle" onclick="toggleNavBar()">☰</div>
         
-        <nav id="sidebar">
+        <nav id="navbar" class="navbar">
             <ul>
-                <li> <a href="dashboard.html"> Dashboard </a></li>
-                <li> <a href="calendar.html"> Calendar</a></li>
-                <li> <a href="activeRecall.html"> Active Recall </a></li>
+                <li> <a href="(3) dashboard.html"> Dashboard </a></li>
+                <li> <a href="(4) calendar.html"> Calendar</a></li>
+                <li> <a href="(5) activeRecall.html"> Active Recall </a></li>
+                <li> <a href="(9) calculator.html"> Calculator</a></li>
+                <li> <a href="(8) settings.html"> Settings </a></li>
 
                 <li class="has-submenu">
-                <li> <a href="games.html"> Games</a></li>
-                <ul class="submenu"
-                    <li> <a href="dressUp.html"> Dress-Up </li>
-                    <li> <a href="coffeeMaker.html"> Coffee Maker</a></li>
+                <li> Games</li>
+                <ul class="submenu">
+                    <li> <a href="(7) dressUp.html"> Dress-Up </a></li>
+                    <li> <a href="(6) coffeeMaker.html"> Coffee Maker</a></li>
+                </ul>
                 </li>
-
-                <li> <a href="calculator.html"> Calculator</a></li>
-                <li> <a href="settings.html"> Settings </a></li>
             </ul>
         </nav>
 
@@ -38,7 +39,7 @@
                 <h2> hello there !</h2>
                 <h2> to - do list</h2>
 
-                <input type="text" id="task-input" placeholder="enter new task !">
+                <input type="text" id="taskInput" placeholder="enter new task !">
                 <button onclick="addTask()"> Add Task </button>
 
                 <ul id="todo-list">
