@@ -1,0 +1,193 @@
+
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+    <link href="https://fonts.googleapis.com/css2?family=Comic+Neue:wght@300;400;700&display=swap" rel="stylesheet">
+
+    <style>
+        body.dark{
+            background:linear-gradient(180deg, rgba(115, 82, 146, 1) 0%, #cd858f 100%);
+            color:#ffeab3;
+            position: relative;
+            font-family: 'Comic Sans', 'Times New Roman', Times, serif;
+        }
+
+        body.light{
+            background:linear-gradient(180deg,  #997aaf 100%, #ffcece 100%);
+            color:#ffeab3;
+            position: relative;
+            font-family: 'Comic Sans', 'Times New Roman', Times, serif;        
+        }
+
+        .settings-container{
+            display: flex;
+            gap: 20px;
+            flex-wrap: wrap;
+        }
+
+        .column{
+            flex: 1;
+            min-width: 250px;
+            display: flex;
+            flex-direction: column;
+            gap: 25px;
+        }
+
+        .setting-box{
+            background: #ffe0b6;
+            padding: 20px;
+            border-radius: 20px;
+            transition: background 0.3s;
+        }
+
+        body.light .setting-box{
+            background: linear-gradient(180deg,  #997aaf 100%, #ffcece 100%);
+        }
+
+        .switch{
+            position: relative;
+            display: inline-block;
+            width: 50px;
+            height: 24px;
+            margin-left: 10px;
+        }
+
+        .switch input{
+            opacity: 0;
+            width: 0;
+            height: 0;
+        }
+
+        .slider{
+            position: absolute;
+            cursor: pointer;
+            top: 0;
+            left:0;
+            right: 0;
+            bottom: 0;
+            background-color: #e78cc5;
+            transition: 0.3s ease;
+            border-radius: 25px;
+        }
+
+        .slider:before{
+            position: absolute;
+            content: " ";
+            height: 18px;
+            width: 18px;
+            bottom: 3px;
+            left: 3px;
+            background-color: white;
+            transition: 0.3s ease;
+            border-radius: 50%;
+        }
+
+        input:checked + .slider{
+            background-color: #e78cc5;
+        }
+
+        input:checked + slider:before{
+            transform: translateX(-26px);
+        }
+
+        .timer-controls{
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+
+        .timer-controls button{
+            padding: 5px 10px;
+            font-size: 16px;
+            cursor: pointer;
+        }
+    </style>
+
+</head>
+
+<body>
+    <div class="settings-container">
+        <div class="column">
+            <div class="setting-box">
+                <h3> Theme </h3>
+                <label class="switch">
+                    <input type="checkbox" id="themeToggle">
+                    <span class="slider round"></span> 
+                </label>
+                <span id="themeLabel"> Dark </span>
+            </div>
+
+            <div class="setting-box">
+                <h3> Sound </h3>
+                <label class="switch">
+                    <input type="checkbox" id="themeToggle">
+                    <span class="slider round"></span>
+                </label>
+            </div>
+        </div>
+
+        <div class="column">
+            <div class="setting-box">
+                <h3> Study Timer</h3>
+                <div class="timer-controls">
+                    <button id="decreaseTimer">-</button>
+                    <span id="timerDisplay">25</span>
+                    <button id="increaeTimer">+</button>
+                </div>
+            </div>
+
+            <div class="setting-box">
+                <h3> Reset All</h3>
+                <button id="resetBtn"> Yis </button>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        const themeToggle = getElementById('themeToggle')
+
+        /* same for themeTable, soundToggle, soundLabel, timerDisplay, decreaseTimer, increaseTimer, resetBtn */
+
+        function saveSetting(key, value);
+            localstorage.setItem(key, value);
+        
+        themeToggle.addEventListener('change', () =>{
+            if(themeToggle.checked){
+                document.body.className='dark';
+                themeLabel.textContent = 'Dark';
+                saveSetting('theme', 'dark');
+            }
+
+            else{
+                document.body.className='light';
+                themeLabel.textContent = 'Light';
+                saveSetting('theme', 'light');
+            }
+        });
+
+        increaseTimer.addEventListener('click', () => {
+            let time=parseInt(timerDisplay.textContent);
+            time+=1;
+            timerDisplay.textContent=time;
+            saveSetting('timer', time);
+        });
+
+        decreaseTimer.addEventListener('click', () => {
+            let time = parseInt(timerDisplay.textContent);
+            if(time>1){
+                time-=1;
+                timerDisplay.textContent=time;
+                saveSetting('timer, time');
+            }
+        });
+
+        resetBtn.addEventListener('click', () =>{
+            localStorage.clear();
+            loadSettings();
+        });
+
+        loadSettings();
+    </script>
+</body>
