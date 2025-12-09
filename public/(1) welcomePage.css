@@ -95,9 +95,10 @@
     .middle-bg {
       position: absolute;
       top: 90px;          
-      left: 0px;
-      right: 0px;
+      left: 10px;
+      right: 10px;
       bottom: 30px;
+      border-radius: 30px;
       background: rgba(255, 255, 255, 0.192); 
       backdrop-filter: blur(6px);          
       -webkit-backdrop-filter: blur(6px);
@@ -121,7 +122,7 @@
     .nickname-label {
       font-size: 30px;
       font-family:'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
-      color: #8b5cac;
+      color: #e7c9fd;
       text-shadow:
         0 0 6px #cbaaff,
         0 0 12px #be82ff,
@@ -139,7 +140,7 @@
       padding: 12px 18px;
       font-size: 1rem;
       border-radius: 25px;
-      border: 2px solid #8b5cac;
+      border: 2px solid #e7c9fd;
       background: rgba(252, 203, 255, 0.6);
       box-shadow: 0 0 20px #be82ff;
       outline: none;
