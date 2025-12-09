@@ -56,27 +56,3 @@
             }
 
             /* Spootify*/
-            document.getElementById('genreSelect').addEventListener('change', function(){
-                const genre = this.value;
-                const player = document.getElementById('spotify-embed');
-                
-                let spotifyLink;
-
-                switch(genre){
-                    case "asmr":
-                       spotifyLink = /*link*/;
-                       break;
-
-                    case "pop":
-                        spotifyLink = /*link*/;
-                        break;
-                    
-                    case "rnb":
-                        spotifyLink = /*link*/;
-                        break;
-
-                    default:
-                        spotifyLink = "";
-                        
-                }
-                });

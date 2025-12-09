@@ -57,7 +57,7 @@
                 padding: 10px 15px;
                 border-radius: 15px;
                 display: block;
-                transition: 0.3s ease-in-out;
+                transition: 0.3s ease;
             }
 
             #navbar ul li a.active{
@@ -121,7 +121,7 @@
                 width: 0%;
                 background: rgb(232, 195, 125);
                 border-radius: 5px;
-                transition: width 0.3s ease;
+                transition: 0.3s ease;
             }
 
             .whiteboard{
