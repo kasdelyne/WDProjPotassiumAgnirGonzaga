@@ -46,14 +46,35 @@
 
         .day:hover{
             background-color: #f19bc5;
-            
         }
 
-
+        .event{
+            font-size: 10px;
+            color: #fd4891;
+        }
     </style>
     <body>
+
+        <div class="calendar">
+            <div class="header">
+                <button id="prev"> < </button>
+                <span id="monthYear"></span>
+                <button id="next"> > </button>
+            </div>
+            <div class="grid" id="daysGrid"></div>
+        </div>
         
         <script>
+
+            let current = new Date();
+
+            function theCalendar(){
+                const monthYear = document.getElementById('monthYear');
+                const daysGrid = document.getElemebtById('daysGrid');
+                const year = current.getFullYear();
+                const month = current.getMonth();
+            }
+
 
         </script>
     </body>
