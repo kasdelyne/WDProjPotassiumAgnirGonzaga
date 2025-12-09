@@ -1,0 +1,68 @@
+        body{
+            font-family: 'Times New Roman', 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            padding: 20px;
+            background: linear-gradient(180deg, rgba(115, 82, 146, 1) 0%, #cd858f 100%);
+            min-height: 100vh;
+            margin:0;
+            color: #746c7f;
+        }
+
+        .calendar{
+            background: #fff;
+            padding: 20px;
+            border-radius: 10px;
+            justify-content: center;
+            text-align: center;
+            width: 500px;
+        }
+
+        .header{
+            display: flex;
+            justify-content: space-between;
+            margin-bottom: 30px;
+        }
+
+        button{
+            cursor: pointer;
+            grid-template-columns: repeat(7, 1fr);
+            gap: 5px;
+        }
+        
+        .day{
+            background-color: #fff;
+            padding: 20px;
+            gap: 5px;
+            position: relative;
+            max-width: 200px;
+            min-height: 60px;
+        }
+
+        .day:hover{
+            background-color: #f19bc5;
+        }
+
+        .event{
+            font-size: 10px;
+            color: #fd4891;
+        }
+        .grid{
+            display:grid;
+            grid-template-columns: repeat(7,1fr);
+            gap:5px;
+        }
+
+        .event button.delete-btn{
+            margin-left: 5px;
+            background: #ffe27b;
+            color: #fd4891;
+            border-radius: 20px;
+            cursor: pointer;
+            font-size: 10px;
+            width: 16px;
+            height: 16px;
+            line-height: 16px;
+            padding: 0;
+        }

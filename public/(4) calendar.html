@@ -3,66 +3,8 @@
     <head>
         <meta charset="UTF-8"/>
         <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-
+        <link rel="stylesheet" href="(4) calendar.css"> <!-- add a css-->
     </head>
-
-    <style>
-        body{
-            font-family: 'Times New Roman', 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            padding: 20px;
-            background: linear-gradient(180deg, rgba(115, 82, 146, 1) 0%, #cd858f 100%);
-            min-height: 100vh;
-            margin:0;
-            color: #746c7f;
-        }
-
-        .calendar{
-            background: #fff;
-            padding: 20px;
-            border-radius: 10px;
-            justify-content: center;
-            text-align: center;
-            width: 500px;
-        }
-
-        .header{
-            display: flex;
-            justify-content: space-between;
-            margin-bottom: 30px;
-        }
-
-        button{
-            cursor: pointer;
-            grid-template-columns: repeat(7, 1fr);
-            gap: 5px;
-        }
-        
-        .day{
-            background-color: #fff;
-            padding: 20px;
-            gap: 5px;
-            position: relative;
-            max-width: 200px;
-            min-height: 60px;
-        }
-
-        .day:hover{
-            background-color: #f19bc5;
-        }
-
-        .event{
-            font-size: 10px;
-            color: #fd4891;
-        }
-        .grid{
-            display:grid;
-            grid-template-columns: repeat(7,1fr);
-            gap:5px;
-        }
-    </style>
     <body>
 
         <div class="calendar">
@@ -74,70 +16,6 @@
             <div class="grid" id="daysGrid"></div>
         </div>
         
-        <script>
-
-            let current = new Date();
-
-            function theCalendar(){
-                let year = current.getFullYear();
-                let month = current.getMonth();
-
-                let monthYear = document.getElementById("monthYear");
-                monthYear.textContent = current.toLocaleString('default',{
-                    month: 'long',
-                    year:'numeric'
-                });
-
-                let daysGrid = document.getElementById("daysGrid");
-                daysGrid.innerHTML = "";
-
-                let firstDay = new Date(year, month, 1).getDay();
-                let lastDate = new Date(year, month +1, 0).getDate();
-
-
-                for(let i=0; i<firstDay; i++){
-                    let emptyBox = document.createElement("div");
-                    daysGrid.appendChild(emptyBox);
-                }
-
-                for(let day=1; day<=lastDate; day++){
-                    let dateKey = year + "-" + (month +1) + "-" + day;
-                    let stored = localStorage.getItem(dateKey);
-                    let event = localStorage.getItem(dateKey);
-                    let dayBox = document.createElement("div");
-                    dayBox.className = "day";
-                    dayBox.textContent = day;
-
-                    if(event){
-                        let save = document.createElement("div");
-                        save.className = "event";
-                        save.textContent = event;
-                        dayBox.appendChild(save);
-                    }
-
-                    dayBox.onclick = function() {
-                        let task = prompt("Add event: ");
-                        if(task){
-                            localStorage.setItem(dateKey, task);
-                            theCalendar();
-                        }
-                    }
-
-                     daysGrid.appendChild(dayBox);  
-                };
-            }
-                function nextMonth(){
-                    current = new Date(current.getFullYear(), current.getMonth() +1, 1);
-                    theCalendar();
-                }
-
-                function prevMonth(){
-                    current = new Date(current.getFullYear(), current.getMonth()-1, 1);
-                    theCalendar();
-                }
-                theCalendar();
-                document.getElementById("next").onclick = nextMonth;
-                document.getElementById("prev").onclick = prevMonth;
-        </script>
+        <script src="(4) calendar.js"></script>
     </body>
 </html>
