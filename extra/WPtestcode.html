@@ -1,308 +1,338 @@
 <!DOCTYPE html>
 <html>
-<head>
-<style>
-    body {
-        background: linear-gradient(110deg, rgba(122, 81, 150, 1) 0%,#e36eb4df 100%, #f89cc8 100%);
-        color: #ffeab3;
-        display: flex;
-        flex-direction: column;
-        align-items: center;
-        min-height: 100vh;
+    <head>  
+        <meta charset="UTF-8"/>
+        <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+        <title> Main Page</title>
+        <link rel="icon" href="../assets/favicon.png">
+        <link rel="stylesheet" href="(3) dashboard.css">
+        <style>
+        .a-calendar {
+        width: 500px;
+        background: #fff;
+        padding: 20px;
+        border-radius: 20px;
         text-align: center;
+        color: #fd4891;
+        box-shadow: 0 0 20px rgba(0,0,0,0.1);
+        max-width: 600px;
+
     }
 
-    header {
-        padding: 60px 20px;
+    .header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 100%;
+    max-width: 600px;
+    margin: 0 auto;
+    padding: 10px;
+    box-sizing: border-box;
+}
+
+
+
+    button {
+        cursor: pointer;
+        background: #ffeab3;
+        border: none;
+        padding: 6px 12px;
+        border-radius: 10px;
+        font-size: 18px;
+        color: #fd4891;
     }
 
-    header, h1 {
-        font-size: 50px;
-        color: #ffeab3;
+    button:hover {
+        background: #ffeab3;
     }
 
-        h1 span {
+    .weekdays {
+    display: flex;
+    justify-content: space-between;
+    width: 100%;
+    max-width: 600px;
+    margin: 0 auto;
+    padding: 10px;
+    box-sizing: border-box;
+}
+
+.grid {
+    display: grid;
+    grid-template-columns: repeat(7, 1fr);
+    gap: 5px;
+    width: 100%;
+    max-width: 600px;
+    margin: 0 auto;
+    padding: 10px;
+    box-sizing: border-box;
+}
+
+
+    .weekdays div {
+        padding: 10px 0;
+    }
+
+    .day {
+        background-color: #fff;
+        padding: 10px;
+        min-height: 60px;
+        border-radius: 8px;
         position: relative;
-        display: inline-block;
-    }
-    h1 span.bounce {
-        animation: bounce 0.6s ease infinite alternate, colorGlow 2s linear infinite;
-        font-family:'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
-        font-size: 80px;
-        margin-top: 3px;
-
-    }
-    h1 span.bounce:nth-child(3) { animation-delay: 0.1s; } /* t */
-    h1 span.bounce:nth-child(4) { animation-delay: 0.2s; } /* a */
-    h1 span.bounce:nth-child(5) { animation-delay: 0.3s; } /* s */
-    h1 span.bounce:nth-child(6) { animation-delay: 0.4s; } /* k */
-    h1 span.bounce:nth-child(7) { animation-delay: 0.5s; } /* o */
-    h1 span.bounce:nth-child(8) { animation-delay: 0.6s; } /* n */
-    h1 span.bounce:nth-child(9) { animation-delay: 0.7s; } /* a */
-    h1 span.bounce:nth-child(10){ animation-delay: 0.8s; } /* u */
-    h1 span.bounce:nth-child(11){ animation-delay: 0.9s; } /* t */
-
-    @keyframes bounce {
-        0%   { transform: translateY(0); }
-        100% { transform: translateY(-20px); }
+        cursor: pointer;
+        border: 1px solid #f3cce0;
     }
 
-    @keyframes colorGlow {
-        0% {
-        color: #ffeab3; 
-        text-shadow: 0 0 10px #ffeab3, 0 0 20px #ffeb3b;
-  }
-        33% {
-        color: #f8a9d1;
-        text-shadow: 0 0 10px #ff69b4, 0 0 20px #ff69b4;
-  }
-        66% {
-        color: #cf98e5; 
-        text-shadow: 0 0 10px #9b59b6, 0 0 20px #9b59b6;
-  }
-        100% {
-        color: #ffeab3; 
-        text-shadow: 0 0 10px #ffeab3, 0 0 20px #ffeb3b;
-  }
-}
-    h1 span.glow {
-      animation: glow 2s ease-in-out infinite;
-      font-family:'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
-    }
-    @keyframes glow {
-      0%   { text-shadow: 0 0 5px #ffeab3; transform: scale(1); }
-      50%  { text-shadow: 0 0 20px #fff5d6; transform: scale(1.05); }
-      100% { text-shadow: 0 0 5px #ffeab3; transform: scale(1); }
-}
-    .intro {
-      font-size: 18px;   
-      line-height: 2em;  
-      margin-top: 0;
-      max-width: 800px;   
-      color: #ffeab3;
-    }
-    .intro-box {
-      position: absolute;
-      top: 150px;
-      left: 50%;
-      transform: translateX(-50%);
-      width: 90%;
-      max-width: 700px;
-      height: 100px;
-      padding: 40px;
-      border-radius: 15px;
-      
-      background: rgba(255, 246, 201, 0.2);
-      backdrop-filter: blur(6px);
-      -webkit-backdrop-filter: blur(6px);
-
-      box-shadow: 0 0 20px rgba(255, 234, 179, 0.3);
-      z-index: -1; 
-}
-    .intro-box::before {
-      content: "";
-      position: absolute;
-      inset: 0;
-      padding: 3px; 
-      border-radius: 15px;
-      background: linear-gradient(
-        270deg,
-       #ffeab3,
-       #f081d6,
-       #c37adf,
-       #ffeab3
-      );
-      background-size: 600% 600%;
-      animation: borderMove 8s linear infinite;
-      mask: 
-      linear-gradient(#fff 0 0) content-box, 
-      linear-gradient(#fff 0 0);
-      -webkit-mask: 
-      linear-gradient(#fff 0 0) content-box, 
-      linear-gradient(#fff 0 0);
-      -webkit-mask-composite: xor;
-      mask-composite: exclude;
-      pointer-events: none;
-}
-
-@keyframes borderMove {
-  0%   { background-position: 0% 50%; }
-  50%  { background-position: 100% 50%; }
-  100% { background-position: 0% 50%; }
-}
-
-    .about-section {
-      margin-top: 20px;
-      padding-top: 0px;
-      width: 90%;
-      max-width: 900px;
-      display: flex;
-      flex-direction: column;
-      align-items: center;
-      text-align: center;
-      gap: 40px;
-}
-
-    .about-title {
-      font-size: 2em;
-      font-weight: bold;
-      margin-bottom: 0px;
-      margin-top: 25px;
-      text-align: center;
-      animation: titleGlow 4s linear infinite;
-}
-@keyframes titleGlow {
-  0% {
-    color: #ffeab3; 
-    text-shadow: 0 0 10px #fff494, 0 0 20px #fff494;
-  }
-  33% {
-    color: #ff7dda;
-    text-shadow: 0 0 10px #ff69b4, 0 0 20px #ff69b4;
-  }
-  100% {
-    color: #ffeab3; 
-    text-shadow: 0 0 10px #fff494, 0 0 20px #fff494;
-  }
-}
-
-    .card-container {
-      display: flex;
-      justify-content: center; 
-      gap: 30px;
-      width: 100%;
-}
-
-    .about-card {
-      background-color: #864c9e;
-      border-radius: 15px;
-      transition: 0.4s;
-      width: 260px;                
-      padding: 30px;
-      display: flex;
-      flex-direction: column;
-      align-items: center;
-      box-shadow: 0 4px 8px rgba(255, 154, 255, 0.96);
-      cursor: pointer;
-      overflow: hidden;
-}
-
-    .card-photo {
-        width: 90px;
-        height: 90px;
-        border-radius: 50%;
-        object-fit: cover;
-        margin-bottom: 15px;
-        border: 3px solid #ffeab3;
+    .day:hover {
+        background-color: #f19bc5;
+        color: white;
     }
 
-    .card-text {
-        font-size: 1.1em;
-        font-weight: 500;
-        color: #ffeab3;
-    }
-
-    .extra {
-        max-height: 0;
-        opacity: 0;
-        overflow: hidden;
-        transition: all 0.4s ease;
-        margin-top: 10px;
-        width: 100%;          
-        text-align: left; 
+    .event {
+        font-size: 10px;
+        color: #fd4891;
+        margin-top: 5px;
+        background: #ffe4e9;
+        padding: 3px 5px;
+        border-radius: 5px;
         display: flex;
-        justify-content: center; 
-
+        justify-content: space-between;
+        align-items: center;
     }
-    .extra ul {
-        margin: 0;
+
+    .delete-btn {
+        margin-left: 5px;
+        background: #ffe27b;
+        color: #fd4891;
+        border: none;
+        border-radius: 50%;
+        cursor: pointer;
+        font-size: 10px;
+        width: 16px;
+        height: 16px;
         padding: 0;
-        list-style: none;
-        color: #fff5d6;   
-}
-    .extra li {
-        text-align: left; 
     }
+              /* Navigation Bar*/
+            
+            body{
+                overflow-x: hidden;
+                background: linear-gradient(180deg, rgba(115, 82, 146, 1) 0%, #cd858f 100%);
+                color:#ffeab3;
+                position: relative;
+                font-family: 'Times New Roman', Times, serif;
+            }
 
-    .about-card:hover {
-        width: 370px;            
-        background: #d857b8;
-    }
+            #navtoggle{
+                position: fixed;
+                top: 30px;
+                left: 3px;
+                z-index: 1000;
+                padding: 10px 15px;
+                cursor: pointer;
+                border-radius: 5px;
+            }
 
-    .about-card:hover .extra {
-        max-height: 1000px;
-        opacity: 1;
-    }
+            .navbar{
+                width: 250px;
+                position: fixed;
+                top: 0;
+                left: -250px;
+                height: 100%;
+                background-color: rgba(254, 192, 192, 0.584);
+                color: #746c7f;
+            }
 
-    @media (max-width: 600px) {
-        .about-card {
-            width: 100%;
-        }
-        .about-card:hover {
-            width: 100%;
-        }
-    }
-    .about-card span {
-        font-size: 1.5em;     
-        font-weight: bold;    
-        margin-top: 10px;     
-        color: #ffeab3;       
-        text-align: center;  
-}
+            .navbar.open{
+                left: 0;
+                border-radius: 20px;
+                margin-left: 5px;
+                font-size: 16px;
+            }
 
-</style>
-</head>
-<body>
+            #navbar ul{
+                list-style: none;
+                padding:0;
+            }
 
-<h1> 
-    <span class="glow">What's</span>
-    <span class="bounce">t</span>
-    <span class="bounce">a</span>
-    <span class="bounce">s</span>
-    <span class="bounce">k</span>
-    <span class="bounce">o</span>
-    <span class="bounce">n</span>
-    <span class="bounce">a</span>
-    <span class="bounce">u</span>
-    <span class="bounce">t</span>
-    <span class="glow">about?</span>
-</h1>
+            #navbar ul li{
+                text-align: center;
+                padding: 20px;
+            }
 
-<div class="intro-box"></div>
-<p class="intro">A productivity and note-taking app for Pisay scholars. It is designed to make your academic experience organized and clean throughout the School Year.</p>
-<p class="intro">Lorem ipsum dolor sit amet, consectetur adipiscing elit...</p>
+            #navbar ul li a{
+                color: #746c7f;;
+                text-decoration: none;
+                font-weight: bold;
+            }
 
-<section class="about-section">
-    <div class="about-title">ˑ✦ˑ About the Developers ˑ✦ˑ</div>
+            #navbar ul li a:hover{
+                background: linear-gradient(180deg, rgba(115, 82, 146, 1) 0%, #cd858f 100%);
+                color: #ffeab3;
+                padding: 10px 15px;
+                border-radius: 15px;
+                display: block;
+                transition: 0.3s ease;
+            }
 
-    <div class="card-container">
-        <div class="about-card">
-            <img src="https://i.pinimg.com/736x/50/49/03/5049039727fecddee14e757b757212c3.jpg" class="card-photo">
-            <span> Kas Agnir </span>
-            <div class="extra">
-                <ul>
-                    <li>Name: AGNIR, Kacey Adelyne O.</li>
-                    <li>Class No.: K02</li>
-                    <li>School: Philippine Science High School</li>
-                    <li>Email: b2029kaoagnir@pshs.edu.ph</li>
+            #navbar ul li a.active{
+                background: linear-gradient(180deg, rgba(115, 82, 146, 1) 0%, #cd858f 100%);
+                color: #ffeab3;
+                padding: 10px 15px;
+                border-radius: 15px;
+                display: block;
+                font-weight: bold;
+            }
+
+            .submenu{
+                display:none;
+                list-style: none;
+                padding-left: 10px;
+                margin: 0;
+            }
+
+            .has-submenu:hover .submenu{
+                display: block;
+            }
+
+            .submenu li{
+                padding: 10px;
+                background: white;
+                margin-top: 5px;
+                border-radius: 5px;
+            }
+
+            .submenu li a{
+                color: #ffd;
+            }
+
+            /*Main Page*/
+
+            .container{
+                display: grid;
+                grid-template-columns: 1fr 2fr 1fr;
+                gap: 20px;
+                height: 100vh;
+                padding: 20px;
+                box-sizing: border-box;
+            }
+
+            .column{
+                padding: 20px;
+                border-radius: 10px;
+                overflow-y: auto;
+            }
+
+            .progress-container{
+                width: 100%;
+                height: 30px;
+                background: #eee;
+                border-radius: 5px;
+                margin-bottom: 10px;
+            }
+
+            .progress-bar{
+                height: 100%;
+                width: 0%;
+                background: rgb(232, 195, 125);
+                border-radius: 5px;
+                transition: 0.3s ease;
+            }
+
+            .whiteboard{
+                background: white;
+                color: #746c7f;
+                height: 300px;
+                border-radius: 10px;
+                margin-bottom: 20px;
+                padding: 15px;
+            }
+
+            #calendar{
+                background: white;
+                border-radius: 10px;
+                padding: 15px;
+            }
+        </style>
+    </head>
+    <body>
+        <div id="navtoggle" onclick="toggleNavBar()">☰</div>
+        
+        <nav id="navbar" class="navbar">
+            <ul>
+                <li> <a href="(3) dashboard.html"> Dashboard </a></li>
+                <li> <a href="(4) calendar.html"> Calendar</a></li>
+                <li> <a href="(5) activeRecall.html"> Active Recall </a></li>
+                <li> <a href="(9) calculator.html"> Calculator</a></li>
+                <li> <a href="(8) settings.html"> Settings </a></li>
+
+                <li class="has-submenu">
+                <li> Games</li>
+                <ul class="submenu">
+                    <li> <a href="(7) dressUp.html"> Dress-Up </a></li>
+                    <li> <a href="(6) coffeeMaker.html"> Coffee Maker</a></li>
                 </ul>
-            </div>
-        </div>
+                </li>
+            </ul>
+        </nav>
 
-        <div class="about-card">
-            <img src="https://i.pinimg.com/1200x/df/8b/a7/df8ba761b0e44855f7cdb8cc7122c745.jpg" class="card-photo">
-            <span> Naj Gonzaga </span>
-            <div class="extra">
-                <ul>
-                    <li>Name: GONZAGA, Germione Naj</li>
-                    <li>Class No.: K15</li>
-                    <li>School: Philippine Science High School</li>
-                    <li>Email: b2029gnggonzaga@pshs.edu.ph</li>
+        <div class="container">
+
+            <div class="column left">
+                <h2> hello there !</h2>
+                <h2> to - do list</h2>
+
+                <input type="text" id="taskInput" placeholder="enter new task !">
+                <button onclick="addTask()"> Add Task </button>
+
+                <ul id="todo-list">
+
                 </ul>
-            </div>
-        </div>
-    </div>
-</section>
 
-</body>
+                <h3> Progress</h3>
+                <div class="progress-container">
+                    <div class="progress-bar" id="progress-bar"></div>
+                </div>
+                <button onclick="moreProgress()"> + </button>
+            </div>
+
+            <div class="column middle">
+                <h2> Whiteboard</h2>
+                <div class="whiteboard">
+                </div>
+
+                <h2> Calendar</h2>
+                <div class="a-calendar">
+                <div class="calendar">
+                <div class="header">
+                    <button id="prev"><</button>
+                    <span id="monthYear"></span>
+                    <button id="next">></button>
+                </div>
+
+                <div class="weekdays">
+                    <div>sun</div>
+                    <div>mon</div>
+                    <div>tue</div>
+                    <div>wed</div>
+                    <div>thu</div>
+                    <div>fri</div>
+                    <div>sat</div>
+                </div>
+
+            <div class="grid" id="daysGrid"></div>
+            </div>
+            </div>
+            </div>
+
+            <div class="column right">
+                <h2> Spotify </h2>
+                <p> vibe: </p>
+                <select id="genreSelect">
+                    <option value=".."> .. </option>
+                </select>
+            </div>
+
+        </div>
+        <script src="(4) calendar.js"></script>
+        <script src="(3) dashboard.js"></script>
+    </body>
 </html>

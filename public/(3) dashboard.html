@@ -8,7 +8,7 @@
         <link rel="stylesheet" href="(3) dashboard.css">
         <style>
         .a-calendar {
-        width: 500px;
+        width: 620px;
         background: #fff;
         padding: 20px;
         border-radius: 20px;
@@ -26,16 +26,30 @@
 
     button {
         cursor: pointer;
-        background: #ffeab3;
-        border: none;
+        background: #fff2d2;
+        border: 1px solid #ffdd88;
         padding: 6px 12px;
         border-radius: 10px;
         font-size: 18px;
-        color: #fd4891;
+        color: #ff6fa8;
+
     }
 
     button:hover {
-        background: #ffeab3;
+        background: #ff6fa8;
+        border: 1px solid #c44595;
+        color: #fff2d2;
+    }
+    
+    .moreprgrs{
+        cursor: pointer;
+        background: #fff2d2;
+        border: 1px solid #ffdd88;
+        padding: 6px 12px;
+        border-radius: 10px;
+        font-size: 18px;
+        color: #ff6fa8;
+        margin-left: 15px;
     }
 
     .weekdays {
@@ -121,8 +135,19 @@
         <div class="container">
 
             <div class="column left">
-                <h2> hello there !</h2>
-                <h2> to - do list</h2>
+                <h2 class="sglow">Hello there,</h2>
+                <h2 class="animate">
+                    <span class="glowbounce">u</span>
+                    <span class="glowbounce">s</span>
+                    <span class="glowbounce">e</span>
+                    <span class="glowbounce">r</span>
+                    <span class="glowbounce">n</span>
+                    <span class="glowbounce">a</span>
+                    <span class="glowbounce">m</span>
+                    <span class="glowbounce">e</span>
+                </h2>
+                <h3>ˑ✦ˑ~~~~~~~~~~ˑ✦ˑ~~~~~~~~~~ˑ✦ˑ</h3>
+                <h2 class="tdl"> to - do list</h2>
 
                 <input type="text" id="taskInput" placeholder="enter new task !">
                 <button onclick="addTask()"> Add Task </button>
@@ -131,11 +156,11 @@
 
                 </ul>
 
-                <h3> Progress</h3>
+                <h3 class="prgrs"> Progress</h3>
                 <div class="progress-container">
                     <div class="progress-bar" id="progress-bar"></div>
                 </div>
-                <button onclick="moreProgress()"> + </button>
+                <button class="moreprgrs", onclick="moreProgress()"> + </button>
             </div>
 
             <div class="column middle">

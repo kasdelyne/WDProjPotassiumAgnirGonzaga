@@ -93,37 +93,134 @@
 
             /*Main Page*/
 
-            .container{
+           .container {
                 display: grid;
                 grid-template-columns: 1fr 2fr 1fr;
-                gap: 20px;
-                height: 100vh;
-                padding: 20px;
                 box-sizing: border-box;
+                margin: 0;
+                padding: 0;
+                gap: 0;
+            }
+
+            .sglow {
+                font-size: 30px; 
+                margin: 50px 0 0 20px; 
+                text-align: left;
+                font-family: 'Times New Roman', Times, serif;
+                display: inline-block;
+                animation: smallbounce 2s ease-in-out infinite,
+                           glowpulse 3s ease-in-out infinite;
+            }
+            @keyframes smallbounce {
+                0%   { transform: translateY(0); }
+                50%  { transform: translateY(-5px); }
+                100% { transform: translateY(0); }
+            }
+            @keyframes glowpulse {
+                0%   { text-shadow: 0 0 5px #ffeab3, 0 0 10px #cd858f; }
+                50%  { text-shadow: 0 0 15px #ffeab3, 0 0 25px #cd858f; }
+                100% { text-shadow: 0 0 5px #ffeab3, 0 0 10px #cd858f; }
+            }
+
+            .animate {
+                margin: 0 0 0 10px; 
+                display: flex;
+                flex-wrap: wrap;
+                gap: 3px;
+            }
+
+            h2 span.glowbounce {
+                animation: bounce 0.6s ease infinite alternate, colorGlow 2s linear infinite;
+                font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+                font-size: 35px; 
+                display: inline-block;
+                margin: 5px 0 0 10px;
+            }
+            h2 span.glowbounce:nth-child(1) { animation-delay: 0s; }
+            h2 span.glowbounce:nth-child(2) { animation-delay: 0.2s; }
+            h2 span.glowbounce:nth-child(3) { animation-delay: 0.4s; }
+            h2 span.glowbounce:nth-child(4) { animation-delay: 0.6s; }
+            h2 span.glowbounce:nth-child(5) { animation-delay: 0.8s; }
+            h2 span.glowbounce:nth-child(6) { animation-delay: 1s; }
+            h2 span.glowbounce:nth-child(7) { animation-delay: 1.2s; }
+            h2 span.glowbounce:nth-child(8) { animation-delay: 1.4s; }
+            h2 span.glowbounce:nth-child(9) { animation-delay: 1.6s; }
+
+            @keyframes bounce {
+                0%   { transform: translateY(0); }
+                100% { transform: translateY(-20px); }
+            }
+
+            @keyframes colorGlow {
+                0% {
+                color: #ffeab3; 
+                text-shadow: 0 0 10px #ffeab3, 0 0 20px #ffeb3b;
+            }
+                33% {
+                color: #f8a9d1;
+                text-shadow: 0 0 10px #ff69b4, 0 0 20px #ff69b4;
+            }
+                66% {
+                color: #cf98e5; 
+                text-shadow: 0 0 10px #9b59b6, 0 0 20px #9b59b6;
+            }
+                100% {
+                color: #ffeab3; 
+                text-shadow: 0 0 10px #ffeab3, 0 0 20px #ffeb3b;
+            }
+            }
+            h3 {
+                margin: 0px 20px 10px 20px;
+                font-family: 'Times New Roman', Times, serif;
+            }
+            .tdl{
+                width: 100%;
+                margin: 0 0 10px 20px;
+                color: #fff7e4;
+            }
+            .prgrs{
+                margin: 0px 0 10px 20px;
+                color: #fff7e4; 
+                font-size: 23px;
             }
 
             .column{
-                padding: 20px;
+                padding: 40px;
                 border-radius: 10px;
                 overflow-y: auto;
+                margin: 0 5px 20px 5px;
             }
 
             .progress-container{
-                width: 100%;
+                width: 270px;
                 height: 30px;
-                background: #eee;
-                border-radius: 5px;
-                margin-bottom: 10px;
+                background: rgb(183, 104, 197);
+                border: 2px solid #5e2e71;
+                border-radius: 10px;
+                margin: 0 0 20px 15px;
             }
 
             .progress-bar{
                 height: 100%;
                 width: 0%;
-                background: rgb(232, 195, 125);
+                background: rgb(255, 169, 229);
                 border-radius: 5px;
                 transition: 0.3s ease;
             }
-
+          
+            #taskInput{
+                background: rgb(183, 104, 197);
+                border: 2px solid #5e2e71;
+                outline: none;
+                color: #edd5f7;
+                height: 3px;
+                border-radius: 10px;
+                margin: 0 0 20px 15px;
+                padding: 14px;
+                width: 130px;
+                gap: 0px;
+            }
+            
             .whiteboard{
                 background: white;
                 color: #746c7f;
