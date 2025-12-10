@@ -23,51 +23,58 @@
                     daysGrid.appendChild(emptyBox);
                 }
 
-                for(let day=1; day<=lastDate; day++){
-                    let dateKey = year + "-" + (month +1) + "-" + day;
-                    let stored = localStorage.getItem(dateKey);
+                for (let day = 1; day <= lastDate; day++) {
+                    let dateKey = year + "-" + (month + 1) + "-" + day;
                     let event = localStorage.getItem(dateKey);
+
                     let dayBox = document.createElement("div");
                     dayBox.className = "day";
                     dayBox.textContent = day;
 
-                    if(event){
+                    if (event) {
                         let save = document.createElement("div");
                         save.className = "event";
-                        save.textContent = event;
+
+                        let textSpan = document.createElement("span");
+                        textSpan.textContent = event;
+                        save.appendChild(textSpan);
+
+                        let deleteBtn = document.createElement("button");
+                        deleteBtn.textContent = "X";
+                        deleteBtn.className = "delete-btn";
+
+                        deleteBtn.onclick = function (e) {
+                            e.stopPropagation();                
+                            localStorage.removeItem(dateKey);   
+                            theCalendar();                     
+                        };
+
+                        save.appendChild(deleteBtn);
                         dayBox.appendChild(save);
                     }
 
-                    dayBox.onclick = function() {
-                        let task = prompt("Add event: ");
-                        if(task){
+                    dayBox.onclick = function () {
+                        let task = prompt("Add event:");
+                        if (task) {
                             localStorage.setItem(dateKey, task);
                             theCalendar();
                         }
-                    }
+                    };
 
-                     daysGrid.appendChild(dayBox);  
-                };
+                    daysGrid.appendChild(dayBox);
+                }
+
+        function nextMonth(){
+                current = new Date(current.getFullYear(), current.getMonth() +1, 1);
+                theCalendar();
             }
-                function nextMonth(){
-                    current = new Date(current.getFullYear(), current.getMonth() +1, 1);
-                    theCalendar();
-                }
 
-                function prevMonth(){
-                    current = new Date(current.getFullYear(), current.getMonth()-1, 1);
-                    theCalendar();
-                }
+        function prevMonth(){
+                current = new Date(current.getFullYear(), current.getMonth()-1, 1);
                 theCalendar();
-                document.getElementById("next").onclick = nextMonth;
-                document.getElementById("prev").onclick = prevMonth;
+            }
 
-            let deleteBtn = document.createElement("button");
-            deleteBtn.textContent = "X";
-            deleteBtn.className = "delete-btn";
-            deleteBtn.onclick = function(e){
-                e.stopPropagation();
-                localStorage.removeItem(dataKey);
-                theCalendar();
-            };
-            save.appendChild(deleteBtn);
+        theCalendar();
+        document.getElementById("next").onclick = nextMonth;
+        document.getElementById("prev").onclick = prevMonth;
+            }
