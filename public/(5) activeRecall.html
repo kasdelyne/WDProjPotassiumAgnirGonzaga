@@ -5,20 +5,284 @@
         <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
         <title> Active Recall </title>
         <link rel="stylesheet" href="css">
+<style>
+    body {
+        font-family: 'Times New Roman', Arial, sans-serif;
+        background: linear-gradient(180deg, rgba(115, 82, 146, 1) 0%, #cd858f 100%);
+        margin: 0;
+        padding: 40px;
+        color: #333;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        color: rgba(115, 82, 146, 1);
+    }
 
-        <style>
-            body{
-                font-family: 'Times New Roman', Georgia,  Times, serif;
-                background: linear-gradient(180deg, rgba(115, 82, 146, 1) 0%, #cd858f 100%);
-                margin: 0;
-                padding: 0;
-                color: #ffeab3;
-                display: flex;
-                flex-direction: column;
-                align-items: center;
-            }
+    h1 {
+        color: white;
+        font-size: 3rem;
+        margin-bottom: 20px;
+        text-shadow: 0 2px 4px rgba(0,0,0,0.3);
+    }
 
-            
-        </style>
+    .card-box {
+        background: #fff3d6;
+        padding: 25px;
+        border-radius: 15px;
+        width: 380px;
+        box-shadow: 0 8px 20px rgba(0, 0, 0, 0.15);
+        margin-bottom: 20px;
+        transition: transform .2s ease;
+    }
+
+    .card-box:hover {
+        transform: translateY(-3px);
+    }
+
+    input, textarea, button {
+        width: 100%;
+        padding: 14px;
+        border-radius: 10px;
+        border: none;
+        margin-top: 10px;
+        font-size: 15px;
+        box-sizing: border-box;
+    }
+
+    textarea {
+        height: 80px;
+        resize: none;
+    }
+
+    button {
+        background: #ff69b4;
+        color: white;
+        cursor: pointer;
+        font-weight: bold;
+        transition: 0.2s ease;
+    }
+
+    button:hover {
+        background: #5749c9;
+        transform: scale(1.02);
+    }
+
+    .flashcard {
+        background: #fff9d6;
+        padding: 18px;
+        border-radius: 12px;
+        margin-top: 10px;
+        position: relative;
+        border-left: 6px solid #ffd451;
+        box-shadow: 0 2px 6px rgba(0,0,0,0.15);
+    }
+
+    .delete-btn {
+        position: absolute;
+        right: 15px;
+        top: 10px;
+        font-weight: bold;
+        color: #e63946;
+        cursor: pointer;
+        font-size: 18px;
+    }
+
+    #quiz-card {
+        width: 380px;
+        height: 240px;
+        perspective: 1000px;
+        margin-top: 20px;
+        display: none;
+        justify-content: center;
+        align-items: center;
+    }
+
+    .flip-inner {
+        width: 100%;
+        height: 100%;
+        background: white;
+        border-radius: 15px;
+        position: relative;
+        text-align: center;
+        transform-style: preserve-3d;
+        transition: transform 0.7s;
+        box-shadow: 0 8px 20px rgba(0,0,0,0.2);
+        padding: 20px;
+    }
+
+    .show-answer .flip-inner {
+        transform: rotateY(180deg);
+    }
+
+    .flip-face {
+        position: absolute;
+        width: 100%;
+        height: 100%;
+        backface-visibility: hidden;
+        border-radius: 15px;
+        padding: 20px;
+        box-sizing: border-box;
+        justify-content: center;
+        align-items: center;
+    }
+
+    .front {
+        font-size: 1.3rem;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+
+    .back {
+        transform: rotateY(180deg);
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        font-size: 1.3rem;
+        color: #1b5e20;
+        font-weight: bold;
+    }
+
+    .thumbs {
+        width: 380px;
+        display: none;
+        justify-content: space-between;
+        margin-top: 20px;
+    }
+
+    .thumbs button {
+        width: 48%;
+        font-size: 20px;
+        padding: 14px;
+        border-radius: 12px;
+        border: none;
+        cursor: pointer;
+        transition: 0.2s;
+        margin-top: 30px;
+    }
+
+    .thumbs button:hover {
+        transform: scale(1.05);
+    }
+
+    .up { 
+      background: #4caf50; 
+      color: white; 
+    }
+    .down { 
+      background: #e63946; 
+      color: white; 
+      
+    }
+
+</style>
+</head>
+<body>
+
+<h1>Flashcards</h1>
+
+<div class="card-box">
+    <h2>Add Flashcard</h2>
+    <input id="question" placeholder="Question">
+    <textarea id="answerInput" placeholder="Answer"></textarea>
+    <button onclick="addFlashcard()">Add</button>
+</div>
+
+<div id="flashcards-container" class="card-box"></div>
+
+<button id="startQuiz" onclick="startQuiz()" style="width:380px; margin-top:10px;">Start Quiz</button>
+
+
+<div id="quiz-card">
+    <div class="flip-inner">
+        <div class="flip-face front" id="quiz-question"></div>
+        <div class="flip-face back" id="quiz-answer"></div>
+    </div>
+</div>
+
+<div class="thumbs">
+    <button class="up" onclick="thumbUp()"> ✧ദ്ദി( ˶^ᗜ^˶ ) </button>
+    <button class="down" onclick="thumbDown()">¯\_(ツ)_/¯</button>
+</div>
+
+<script>
+let flashcards = [];
+let quizQueue = [];
+let currentCard = null;
+
+function addFlashcard() {
+    let q = document.getElementById("question").value.trim();
+    let a = document.getElementById("answerInput").value.trim();
+
+    if (!q || !a) return alert("Please fill in both fields.");
+
+    flashcards.push({ question: q, answer: a });
+    renderFlashcards();
+
+    document.getElementById("question").value = "";
+    document.getElementById("answerInput").value = "";
+}
+
+function deleteFlashcard(i) {
+    flashcards.splice(i, 1);
+    renderFlashcards();
+}
+
+function renderFlashcards() {
+    let container = document.getElementById("flashcards-container");
+    container.innerHTML = "<h2>Your Flashcards</h2>";
+
+    flashcards.forEach((fc, i) => {
+        container.innerHTML += `
+        <div class="flashcard">
+            <div class="delete-btn" onclick="deleteFlashcard(${i})">×</div>
+            <p><strong>Q:</strong> ${fc.question}</p>
+            <p><strong>A:</strong> ${fc.answer}</p>
+        </div>`;
+    });
+}
+
+function startQuiz() {
+    if (flashcards.length === 0) return alert("Add some flashcards first!");
+
+    quizQueue = [...flashcards];
+    document.querySelector(".thumbs").style.display = "none";
+    nextCard();
+
+    document.getElementById("quiz-card").style.display = "block";
+}
+
+function nextCard() {
+    if (quizQueue.length === 0) {
+        alert("Quiz Complete!");
+        document.getElementById("quiz-card").style.display = "none";
+        document.querySelector(".thumbs").style.display = "none";
+        return;
+    }
+
+    currentCard = quizQueue.shift();
+    document.getElementById("quiz-question").textContent = currentCard.question;
+    document.getElementById("quiz-answer").textContent = currentCard.answer;
+
+    let quizCard = document.getElementById("quiz-card");
+    quizCard.classList.remove("show-answer");
+
+    quizCard.onclick = () => {
+        quizCard.classList.add("show-answer");
+        document.querySelector(".thumbs").style.display = "flex";
+        quizCard.onclick = null;
+    };
+}
+
+function thumbUp() {
+    nextCard();
+}
+
+function thumbDown() {
+    quizQueue.push(currentCard);
+    nextCard();
+}
+</script>
+</body>
     </head>
 </html>
