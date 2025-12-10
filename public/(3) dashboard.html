@@ -11,6 +11,96 @@
         -->
         <!-- Naj you handle the types of genres-->
         <link rel="stylesheet" href="(3) dashboard.css">
+        <style>
+               .calendar {
+        width: 500px;
+        background: #fff;
+        padding: 20px;
+        border-radius: 20px;
+        text-align: center;
+        color: #fd4891;
+        box-shadow: 0 0 20px rgba(0,0,0,0.1);
+    }
+
+    .header {
+        display: flex;
+        justify-content: space-between;
+        margin-bottom: 25px;
+        align-items: center;
+    }
+
+    button {
+        cursor: pointer;
+        background: #ffeab3;
+        border: none;
+        padding: 6px 12px;
+        border-radius: 10px;
+        font-size: 18px;
+        color: #fd4891;
+    }
+
+    button:hover {
+        background: #ffeab3;
+    }
+
+    .weekdays {
+        display: grid;
+        grid-template-columns: repeat(7, 1fr);
+        font-weight: bold;
+        margin-bottom: 10px;
+        color: #fd4891;
+    }
+
+    .weekdays div {
+        padding: 10px 0;
+    }
+
+    .grid {
+        display: grid;
+        grid-template-columns: repeat(7, 1fr);
+        gap: 5px;
+    }
+
+    .day {
+        background-color: #fff;
+        padding: 10px;
+        min-height: 60px;
+        border-radius: 8px;
+        position: relative;
+        cursor: pointer;
+        border: 1px solid #f3cce0;
+    }
+
+    .day:hover {
+        background-color: #f19bc5;
+        color: white;
+    }
+
+    .event {
+        font-size: 10px;
+        color: #fd4891;
+        margin-top: 5px;
+        background: #ffe4e9;
+        padding: 3px 5px;
+        border-radius: 5px;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+    }
+
+    .delete-btn {
+        margin-left: 5px;
+        background: #ffe27b;
+        color: #fd4891;
+        border: none;
+        border-radius: 50%;
+        cursor: pointer;
+        font-size: 10px;
+        width: 16px;
+        height: 16px;
+        padding: 0;
+    }
+        </style>
     </head>
     <body>
         <div id="navtoggle" onclick="toggleNavBar()">☰</div>
@@ -60,7 +150,26 @@
 
                 <h2> Calendar</h2>
                 <div class="calendar">
+                <div class="calendar">
+                <div class="header">
+                    <button id="prev"><</button>
+                    <span id="monthYear"></span>
+                    <button id="next">></button>
                 </div>
+
+                <div class="weekdays">
+                    <div>sun</div>
+                    <div>mon</div>
+                    <div>tue</div>
+                    <div>wed</div>
+                    <div>thu</div>
+                    <div>fri</div>
+                    <div>sat</div>
+                </div>
+
+            <div class="grid" id="daysGrid"></div>
+            </div>
+            </div>
             </div>
 
             <div class="column right">
@@ -70,8 +179,9 @@
                     <option value=".."> .. </option>
                 </select>
             </div>
+
         </div>
-        
+        <script src="(4) calendar.js"></script>
         <script src="(3) dashboard.js"></script>
     </body>
 </html>
