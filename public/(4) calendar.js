@@ -13,7 +13,6 @@
         let firstDay = new Date(year, month, 1).getDay();
         let lastDate = new Date(year, month + 1, 0).getDate();
 
-        // Empty boxes before first day
         for (let i = 0; i < firstDay; i++) {
             let empty = document.createElement("div");
             daysGrid.appendChild(empty);
