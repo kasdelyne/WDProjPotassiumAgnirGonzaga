@@ -1,12 +1,23 @@
-    body {
-        background: linear-gradient(110deg, rgba(122, 81, 150, 1) 0%,#e36eb4df 100%, #f89cc8 100%);
-        color: #ffeab3;
-        display: flex;
-        flex-direction: column;
-        align-items: center;
-        min-height: 100vh;
-        text-align: center;
-    }
+body {
+  background: linear-gradient(110deg, #5c3279, #d54f9fdf 100%, #f89cc8 100%);
+  color: #ffeab3;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  min-height: 115vh;
+  text-align: center;
+  position: relative;  
+}
+
+body::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: url('https://i.pinimg.com/1200x/5a/67/9b/5a679bc4d2bc5a2547b4e83594a5277f.jpg') center/cover no-repeat;
+  opacity: 0.25;        
+  pointer-events: none; 
+  z-index: -1;
+}
 
     header {
         padding: 60px 20px;
