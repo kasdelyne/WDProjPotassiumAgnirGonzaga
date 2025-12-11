@@ -23,14 +23,17 @@
             });
 
             if(currentDress == dressNumber){
-                teddy.src="assets/base.png?" + newDate().getTime();
+                pixel.src="assets/base.png?" + newDate().getTime();
                 currentDress=null;
             }
 
             else{
-                teddy.src=`assets/base.png$"{dress}`;
+                pixel.src=`assets/base.png$"{dress}`;
                 currentDress=dressNumber;
                 document.getElementById(`dress${Number}.png`).classList.add('selected');
+
+             pixel.classList.add('clicked');
+             setTimeout(())   
             }
         }
     </script>
