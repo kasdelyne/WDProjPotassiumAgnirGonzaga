@@ -55,4 +55,31 @@
                 updateP();
             }
 
-            /* Spootify*/
+            let spotifyLink;
+
+            switch(genre){
+                case 'rnb':
+                    spotifyLink="https://open.spotify.com/genre/0JQ5DAqbMKFEZPnFQSFB1T";
+                    break;
+
+                case 'asmr':
+                    spotifyLink="https://open.spotify.com/playlist/7pNz2JvzxfstnY8zazPklN";
+                    break;
+                
+                case 'study':
+                    spotifyLink="https://open.spotify.com/playlist/2ptAZKTm6xJoZ4RsebY3Vk";
+                    break;
+
+                case 'pop':
+                    spotifyLink="https://open.spotify.com/album/1aqg30bNvLSWgShZgX4oop";
+                    break;
+
+                case 'kpop':
+                    spotifyLink="https://open.spotify.com/playlist/6Z05FMYGnZxTzxU9AZRsWA";
+                    break;
+
+                default:
+                    spotifyLink="";
+            }
+
+            player.src = spotifyLink;

@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+    <link rel="stylesheet" href=".css">
+
+    <style>
+
+    </style>
+</head>
+<body>
+
+    <script>
+        const pixel = document.getElementById("pixel");
+        let pixelsDress = null;
+
+        function dressUp(dressNo){
+            dressNumber = Number(dressNumber);
+
+            document.querySelectorAll('.dress-option').forEach(option =>{
+                option.classSelected.remove('selected');
+            });
+
+            if(currentDress == dressNumber){
+                teddy.src="assets/base.png?" + newDate().getTime();
+                currentDress=null;
+            }
+
+            else{
+                teddy.src=`assets/base.png$"{dress}`;
+                currentDress=dressNumber;
+                document.getElementById(`dress${Number}.png`).classList.add('selected');
+            }
+        }
+    </script>
+</body>
+</html>
