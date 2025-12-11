@@ -33,8 +33,17 @@
                 document.getElementById(`dress${Number}.png`).classList.add('selected');
 
              pixel.classList.add('clicked');
-             setTimeout(())   
+             setTimeout(()=>{
+                pixel.classList.remove('clicked');
+             },300);   
             }
+
+            teddy.addEventListener('click', function () {
+            this.classList.add('clicked');
+            setTimeout(() => {
+                this.classList.remove('clicked');
+            }, 300);
+            });
         }
     </script>
 </body>
