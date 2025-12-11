@@ -4,6 +4,7 @@
             color:#ffeab3;
             position: relative;
             font-family: 'Comic Sans', 'Times New Roman', Times, serif;   
+            margin-top: 25vh;
         }
 
         body.light{
@@ -32,17 +33,48 @@
             gap: 25px;
         }
 
-        .setting-box{
-            background: #997aaf;
-            padding: 20px;
-            border-radius: 20px;
-            transition: background 0.3s;
-        }
+        .setting-box {
+  background: #997aaf;
+  padding: 20px;
+  border-radius: 20px;
+  min-height: 120px; 
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  transition: background 0.3s, transform 0.3s, box-shadow 0.3s;
+  animation: slideUp 0.8s ease forwards;
+}
+@keyframes slideUp {
+  from { transform: translateY(40px); opacity: 0; }
+  to { transform: translateY(0); opacity: 1; }
+}
 
-        body.light .setting-box{
-            background: #ffcece;
-            color: #997aaf;
+.setting-box:hover {
+  transform: translateY(-5px) scale(1.02);
+  box-shadow: 0 8px 20px rgba(0,0,0,0.25);
+}
+
+
+
+body.light .setting-box {
+  background: #ffcece;
+  color: #997aaf;
+}
+
+h3{
+            margin: 0;
+            font-size: 50px;
+            animation: fadeIn 1s ease-in-out;
+            transition: color 0.3s;
         }
+        @keyframes fadeIn {
+            from { opacity: 0; }
+            to { opacity: 1; }
+        }
+        h3.switch{
+            color: #524862;
+        }
+       
 
         .switch{
             position: relative;
@@ -68,7 +100,13 @@
             background-color: #e78cc5;
             transition: 0.3s ease;
             border-radius: 25px;
-        }
+            animation: glowPulse 2s infinite;   
+} 
+        @keyframes glowPulse {
+  0% { box-shadow: 0 0 5px #e78cc5; }
+  50% { box-shadow: 0 0 15px #ff69b4; }
+  100% { box-shadow: 0 0 5px #e78cc5; }
+}
 
         .slider:before{
             position: absolute;
@@ -101,3 +139,50 @@
             font-size: 16px;
             cursor: pointer;
         }
+
+        
+        #increaseTimer, #decreaseTimer{
+            background: #ff69b4;
+            border: none;
+            border-radius: 5px;
+            color: white;
+            font-weight: bold;
+            transition: background 0.3s ease;
+        }
+        #increaseTimer:hover, #decreaseTimer:hover{
+            background: #5749c9;
+        }
+
+        #startTimer, #resetBtn{
+            background: #ff69b4;
+            border: none;
+            border-radius: 5px;
+            color: white;
+            font-weight: bold;
+            transition: background 0.3s ease;
+            font-size: large;
+        }
+        #increaseTimer:hover, #decreaseTimer:hover,
+#startTimer:hover, #resetBtn:hover {
+  background: #5749c9;
+  animation: wiggle 0.4s ease;
+}
+@keyframes wiggle {
+  0% { transform: rotate(0deg); }
+  25% { transform: rotate(2deg); }
+  50% { transform: rotate(-2deg); }
+  75% { transform: rotate(2deg); }
+  100% { transform: rotate(0deg); }
+}
+
+#timerDisplay {
+  font-size: 22px;
+  font-weight: bold;
+  animation: pulse 2s infinite;
+}
+@keyframes pulse {
+  0% { transform: scale(1); color: #e4b3ff; }
+  50% { transform: scale(1.2); color: #e37cff; }
+  100% { transform: scale(1); color: #e6b3ff; }
+}
+
