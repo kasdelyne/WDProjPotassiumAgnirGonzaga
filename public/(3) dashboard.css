@@ -8,6 +8,21 @@
                 font-family: 'Times New Roman', Times, serif;
             }
 
+            .centerP{
+                text-align: center;
+                margin-left: 20vh;
+                margin-right: 20vh;
+                margin-top: 10px;
+            }
+
+            .centerHeader{
+                font-size: 1.5rem;
+                text-align: center;
+                margin-left: 20vh;
+                margin-right: 20vh;
+                margin-top: 10vh;
+            }
+
             #navtoggle{
                 position: fixed;
                 font-size: 20px;
