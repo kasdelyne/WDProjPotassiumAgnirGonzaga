@@ -24,7 +24,7 @@
     <div class="left-section">
       <label for="nickname" class="nickname-label">✧ Nickname</label>
       <input type="text" id="nickname" maxlength="10" placeholder="Maximum 10 letters..." class="nickname-input">
-      <button class="proceed-btn"> click </button>
+      <a href="(3) dashboard.html" class="proceed-btn"> click</a>
     </div>
   </div>
 
@@ -33,6 +33,30 @@
   </div>
 </div>
 
+<script>
+    const btn = document.getElementById('proceed-btn');
+    const username = document.getElementById('nickname-input');
+    const buttonContainer = document.querySelector('.button-container');
 
+    btn.addEventListener('mouseover', () => {
+        if (nickname-input.value.trim() === '' ) {
+            const containerRect = buttonContainer.getBoundingClientRect();
+            const btnWidth = btn.offsetWidth;
+            const btnHeight = btn.offsetHeight;
+
+            const x = Math.random() * (containerRect.width - btnWidth);
+            const y = Math.random() * (containerRect.height - btnHeight);
+
+            btn.style.left = ${x}px;
+            btn.style.top = ${y}px;
+            btn.style.transform = 'none';
+        }
+    });
+    btn.addEventListener('click', () => {
+        if (nickname-input.value.trim()) {
+            alert(Welcome, ${nickname-input.value}!);
+        }
+    });
+</script>
 </body>
 </html>

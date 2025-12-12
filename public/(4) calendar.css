@@ -45,7 +45,7 @@ body::before {
                 scale: 1.1;
             }
             
-            .navbar{
+        .navbar{
                 width: 250px;
                 position: fixed;
                 top: 0;
