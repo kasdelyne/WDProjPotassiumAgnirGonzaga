@@ -12,39 +12,6 @@
 <body>
 
     <script>
-        const pixel = document.getElementById("pixel");
-        let pixelsDress = null;
-
-        function dressUp(dressNo){
-            dressNumber = Number(dressNumber);
-
-            document.querySelectorAll('.dress-option').forEach(option =>{
-                option.classSelected.remove('selected');
-            });
-
-            if(currentDress == dressNumber){
-                pixel.src="assets/base.png?" + newDate().getTime();
-                currentDress=null;
-            }
-
-            else{
-                pixel.src=`assets/base.png$"{dress}`;
-                currentDress=dressNumber;
-                document.getElementById(`dress${Number}.png`).classList.add('selected');
-
-             pixel.classList.add('clicked');
-             setTimeout(()=>{
-                pixel.classList.remove('clicked');
-             },300);   
-            }
-
-            teddy.addEventListener('click', function () {
-            this.classList.add('clicked');
-            setTimeout(() => {
-                this.classList.remove('clicked');
-            }, 300);
-            });
-        }
     </script>
 </body>
 </html>
