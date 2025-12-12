@@ -4,7 +4,9 @@
             color:#ffeab3;
             position: relative;
             font-family: 'Comic Sans', 'Times New Roman', Times, serif;   
-            margin-top: 25vh;
+            margin-top: 10vh;
+            margin-left: 30px;
+            margin-right: 30px;
         }
 
         body.light{
@@ -34,32 +36,32 @@
         }
 
         .setting-box {
-  background: #997aaf;
-  padding: 20px;
-  border-radius: 20px;
-  min-height: 120px; 
-  display: flex;
-  flex-direction: column;
-  justify-content: space-between;
-  transition: background 0.3s, transform 0.3s, box-shadow 0.3s;
-  animation: slideUp 0.8s ease forwards;
-}
-@keyframes slideUp {
-  from { transform: translateY(40px); opacity: 0; }
-  to { transform: translateY(0); opacity: 1; }
-}
+            background: #997aaf;
+            padding: 20px;
+            border-radius: 20px;
+            min-height: 120px; 
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+            transition: background 0.3s, transform 0.3s, box-shadow 0.3s;
+            animation: slideUp 0.8s ease forwards;
+            }
+            @keyframes slideUp {
+            from { transform: translateY(40px); opacity: 0; }
+            to { transform: translateY(0); opacity: 1; }
+            }
 
-.setting-box:hover {
-  transform: translateY(-5px) scale(1.02);
-  box-shadow: 0 8px 20px rgba(0,0,0,0.25);
-}
+            .setting-box:hover {
+            transform: translateY(-5px) scale(1.02);
+            box-shadow: 0 8px 20px rgba(0,0,0,0.25);
+            }
 
 
 
-body.light .setting-box {
-  background: #ffcece;
-  color: #997aaf;
-}
+            body.light .setting-box {
+            background: #ffcece;
+            color: #997aaf;
+            }
 
 h3{
             margin: 0;
