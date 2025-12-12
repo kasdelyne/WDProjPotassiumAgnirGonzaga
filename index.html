@@ -47,8 +47,8 @@
             const x = Math.random() * (containerRect.width - btnWidth);
             const y = Math.random() * (containerRect.height - btnHeight);
 
-            btn.style.left = ${x}px;
-            btn.style.top = ${y}px;
+            btn.style.left = `${x}px`;
+            btn.style.top = `${y}px`;
         }
     });
 
@@ -56,7 +56,7 @@
         if (nickname.value.trim() === '') {
             event.preventDefault();
         } else {
-            alert(Welcome, ${nickname.value}!);
+            alert(`Welcome, ${nickname.value}!`);
         }
     });
 </script>

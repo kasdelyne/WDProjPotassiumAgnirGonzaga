@@ -111,27 +111,6 @@ body::before {
                 font-weight: bold;
             }
 
-            .submenu{
-                display:none;
-                list-style: none;
-                padding-left: 10px;
-                margin: 0;
-            }
-
-            .has-submenu:hover .submenu{
-                display: block;
-            }
-
-            .submenu li{
-                padding: 10px;
-                background: white;
-                margin-top: 5px;
-                border-radius: 5px;
-            }
-
-            .submenu li a{
-                color: #ffd;
-            }
 
             /* Calendar */
 

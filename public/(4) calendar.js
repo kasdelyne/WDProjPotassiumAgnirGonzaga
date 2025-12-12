@@ -71,3 +71,8 @@
     };
 
     theCalendar();
+
+    function toggleNavBar(){
+    const nav=document.getElementById("navbar");
+    nav.classList.toggle("open");
+}

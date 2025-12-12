@@ -92,3 +92,8 @@
         const startTimer = document.getElementById("startTimer");
         startTimer.addEventListener("click", startCountdown);
         loadSettings();
+
+    function toggleNavBar(){
+        const nav=document.getElementById("navbar");
+        nav.classList.toggle("open");
+    }
