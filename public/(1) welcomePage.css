@@ -1,18 +1,30 @@
-    body {
-      background-image: linear-gradient(110deg ,#d54f9fdf, #7a5196, #f89cc8);
-      background-size: 200% 200%;
-      animation: gradient-bg 15s ease infinite;
-      display: flex;
-      justify-content: flex-start;
-      align-items: flex-start;
-      height: 100vh;
-      margin: 0;
-    }
-    @keyframes gradient-bg {
-      0% { background-position: 0% 50%; }
-      50% { background-position: 100% 50%; }
-      100% { background-position: 0% 50%; }
-    }
+body {
+  display: flex;
+  justify-content: flex-start;
+  align-items: flex-start;
+  height: 100vh;
+  margin: 0;
+  background-image: linear-gradient(110deg ,#d54f9fdf, #5c3279, #f89cc8);
+  background-size: 200% 200%;
+  animation: gradient-bg 10s ease infinite;
+  position: relative;
+  overflow: hidden;
+}
+
+body::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: url('https://i.pinimg.com/1200x/5a/67/9b/5a679bc4d2bc5a2547b4e83594a5277f.jpg') center/cover no-repeat;
+  opacity: 0.25; 
+  pointer-events: none;
+}
+
+@keyframes gradient-bg {
+  0%   { background-position: 0% 50%; }
+  50%  { background-position: 100% 50%; }
+  100% { background-position: 0% 50%; }
+}
 
     .card1 {
       width: 100%;

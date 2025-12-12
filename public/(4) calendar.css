@@ -1,14 +1,139 @@
-    body {
-        font-family: 'Times New Roman', Arial, sans-serif;
-        display: flex;
-        justify-content: center;
-        align-items: center;
-        padding: 20px;
-        background: linear-gradient(180deg, rgba(115, 82, 146, 1) 0%, #cd858f 100%);
-        min-height: 100vh;
-        margin: 0;
-        color: #746c7f;
-    }
+body {
+  font-family: 'Times New Roman', Arial, sans-serif;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 20px;
+  background: linear-gradient(110deg, #5c3279, #d54f9fdf, #f2e291 100%);
+  background-size: 200% 200%;
+  animation: gradientFlow 10s ease infinite;
+  height: 100vh;    
+  margin: 0;
+  color: #746c7f;
+  position: relative;
+  overflow: hidden;  
+}
+body::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: url('https://i.pinimg.com/1200x/5a/67/9b/5a679bc4d2bc5a2547b4e83594a5277f.jpg') center/cover no-repeat;
+  opacity: 0.25;     
+  pointer-events: none;
+  z-index: -1;       
+}
+
+@keyframes gradientFlow {
+  0%   { background-position: 0% 50%; }
+  50%  { background-position: 100% 50%; }
+  100% { background-position: 0% 50%; }
+}
+    #navtoggle{
+                position: fixed;
+                font-size: 20px;
+                font-weight: bold;
+                top: 0;
+                left: 3px;
+                z-index: 1000;
+                padding: 10px 15px;
+                cursor: pointer;
+                border-radius: 5px;
+                color: #3b3545;
+                transition: scale 0.2s ease;
+            }
+            #navtoggle:hover{
+                scale: 1.1;
+            }
+            
+            .navbar{
+                width: 250px;
+                position: fixed;
+                top: 0;
+                left: -250px;
+                max-height: 100%;
+                height: 60%;
+                background-color: rgba(255, 255, 255, 0.621);
+                color: #746c7f;
+                box-shadow: 2px 2px 10px rgba(0, 0, 0, 0.3);
+                transition: left 0.3s ease;
+                z-index: 1;
+            }
+            @keyframes slideIn {
+                from {
+                    left: -230px;
+                }
+                to {
+                    left: 0;
+                }
+            }
+
+            .navbar.open{
+                left: 0;
+                border-radius: 20px;
+                margin-left: 5px;
+                font-size: 16px;
+            }
+
+            #navbar ul{
+                list-style: none;
+                padding:0;
+            }
+
+            #navbar ul li{
+                text-align: center;
+                margin-top: 40px;
+            }
+
+            #navbar ul li a{
+                color: #5f576b;
+                text-decoration: none;
+                font-weight: bold;
+                font-size: 20px;
+            }
+
+            #navbar ul li a:hover{
+                background: linear-gradient(180deg, rgba(115, 82, 146, 1) 0%, #cd858f 100%);
+                color: #ffeab3;
+                padding: 10px 5px;
+                border-radius: 15px;
+                margin-left: 28px;
+                margin-right: 28px;
+                display: block;
+                transition: 0.3s ease;
+            }
+
+            #navbar ul li a.active{
+                background: linear-gradient(180deg, rgba(115, 82, 146, 1) 0%, #cd858f 100%);
+                color: #ffeab3;
+                padding: 10px 15px;
+                border-radius: 15px;
+                display: block;
+                font-weight: bold;
+            }
+
+            .submenu{
+                display:none;
+                list-style: none;
+                padding-left: 10px;
+                margin: 0;
+            }
+
+            .has-submenu:hover .submenu{
+                display: block;
+            }
+
+            .submenu li{
+                padding: 10px;
+                background: white;
+                margin-top: 5px;
+                border-radius: 5px;
+            }
+
+            .submenu li a{
+                color: #ffd;
+            }
+
+            /* Calendar */
 
     .calendar {
         width: 800px;

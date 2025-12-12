@@ -1,0 +1,134 @@
+
+body {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh;
+  background: linear-gradient(110deg, #5c3279, #d54f9fdf 50%, #f2e291 100%);
+  background-size: 200% 200%;
+  animation: gradientFlow 10s ease infinite;
+  font-family: 'Comic Neue', 'Times New Roman', serif;
+  color: #ffeab3;
+  position: relative;
+  overflow: hidden;
+}
+body::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: url('https://i.pinimg.com/1200x/5a/67/9b/5a679bc4d2bc5a2547b4e83594a5277f.jpg') center/cover no-repeat;
+  opacity: 0.25;    
+  pointer-events: none; 
+  z-index: -1;         
+}
+@keyframes gradientFlow {
+  0%   { background-position: 0% 50%; }
+  50%  { background-position: 100% 50%; }
+  100% { background-position: 0% 50%; }
+}
+.calc-container {
+  width: 420px;
+  margin: 0 auto;
+}
+
+.calculator {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 12px;
+  background: linear-gradient(135deg, #492b62, #794e99, #b66fd2, #dbadf9);
+  background-size: 400% 400%;
+  padding: 25px;
+  border-radius: 20px;
+  box-shadow: 0 10px 25px rgba(0,0,0,0.3);
+  animation: fadeIn 0.8s ease forwards, purpleFlow 12s ease infinite, borderGlow 3s ease-in-out infinite;
+  position: relative;
+}
+
+@keyframes purpleFlow {
+  0%   { background-position: 0% 50%; }
+  50%  { background-position: 100% 50%; }
+  100% { background-position: 0% 50%; }
+}
+
+@keyframes borderGlow {
+  0%   { box-shadow: 0 0 10px #ffeab3, 0 0 20px #ff69b4, 0 0 30px #bd61ee; }
+  50%  { box-shadow: 0 0 20px #ffeab3, 0 0 40px #ff69b4, 0 0 60px #bd61ee; }
+  100% { box-shadow: 0 0 10px #ffeab3, 0 0 20px #ff69b4, 0 0 30px #bd61ee; }
+}
+
+@keyframes fadeIn {
+  from { opacity: 0; transform: translateY(30px); }
+  to   { opacity: 1; transform: translateY(0); }
+}
+
+
+.calculator input {
+  grid-column: span 4;
+  height: 80px;
+  text-align: right;
+  font-size: 2rem;
+  padding: 15px;
+  border: none;
+  outline: none;
+  border-radius: 12px;
+  margin-bottom: 10px;
+  background: #fff9d6;
+  color: #524862;
+  box-shadow: inset 0 0 8px rgba(0,0,0,0.2);
+  animation: inputGlow 3s infinite;
+  transition: background 0.3s ease, color 0.3s ease;
+}
+
+@keyframes inputGlow {
+  0% { box-shadow: inset 0 0 8px rgba(255,255,255,0.3); }
+  50% { box-shadow: inset 0 0 15px #ffd451; }
+  100% { box-shadow: inset 0 0 8px rgba(255,255,255,0.3); }
+}
+
+
+.calculator button {
+  height: 70px;
+  font-size: 1.4rem;
+  border: none;
+  border-radius: 12px;
+  cursor: pointer;
+  background: #ff69b4;
+  color: white;
+  font-weight: bold;
+  transition: transform 0.2s ease, background 0.3s ease, box-shadow 0.3s ease;
+}
+
+
+.calculator button:hover {
+  background: #ff98e2;
+  transform: translateY(-3px) scale(1.05);
+  box-shadow: 0 6px 12px rgba(0,0,0,0.25);
+}
+
+
+.calculator button:active {
+  animation: pressBounce 0.2s ease;
+}
+
+@keyframes pressBounce {
+  0% { transform: scale(1); }
+  50% { transform: scale(0.92); }
+  100% { transform: scale(1); }
+}
+
+
+.equal {
+  grid-column: span 2;
+  background: #f7d980;
+  color: #333;
+  animation: equalGlow 2s infinite;
+}
+.equal:hover {
+  background: #ffeab3;
+}
+
+@keyframes equalGlow {
+  0% { background: #f7d980; }
+  50% { background: #ffeab3; }
+  100% { background: #f7d980; }
+}
