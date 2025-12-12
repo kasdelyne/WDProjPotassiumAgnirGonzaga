@@ -199,3 +199,15 @@ body::before {
       50%  { transform: translateY(-4px); }
       100% { transform: translateY(0); }
     }
+    .button-container {
+        position: relative;
+        width: 300px; 
+        height: 120px;
+        border: 0px solid transparent;
+    }
+
+    #proceed-btn {
+        position: absolute; 
+        left: 0;
+        top: 0;
+    }
