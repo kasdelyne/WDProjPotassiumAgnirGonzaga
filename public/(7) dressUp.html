@@ -3,15 +3,192 @@
 <head>
     <meta charset="UTF-8"/>
     <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+    <title> ✦ Dress-Up ✦</title>
     <link rel="stylesheet" href=".css">
 
     <style>
+        body {
+            background: linear-gradient(#6a4ba6, #d8a0c9);
+            height: 100vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-family: sans-serif;
+        }
+
+        .game-container {
+            width: 380px;
+            background: rgba(255,255,255,0.18);
+            padding: 20px;
+            border-radius: 20px;
+            backdrop-filter: blur(6px);
+        }
+
+        .display-area {
+            width: 100%;
+            height: 320px;
+            background: #ffe9c8;
+            border-radius: 20px;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .layer {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            width: 250px;
+            pointer-events: none;
+        }
+
+        .bottom-row {
+            margin-top: 20px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            gap: 12px;
+        }
+
+        .circle {
+            width: 70px;
+            height: 70px;
+            border-radius: 50%;
+            background: #ffe9c8;
+            overflow: hidden;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            cursor: pointer;
+        }
+
+        .circle img {
+            width: 90%;
+        }
+
+        .arrow {
+            background: none;
+            border: none;
+            font-size: 40px;
+            color: #8bd0e4;
+            cursor: pointer;
+        }
+
+        .category-label {
+            text-align: center;
+            margin-top: 10px;
+            color: white;
+            font-size: 20px;
+        }
 
     </style>
 </head>
 <body>
 
+    <div class="game-container">
+
+        <div class="display-area">
+            <img id="base" class="layer" src="/assets/base.png">
+
+            <img id="hair" class="layer">
+            <img id="dress" class="layer">
+            <img id="shirt" class="layer">
+            <img id="pants" class="layer">
+            <img id="accessory" class="layer">
+        </div>
+
+        <div class="bottom-row">
+            <button class="arrow" id="prevBtn">&#10094;</button>
+
+            <div class="circle" id="opt1"></div>
+            <div class="circle" id="opt2"></div>
+            <div class="circle" id="opt3"></div>
+
+            <button class="arrow" id="nextBtn">&#10095;</button>
+        </div>
+
+        <div style = "text-align: center; margin-top: 10px;">
+            <button id="removeBtn" style = " 
+                background: #ffb6b6;
+                color: white;
+                border: none;
+                padding: 8px 20px;
+                border-radius: 12px;
+                cursor: pointer;
+                font-size: 16px;"> Remove </button>
+        </div>
+
+        <div class="category-label" id="categoryLabel">Hair</div>
+
+    </div>
+
     <script>
+        // categories and options
+        const items = {
+            hair: ["../assets/hair1.png", "/assets/hair2.png", "/assets/hair3.png"],
+            dress: ["/assets/dress.png"],
+            shirt: ["/assets/shirt1.png", "/assets/shirt2.png"],
+            pants: ["/assets/pants1.png", "/assets/pants2.png"],
+            accessory: ["/assets/accessory1.png", "/assets/accessory2.png"]
+        };
+
+        const categories = Object.keys(items);
+        let currentCategoryIndex = 0;
+
+        // html elements
+        const categoryLabel = document.getElementById("categoryLabel");
+        const circles = [ 
+            document.getElementById("opt1"), 
+            document.getElementById("opt2"), 
+            document.getElementById("opt3") 
+        ];
+
+        // update circles for current category
+        function loadCategory() {
+            const category = categories[currentCategoryIndex];
+            const list = items[category];
+
+            categoryLabel.textContent = category.charAt(0).toUpperCase() + category.slice(1);
+
+            circles.forEach((circle, i) => {
+                circle.innerHTML = "";
+
+                if (list[i]) {
+                    let img = document.createElement("img");
+                    img.src = list[i];
+                    circle.appendChild(img);
+
+                    circle.onclick = () => {
+                        document.getElementById(category).src = list[i];
+                    };
+                } else {
+                    circle.onclick = null;
+                }
+            });
+        }
+
+        // arrows
+        document.getElementById("prevBtn").onclick = () => {
+            currentCategoryIndex =
+                (currentCategoryIndex - 1 + categories.length) % categories.length;
+            loadCategory();
+        };
+
+        document.getElementById("nextBtn").onclick = () => {
+            currentCategoryIndex =
+                (currentCategoryIndex + 1) % categories.length;
+            loadCategory();
+        };
+
+        // initialize
+        loadCategory();
+
+        const removeBtn = document.getElementById("removeBtn");
+
+        removeBtn.onclick = () =>{
+            const category = categories[currentCategoryIndex];
+            document.getElementById(category).src=" ";
+        }
     </script>
 </body>
 </html>
