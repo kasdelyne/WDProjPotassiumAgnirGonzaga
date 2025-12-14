@@ -258,14 +258,7 @@
                 width: 130px;
                 gap: 0px;
             }
-            .logo-circle {
-                width: 300px;
-                height: 300px;
-                border-radius: 50%;
-                overflow: hidden;
-                margin-left: 10px;
-                margin-top: 370px;
-            }
+    
             
             .whiteboard{
                 background: white;
