@@ -10,8 +10,19 @@ body {
   font-family: 'Comic Neue', 'Times New Roman', serif;
   color: #ffeab3;
   position: relative;
-  overflow: hidden;
+  overflow-x  : hidden;
 }
+
+.page-content{
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: flex-start;
+  padding-top: 10vh;
+  gap: 25px;
+  min-height: 100vh;
+}
+
 body::before {
   content: "";
   position: absolute;
@@ -42,6 +53,7 @@ body::before {
   box-shadow: 0 10px 25px rgba(0,0,0,0.3);
   animation: fadeIn 0.8s ease forwards, purpleFlow 12s ease infinite, borderGlow 3s ease-in-out infinite;
   position: relative;
+  margin-bottom: 100px;
 }
 
 @keyframes purpleFlow {
