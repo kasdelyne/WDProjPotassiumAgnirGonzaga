@@ -260,13 +260,21 @@
             }
     
             
-            .whiteboard{
+            #whiteboard{
                 background: white;
                 color: #746c7f;
                 height: 300px;
+                width: 700px;
                 border-radius: 10px;
                 margin-bottom: 20px;
                 padding: 15px;
+                cursor: text;
+                resize: none;
+            }
+
+            #whiteboard.expanded{
+                width: 100%;
+                height: 350px;
             }
 
             #calendar{

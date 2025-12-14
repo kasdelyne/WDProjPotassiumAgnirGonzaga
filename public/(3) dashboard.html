@@ -192,8 +192,8 @@
 
             <div class="column middle">
                 <h2> Whiteboard</h2>
-                <div class="whiteboard">
-                </div>
+                <textarea id="whiteboard" tabindex="0">
+                </textarea>
 
                 <h2> Calendar</h2>
                 <div class="a-calendar">
@@ -223,12 +223,15 @@
                 <h2> Spotify </h2>
                 <p> vibe: </p>
                 <select id="genreSelect">
+                    <option value="default"> </option>
                     <option value="rnb"> R&B </option>
                     <option value="asmr"> ASMR </option>
                     <option value="study"> Study </option>
                     <option value="pop"> Pop </option>
                     <option value="kpop"> K-Pop</option>
-                    <option value=""></option>
+                </select>
+
+                <br><br>
                     <iframe id="spotifyPlayer" 
                         style="border-radius:12px" 
                         width="100%" 
@@ -237,8 +240,6 @@
                         allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture" 
                         loading="lazy">
                     </iframe>
-
-                </select>
                 <h3>        </h3>
                 <h3> ˑ✦ˑ~~~~~~~~~~ˑ✦ˑ~~~~~~~~~~ˑ✦ˑ</h3>
                 <h3 class="sglow"> Spotify </h3>
