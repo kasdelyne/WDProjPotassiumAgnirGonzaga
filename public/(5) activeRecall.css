@@ -10,7 +10,6 @@
         flex-direction: column;
         align-items: center;
         position: relative;
-        overflow: hidden;   
         z-index: 0;          
     }
     body::before {
@@ -32,6 +31,7 @@
         font-size: 3rem;
         margin-bottom: 20px;
         text-shadow: 0 2px 4px rgba(115, 82, 146, 1);
+        margin-right: 0px;
     }
 
     .card-box {
@@ -116,7 +116,11 @@
         transform-style: preserve-3d;
         transition: transform 0.7s;
         box-shadow: 0 8px 20px rgba(0,0,0,0.2);
-        padding: 20px;
+        padding-bottom: 20px;
+        padding-right: 20px;
+        padding: 0px;
+        padding: 0px;
+        
     }
 
     .show-answer .flip-inner {
@@ -129,7 +133,7 @@
         height: 100%;
         backface-visibility: hidden;
         border-radius: 15px;
-        padding: 20px;
+        display: flex;
         box-sizing: border-box;
         justify-content: center;
         align-items: center;
