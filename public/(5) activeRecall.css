@@ -1,8 +1,8 @@
     body {
         font-family: 'Yeseva One', 'Times New Roman', Arial, sans-serif;
-        background: linear-gradient(180deg, rgba(115, 82, 146, 1) 0%, #cd858f 100%);
-        background-size: 200% 200%;   /* allows gradient to animate */
-        animation: gradientFlow 15s ease infinite;
+       background: linear-gradient(110deg, #5c3279, #d54f9fdf 50%, #f2e291 100%);
+  background-size: 200% 200%;
+  animation: gradientFlow 10s ease infinite;
         margin: 0;
         padding: 40px;
         color: rgba(115, 82, 146, 1);
@@ -12,20 +12,20 @@
         position: relative;
         z-index: 0;          
     }
-    body::before {
-        content: "";
-        position: absolute;
-        inset: 0;
-        background: url('https://i.pinimg.com/1200x/5a/67/9b/5a679bc4d2bc5a2547b4e83594a5277f.jpg') center/cover no-repeat;
-        opacity: 0.25;      
-        pointer-events: none; 
-        z-index: -1;         
-    }
-    @keyframes gradientFlow {
-        0%   { background-position: 0% 50%; }
-        50%  { background-position: 100% 50%; }
-        100% { background-position: 0% 50%; }
-    }
+   body::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: url('https://i.pinimg.com/1200x/5a/67/9b/5a679bc4d2bc5a2547b4e83594a5277f.jpg') center/cover no-repeat;
+  opacity: 0.25;    
+  pointer-events: none; 
+  z-index: -1;         
+}
+@keyframes gradientFlow {
+  0%   { background-position: 0% 50%; }
+  50%  { background-position: 100% 50%; }
+  100% { background-position: 0% 50%; }
+}
     h1 {
         color: white;
         font-size: 3rem;
