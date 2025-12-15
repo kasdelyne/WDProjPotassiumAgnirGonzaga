@@ -1,5 +1,5 @@
     body {
-        font-family: 'Times New Roman', Arial, sans-serif;
+        font-family: 'Yeseva One', 'Times New Roman', Arial, sans-serif;
         background: linear-gradient(180deg, rgba(115, 82, 146, 1) 0%, #cd858f 100%);
         background-size: 200% 200%;   /* allows gradient to animate */
         animation: gradientFlow 15s ease infinite;
