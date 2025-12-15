@@ -124,13 +124,13 @@ body::before {
         text-align: center;
         color: #fd4891;
         box-shadow: 0 0 20px rgba(0,0,0,0.1);
-        margin-bottom: 10vh;
+        margin-bottom: 19vh;
     }
 
     .header {
         display: flex;
         justify-content: space-between;
-        margin-bottom: 25px;
+        margin-bottom: 5px;
         align-items: center;
     }
 
