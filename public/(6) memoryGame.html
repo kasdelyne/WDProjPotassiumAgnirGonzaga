@@ -11,10 +11,27 @@
             body{
                 font-family: 'Yeseva One', 'Times New Roman', Georgia, 'Times New Roman', Times, serif;
                 text-align: center;
+                 background: linear-gradient(110deg, #5c3279, #d54f9fdf 50%, #f2e291 100%);
+  background-size: 200% 200%;
+  animation: gradientFlow 10s ease infinite;
                 background-color: white;
                 margin: 0;
                 padding: 20px;
             }
+        body::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: url('https://i.pinimg.com/1200x/5a/67/9b/5a679bc4d2bc5a2547b4e83594a5277f.jpg') center/cover no-repeat;
+  opacity: 0.25;    
+  pointer-events: none; 
+  z-index: -1;         
+}
+@keyframes gradientFlow {
+  0%   { background-position: 0% 50%; }
+  50%  { background-position: 100% 50%; }
+  100% { background-position: 0% 50%; }
+}
             
             h1{
                 color: #333;

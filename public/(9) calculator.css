@@ -145,23 +145,24 @@ body::before {
   50% { background: #ffeab3; }
   100% { background: #f7d980; }
 }
-#navtoggle{
-    position: fixed;
-    font-size: 20px;
-    font-weight: bold;
-    top: 0;
-    left: 3px;
-    z-index: 1000;
-    padding: 10px 15px;
-    cursor: pointer;
-    border-radius: 5px;
-    color: #3b3545;
-    transition: scale 0.2s ease;
-}
-#navtoggle:hover{
-    scale: 1.1;
-}
+            #navtoggle {
+                position: fixed;
+                font-size: 20px; 
+                font-weight: bold;
+                top: 0;
+                left: 3px;
+                z-index: 1000;
+                padding: 10px 15px;
+                cursor: pointer;
+                border-radius: 5px;
+                color: #3b3545;
+                transition: transform 0.2s ease; 
+            }
+            #navtoggle:hover {
+                transform: scale(1.1);
+            }
 
+<<<<<<< HEAD
 .navbar{
     width: 250px;
     position: fixed;
@@ -175,50 +176,92 @@ body::before {
     transition: left 0.3s ease;
     z-index: 1;
 }
+=======
+            .navbar {
+                width: 250px;             
+                position: fixed;
+                top: 0;
+                left: -250px;
+                height: 550px;            
+                background: rgba(255, 255, 255, 0.75); 
+                color: #737373;
+                box-shadow: 0 0 20px #a86fa3; 
+                transition: left 0.3s ease;
+                z-index: 1;
+            }
+>>>>>>> b750aef0d76a3bd7210009b4fd94753a6c79680e
 
-.navbar.open{
-    left: 0;
-    border-radius: 20px;
-    margin-left: 5px;
-    font-size: 16px;
-}
+            @keyframes slideIn {
+                from { left: -230px; }
+                to { left: 0; }
+            }
 
-#navbar ul{
-    list-style: none;
-    padding:0;
-}
+            .navbar.open {
+                left: 0;
+                border-radius: 20px;
+                margin-left: 5px;
+                font-size: 16px; 
+            }
 
-#navbar ul li{
-    text-align: center;
-    margin-top: 40px;
-}
+            #navbar ul {
+                list-style: none;
+                padding: 0;
+            }
 
-#navbar ul li a{
-    color: #5f576b;
-    text-decoration: none;
-    font-weight: bold;
-    font-size: 20px;
-}
+            #navbar ul li {
+                text-align: center;
+                margin-top: 40px;
+            }
 
-#navbar ul li a:hover{
-    background: linear-gradient(180deg, rgba(115, 82, 146, 1) 0%, #cd858f 100%);
-    color: #ffeab3;
-    padding: 10px 5px;
-    border-radius: 15px;
-    margin-left: 28px;
-    margin-right: 28px;
-    display: block;
-    transition: 0.3s ease;
-}
+            #navbar ul li a {
+                color: #646464;
+                text-decoration: none;
+                font-weight: bold;
+                font-size: 20px; 
+            }
 
-#navbar ul li a.active{
-    background: linear-gradient(180deg, rgba(115, 82, 146, 1) 0%, #cd858f 100%);
-    color: #ffeab3;
-    padding: 10px 15px;
-    border-radius: 15px;
-    display: block;
-    font-weight: bold;
-}
+            #navbar ul li a:hover {
+                background: linear-gradient(180deg, #735292 0%, #cd858f 100%);
+                color: #ffeab3;
+                padding: 10px 5px;
+                border-radius: 15px;
+                margin-left: 28px;
+                margin-right: 28px;
+                display: block;
+                transition: 0.3s ease;
+            }
+
+            #navbar ul li a.active {
+                background: linear-gradient(180deg, #735292 0%, #cd858f 100%);
+                color: #ffeab3;
+                padding: 10px 15px;
+                border-radius: 15px;
+                display: block;
+                font-weight: bold;
+            }
+
+            .submenu {
+                display: none;
+                list-style: none;
+                padding-left: 10px;
+                margin: 0;
+            }
+
+            .has-submenu:hover .submenu {
+                display: block;
+            }
+
+            .submenu li {
+                padding: 10px;
+                background: #6c4c8f; 
+                margin-top: 5px;
+                border-radius: 5px;
+            }
+
+            .submenu li a {
+                color: #ffeab3;
+            }
+            
             .sglow {
                 animation: smallbounce 2s ease-in-out infinite,
                         glowpulse 3s ease-in-out infinite;
@@ -242,7 +285,7 @@ body::before {
                 margin-right: 20vh;
                 margin-top: 10px;
                 color:#ffeab3;
-                margin-bottom: 30px;
+                margin-bottom: 10px;
             }
 
             .centerHeader{
@@ -250,6 +293,6 @@ body::before {
                 text-align: center;
                 margin-left: 20vh;
                 margin-right: 20vh;
-                margin-top: 10vh;
+                margin-top: 10px;
                 color: #ffeab3;
             }

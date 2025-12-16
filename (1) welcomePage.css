@@ -211,3 +211,9 @@ body::before {
         left: 0;
         top: 0;
     }
+        body.mobile-view header h1 {
+       font-size: 32px;
+    }
+    body.mobile-view .card-container {
+      flex-direction: column;
+    }

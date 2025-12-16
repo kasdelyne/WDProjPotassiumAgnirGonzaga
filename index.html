@@ -60,5 +60,28 @@
         }
     });
 </script>
+
+<script>
+    // Fade-in on page load
+    document.addEventListener("DOMContentLoaded", () => {
+    document.body.style.opacity = 0;
+    document.body.style.transition = "opacity 1.5s ease";
+    requestAnimationFrame(() => {
+    document.body.style.opacity = 1;
+    });
+    // mobile view kineme
+    function handleMobileView() {
+    if (window.innerWidth <= 768) {
+      document.body.classList.add("mobile-view");
+    } else {
+      document.body.classList.remove("mobile-view");
+    }
+  }
+
+    handleMobileView();
+    window.addEventListener("resize", handleMobileView);
+    });
+</script>
+        
 </body>
 </html>
