@@ -18,7 +18,7 @@ body::before {
   pointer-events: none; 
   z-index: -1;
 }
-
+/* info */
     header {
         padding: 60px 20px;
     }
@@ -137,6 +137,7 @@ body::before {
   50%  { background-position: 100% 50%; }
   100% { background-position: 0% 50%; }
 }
+/* about us cards */
 
     .about-section {
       margin-top: 20px;
@@ -262,3 +263,35 @@ body::before {
     body.mobile-view .card-container {
       flex-direction: column;
     }
+    /* to go back to Welcome Page */
+button {
+  background: none;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: opacity 0.3s ease, transform 0.3s ease; 
+  color: #ffeab3;
+  font-size: 20px;
+  margin-left: 1230px;
+  animation: glowPulse 2s infinite alternate; 
+  font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+  opacity: 0.8;
+}
+
+button:hover {
+  opacity: 0.8;
+  transform: scale(1.1); 
+}
+
+@keyframes glowPulse {
+  from {
+    text-shadow: 0 0 5px #ffeab3,
+                 0 0 10px #ffcc66,
+                 0 0 20px #ffeab3;
+  }
+  to {
+    text-shadow: 0 0 10px #ffd27f,
+                 0 0 20px #ffcc66,
+                 0 0 40px #ffeab3;
+  }
+}
