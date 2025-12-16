@@ -17,7 +17,7 @@
       <div class="small-circle"></div>
       Task-o-naut
     </div>
-    <a href="../public/(2) aboutUs.html" class="about-link">About & Creators</a>
+    <a href="/WDProjPotassiumAgnirGonzaga/public/(2) aboutUs.html" class="about-link">About & Creators</a>
   </div>
 
   <div class="inner-box">
@@ -25,7 +25,7 @@
       <label for="nickname" class="nickname-label">✧ Nickname</label>
       <input type="text" id="nickname" maxlength="10" placeholder="Maximum 10 letters..." class="nickname-input">
       <div class="button-container">
-        <a id="proceed-btn" href="../public/(3) dashboard.html" class="proceed-btn">Click</a>
+        <a id="proceed-btn" href="/WDProjPotassiumAgnirGonzaga/public/(3) dashboard.html" class="proceed-btn">Click</a>
       </div>
     </div>
 
@@ -36,36 +36,6 @@
 </div>
 
 <script>
-const btn = document.getElementById('proceed-btn');
-const nickname = document.getElementById('nickname'); 
-const buttonContainer = document.querySelector('.button-container');
-
-buttonContainer.style.position = "relative";
-btn.style.position = "absolute";
-btn.style.left = "0px";
-btn.style.top = "0px";
-
-btn.addEventListener('mouseover', () => {
-    if (nickname.value.trim() === '') {
-        const containerRect = buttonContainer.getBoundingClientRect();
-        const btnWidth = btn.offsetWidth;
-        const btnHeight = btn.offsetHeight;
-
-        // Calculate random position within container
-        const x = Math.random() * (containerRect.width - btnWidth);
-        const y = Math.random() * (containerRect.height - btnHeight);
-
-        btn.style.left = `${x}px`;
-        btn.style.top = `${y}px`;
-    }
-});
-
-// Disable click if nickname empty
-btn.addEventListener('click', (e) => {
-    if (nickname.value.trim() === '') {
-        e.preventDefault(); // Prevent navigation
-    }
-});
 
 
 document.addEventListener("DOMContentLoaded", () => {
