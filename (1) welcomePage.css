@@ -15,16 +15,17 @@ body::before {
   content: "";
   position: absolute;
   inset: 0;
-  background: url('https://i.pinimg.com/1200x/5a/67/9b/5a679bc4d2bc5a2547b4e83594a5277f.jpg') center/cover no-repeat;
+  background: url('https://i.pinimg.com/1200x/5a/67/9b/5a679bc4d2bc5a2547b4e83594a5277f.jpg') center/cover no-repeat; 
   opacity: 0.25; 
   pointer-events: none;
 }
-
 @keyframes gradient-bg {
-  0%   { background-position: 0% 50%; }
-  50%  { background-position: 100% 50%; }
+  0% { background-position: 0% 50%; }
+  50% { background-position: 100% 50%; }
   100% { background-position: 0% 50%; }
 }
+
+
 
     .card1 {
       width: 100%;
