@@ -10,6 +10,8 @@
 
         <style>
             body {
+                display: flex;
+                flex-direction: column;
                 font-family: 'Yeseva One','Times New Roman', Arial, sans-serif;
                 justify-content: center;
                 align-items: center;
@@ -22,13 +24,11 @@
             
             .container{
                 background-color: rgba(255, 255, 255, 0.5);
-                padding: 10px;
-                min-height: 60px;
-                border-radius: 8px;
-                position: relative;
-                cursor: pointer;
-                border: 1px solid #f3cce0;
+                width: 90%;
+                margin: 40px auto;
+                padding: 20px;
                 color: rgba(115, 82, 146, 1);
+                border-radius: 12px;
             }
 
             .head{
@@ -267,6 +267,27 @@
             to {
                 text-shadow: 0 0 20px #fff, 0 0 30px #ff4da6, 0 0 40px #ff4da6, 0 0 50px #ff4da6, 0 0 60px #ff4da6, 0 0 70px #ff4da6, 0 0 80px #ff4da6;
             }
+            }
+
+            @media (max-width: 480px) {
+                .navbar {
+                    width: 200px;
+                    height: 100%; 
+                }
+
+                #navbar ul li a {
+                    font-size: 16px;
+                }
+
+                .head h3 {
+                    font-size: 2rem;
+                }
+
+                .container{
+                    width: 90%;
+                    padding: 10px;
+                    margin: 20px auto;
+                }
             }
         </style>
     </head>
