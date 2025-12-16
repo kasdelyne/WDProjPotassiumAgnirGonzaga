@@ -1,10 +1,10 @@
         // categories and options
         const items = {
-            hair: ["../assets/hair1.png", "/assets/hair2.png", "/assets/hair3.png"],
-            dress: ["/assets/dress.png"],
-            shirt: ["/assets/shirt1.png", "/assets/shirt2.png"],
-            pants: ["/assets/pants1.png", "/assets/pants2.png"],
-            accessory: ["/assets/accessory1.png", "/assets/accessory2.png"]
+            hair: ["/WDProjPotassiumAgnirGonzaga/assets/hair1.png", "/WDProjPotassiumAgnirGonzaga/assets/hair2.png", "/WDProjPotassiumAgnirGonzaga/assets/hair3.png"],
+            dress: ["/WDProjPotassiumAgnirGonzaga/assets/dress.png"],
+            shirt: ["/WDProjPotassiumAgnirGonzaga/assets/shirt1.png", "/WDProjPotassiumAgnirGonzaga/assets/shirt2.png"],
+            pants: ["/WDProjPotassiumAgnirGonzaga/assets/pants1.png", "/WDProjPotassiumAgnirGonzaga/assets/pants2.png"],
+            accessory: ["/WDProjPotassiumAgnirGonzaga/assets/accessory1.png", "/WDProjPotassiumAgnirGonzaga/assets/accessory2.png"]
         };
 
         const categories = Object.keys(items); // extract category names into arrays
