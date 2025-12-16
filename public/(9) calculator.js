@@ -24,3 +24,5 @@ function del() {
         const nav=document.getElementById("navbar");
         nav.classList.toggle("open");
     }
+
+
