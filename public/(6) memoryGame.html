@@ -8,37 +8,35 @@
         <link rel="stylesheet" href=".css">
         <link href="https://fonts.googleapis.com/css2?family=Yeseva+One&display=swap" rel="stylesheet">
         <style>
-            body{
-                font-family: 'Yeseva One', 'Times New Roman', Georgia, 'Times New Roman', Times, serif;
-                text-align: center;
-                background: linear-gradient(110deg, #5c3279, #d54f9fdf 50%, #f2e291 100%);
-                background-size: 200% 200%;
-                animation: gradientFlow 10s ease infinite;
-                background-color: white;
-                margin: 40px;
-                margin-right: 50px;
-                margin-left: 50px;
-                padding: 20px;
-                color: #ffeab3;
-                margin-top: 0;
-            }
-            
-            body::before {
-            content: "";
-            position: absolute;
-            inset: 0;
-            background: url('https://i.pinimg.com/1200x/5a/67/9b/5a679bc4d2bc5a2547b4e83594a5277f.jpg') center/cover no-repeat;
-            background-size: auto 100%
-            opacity: 0.25;    
-            pointer-events: none; 
-            z-index: -1;         
-            }
-            @keyframes gradientFlow {
-            0%   { background-position: 0% 50%; }
-            50%  { background-position: 100% 50%; }
-            100% { background-position: 0% 50%; }
-            }
-            
+        body {
+            font-family: 'Yeseva One', 'Times New Roman', Arial, sans-serif;
+            background: linear-gradient(110deg, #5c3279, #d54f9fdf 50%, #f2e291 100%);
+            background-size: 200% 200%;
+            animation: gradientFlow 10s ease infinite;
+            margin: 0;
+            padding: 50px;
+            color:#ffeab3;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            position: relative;
+            z-index: 0;          
+            text-align: center;
+        }
+        body::before {
+        content: "";
+        position: absolute;
+        inset: 0;
+        background: url('https://i.pinimg.com/1200x/5a/67/9b/5a679bc4d2bc5a2547b4e83594a5277f.jpg') center/cover no-repeat;
+        opacity: 0.25;    
+        pointer-events: none; 
+        z-index: -1;         
+        }
+        @keyframes gradientFlow {
+        0%   { background-position: 0% 50%; }
+        50%  { background-position: 100% 50%; }
+        100% { background-position: 0% 50%; }
+        }
             h1{
                 color: #ffeab3;
             }
@@ -156,8 +154,150 @@
                 display: block;
                 font-weight: bold;
             }
+            .twinkle,
+            .sparkle,
+            .shine{
+                position: absolute;
+            }
+            .twinkle.one{
+                top: 5%;
+                left: 70%;
+            }
+            .twinkle.two{
+                top: 50%;
+                left: 70%;
+            }
+            .twinkle.three{
+            top: 75%;
+            left: 25%;
+            }
+            .shine.one{
+            top: 69%;
+            left: 40%;
+            }
+            .shine.two{
+            top: 55%;
+            left: 5%;
+            }
+            .shine.three{
+            top: 29%;
+            left: 17%;
+            }
+            .sparkle.one{
+            top: 25%;
+            left: 35%;
+            }
+            .sparkle.two{
+            top: 5%;
+            left: 5%;
+            }
+            .sparkle.three{
+            top: 65%;
+            left: 27%;
+            }
+            .twinkle{
+            animation: twinkleRotate 3s infinite linear;
+            display: inline-block;
+            transition: all 0.3s ease;
+            color: #ffeb90;
+            font-style: normal;
+            font-size: 80px;
+            }
+            .sparkle{
+            animation: twinkleSwing 4s infinite linear;
+            display: inline-block;
+            color: #FF69B4; /* Hot Pink */
+            font-size: 45px;
+            }
+            .shine {
+            animation: blink 1s infinite;
+            color: #CBA135; /* Gold */
+            display: inline-block;
+            font-size: 100px;
+            }
+            @keyframes blink {
+            0%, 100% {
+                opacity: 1;
+            }
+            50% {
+                opacity: 0;
+            }
+            }
+            @keyframes twinkleRotate {
+            0% {
+                opacity: 0.2;
+                transform: rotate(0deg) scale(1);
+            }
+            25% {
+                opacity: 1;
+                transform: rotate(90deg) scale(1.1);
+            }
+            50% {
+                opacity: 0.4;
+                transform: rotate(180deg) scale(0.95);
+            }
+            75% {
+                opacity: 1;
+                transform: rotate(270deg) scale(1.05);
+            }
+            100% {
+                opacity: 0.2;
+                transform: rotate(360deg) scale(1);
+            }
+            }
+            @keyframes twinkleSwing {
+            0% {
+                opacity: 0.3;
+                transform: rotate(0deg) scale(1);
+            }
+            25% {
+                opacity: 1;
+                transform: rotate(-180deg) scale(1.1);
+            }
+            50% {
+                opacity: 0.5;
+                transform: rotate(0deg) scale(0.95);
+            }
+            75% {
+                opacity: 1;
+                transform: rotate(180deg) scale(1.05);
+            }
+            100% {
+                opacity: 0.3;
+                transform: rotate(0deg) scale(1);
+            }
+            }
+            @-webkit-keyframes glow {
+            from {
+                text-shadow: 0 0 10px #fff, 0 0 20px #fff, 0 0 30px #e60073, 0 0 40px #e60073, 0 0 50px #e60073, 0 0 60px #e60073, 0 0 70px #e60073;
+            }
+            
+            to {
+                text-shadow: 0 0 20px #fff, 0 0 30px #ff4da6, 0 0 40px #ff4da6, 0 0 50px #ff4da6, 0 0 60px #ff4da6, 0 0 70px #ff4da6, 0 0 80px #ff4da6;
+            }
+            }
+        
+        
+            @keyframes glow {
+            from {
+                text-shadow: 0 0 10px #fff, 0 0 20px #fff, 0 0 30px #e60073, 0 0 40px #e60073, 0 0 50px #e60073, 0 0 60px #e60073, 0 0 70px #e60073;
+            }
+            
+            to {
+                text-shadow: 0 0 20px #fff, 0 0 30px #ff4da6, 0 0 40px #ff4da6, 0 0 50px #ff4da6, 0 0 60px #ff4da6, 0 0 70px #ff4da6, 0 0 80px #ff4da6;
+            }
+            }
         </style>
         <body>
+            <i class="twinkle one">✦</i>
+            <i class="twinkle two">✦</i>
+            <i class="twinkle three">✦</i>
+            <i class="sparkle one">⊹</i>
+            <i class="sparkle two">⊹</i>
+            <i class="sparkle three">⊹</i>
+            <i class="shine one">₊</i>
+            <i class="shine two">₊</i>
+            <i class="shine three">₊</i>
 
             <div id="navtoggle" onclick="toggleNavBar()">☰</div>
         
