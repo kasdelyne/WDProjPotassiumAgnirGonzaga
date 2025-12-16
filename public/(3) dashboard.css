@@ -1,5 +1,4 @@
             html{
-                position: relative;
                 overflow-x: hidden;
             }
             
@@ -368,21 +367,24 @@
         }
         /* to go back to Welcome Page */
         .yummmy {
-  background: none;
-  border: none;
-  border-radius: 8px;
-  cursor: pointer;
-  transition: opacity 0.3s ease, transform 0.3s ease; 
-  color: #ffeab3;
-  font-size: 20px;
-  margin-left: 1230px;
-  animation: glowPulse 2s infinite alternate; 
-  font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
-  opacity: 0.8;
+            position: fixed;
+            top: 20px;
+            right: 20px;
+
+            background: none;
+            border: none;
+            border-radius: 8px;
+            cursor: pointer;
+            transition: opacity 0.3s ease, transform 0.3s ease; 
+            color: #ffeab3;
+            font-size: 20px;
+            margin-left: 1230px;
+            animation: glowPulse 2s infinite alternate; 
+            font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+            opacity: 0.8;
 }
 
 .yummmy:hover {
-  opacity: 0.8;
   transform: scale(1.1); 
 }
 
@@ -399,4 +401,3 @@
   }
 }
 
-        
