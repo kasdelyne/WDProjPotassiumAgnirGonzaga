@@ -10,30 +10,35 @@
 
     <style>
         body {
-              background: linear-gradient(110deg, #5c3279, #d54f9fdf 50%, #f2e291 100%);
-  background-size: 200% 200%;
-  animation: gradientFlow 10s ease infinite;
+            background: linear-gradient(110deg, #5c3279, #d54f9fdf 50%, #f2e291 100%);
+            background-size: 200% 200%;
+            animation: gradientFlow 10s ease infinite;
             height: 100vh;
             display: flex;
             align-items: center;
             justify-content: center;
             font-family: 'Yeseva One', 'Times New Roman', sans-serif;
             color: #ffeab3;
+            padding: 30px;
+            margin-right: 70px;
+            margin-left: 90px;
+            text-align: center;
         }
         body::before {
-  content: "";
-  position: absolute;
-  inset: 0;
-  background: url('https://i.pinimg.com/1200x/5a/67/9b/5a679bc4d2bc5a2547b4e83594a5277f.jpg') center/cover no-repeat;
-  opacity: 0.25;    
-  pointer-events: none; 
-  z-index: -1;         
-}
-@keyframes gradientFlow {
-  0%   { background-position: 0% 50%; }
-  50%  { background-position: 100% 50%; }
-  100% { background-position: 0% 50%; }
-}
+            content: "";
+            position: absolute;
+            inset: 0;
+            background: url('https://i.pinimg.com/1200x/5a/67/9b/5a679bc4d2bc5a2547b4e83594a5277f.jpg') center/cover no-repeat;
+            opacity: 0.25;    
+            pointer-events: none; 
+            z-index: -1;         
+        }
+
+        @keyframes gradientFlow {
+            0%   { background-position: 0% 50%; }
+            50%  { background-position: 100% 50%; }
+            100% { background-position: 0% 50%; }
+        }
 
         .game-container {
             width: 380px;
@@ -100,7 +105,7 @@
             font-size: 20px;
         }
 
-                    #navtoggle {
+        #navtoggle {
                 position: fixed;
                 font-size: 20px; 
                 font-weight: bold;
@@ -113,7 +118,7 @@
                 color: #3b3545;
                 transition: transform 0.2s ease; 
             }
-            #navtoggle:hover {
+        #navtoggle:hover {
                 transform: scale(1.1);
             }
 
@@ -206,8 +211,22 @@
     </style>
 </head>
 <body>
+    <div>
     <h1> Dress-Up </h1>
-    <p> .</p>
+        <p style="
+        margin-right: 60px;
+        "> Welcome to a fun and interactive Dress-Up game! This browser-based game allows users to express their creativity 
+            while styling the characters with different outfits, hair colors/styles, accessories.</p>
+
+        <p style="
+        margin-right: 60px;
+        ">
+            Players can mix and match clothing, accessories, and styles to create new , unique looks. It uses easy controls and encourages 
+            imagination and experimentation so whether you’re looking for fashion ideas or simply want to have fun, this Dress-Up game offers 
+            endless creative possibilities.
+        </p>
+    </div>
+
         <div id="navtoggle" onclick="toggleNavBar()">☰</div>
         
         <nav id="navbar" class="navbar">

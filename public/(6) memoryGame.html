@@ -11,30 +11,35 @@
             body{
                 font-family: 'Yeseva One', 'Times New Roman', Georgia, 'Times New Roman', Times, serif;
                 text-align: center;
-                 background: linear-gradient(110deg, #5c3279, #d54f9fdf 50%, #f2e291 100%);
-  background-size: 200% 200%;
-  animation: gradientFlow 10s ease infinite;
+                background: linear-gradient(110deg, #5c3279, #d54f9fdf 50%, #f2e291 100%);
+                background-size: 200% 200%;
+                animation: gradientFlow 10s ease infinite;
                 background-color: white;
-                margin: 0;
+                margin: 40px;
+                margin-right: 50px;
+                margin-left: 50px;
                 padding: 20px;
+                color: #ffeab3;
+                margin-top: 0;
             }
-        body::before {
-  content: "";
-  position: absolute;
-  inset: 0;
-  background: url('https://i.pinimg.com/1200x/5a/67/9b/5a679bc4d2bc5a2547b4e83594a5277f.jpg') center/cover no-repeat;
-  opacity: 0.25;    
-  pointer-events: none; 
-  z-index: -1;         
-}
-@keyframes gradientFlow {
-  0%   { background-position: 0% 50%; }
-  50%  { background-position: 100% 50%; }
-  100% { background-position: 0% 50%; }
-}
+            
+            body::before {
+            content: "";
+            position: absolute;
+            inset: 0;
+            background: url('https://i.pinimg.com/1200x/5a/67/9b/5a679bc4d2bc5a2547b4e83594a5277f.jpg') center/cover no-repeat;
+            opacity: 0.25;    
+            pointer-events: none; 
+            z-index: -1;         
+            }
+            @keyframes gradientFlow {
+            0%   { background-position: 0% 50%; }
+            50%  { background-position: 100% 50%; }
+            100% { background-position: 0% 50%; }
+            }
             
             h1{
-                color: #333;
+                color: #ffeab3;
             }
 
             .game-container{
@@ -48,7 +53,7 @@
             .card {
                 width: 100px;
                 height: 100px;
-                background-color: #1e90ff;
+                background-color: #674381;
                 display: flex;
                 justify-content: center;
                 align-items: center;
@@ -59,7 +64,7 @@
             }
 
             .card.flipped {
-                background-color: #fff;
+                background-color: #ffefc2;
                 transform: rotateY(180deg);
             }
 
@@ -69,7 +74,7 @@
                 cursor: pointer;
                 border-radius: 5px;
                 border: none;
-                background-color: #1e90ff;
+                background-color: #674381;
                 color: #fff;
             }
 
@@ -169,6 +174,19 @@
                 </nav>
 
             <h1>Emoji Memory Game</h1>
+                <p>
+                    Welcome to a challenging Memory Game! This game is designed to test and improve your concentration, 
+                    focus, and recall skills in an entertaining way. Players flip cards to reveal hidden images and try 
+                    to find matching pairs. Each turn requires careful attention, as cards flip back if they do not match. 
+                    The goal is to remember card positions and match all pairs in the fewest moves and shortest time possible.
+                </p>
+
+                <p>    
+                    Built using HTML, CSS, and JavaScript, the game features smooth animations, responsive design, and simple 
+                    controls for an enjoyable user experience on any device. With colorful visuals and engaging gameplay, this 
+                    memory game is perfect for players of all ages who enjoy brain-training challenges.
+                </p>
+
             <div class="game-container" id="gameContainer"></div>
             <button id="restartBtn">Restart Game</button>
 
