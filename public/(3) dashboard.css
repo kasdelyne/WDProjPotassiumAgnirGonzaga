@@ -367,7 +367,7 @@
             }
         }
         /* to go back to Welcome Page */
-        button {
+        .yummmy {
   background: none;
   border: none;
   border-radius: 8px;
@@ -381,7 +381,7 @@
   opacity: 0.8;
 }
 
-button:hover {
+.yummmy:hover {
   opacity: 0.8;
   transform: scale(1.1); 
 }
