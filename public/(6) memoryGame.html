@@ -287,6 +287,52 @@
                 text-shadow: 0 0 20px #fff, 0 0 30px #ff4da6, 0 0 40px #ff4da6, 0 0 50px #ff4da6, 0 0 60px #ff4da6, 0 0 70px #ff4da6, 0 0 80px #ff4da6;
             }
             }
+            /* Mobile responsiveness */
+            @media (max-width: 768px) {
+                body {
+                    padding: 20px;
+                }
+
+                .game-container {
+                    grid-template-columns: repeat(2, 80px); /* smaller grid for mobile */
+                    grid-gap: 20px;
+                }
+
+                .card {
+                    width: 80px;
+                    height: 80px;
+                    font-size: 40px;
+                }
+
+                button {
+                    padding: 8px 15px;
+                    font-size: 14px;
+                }
+
+                h1 {
+                    font-size: 28px;
+                }
+
+                p {
+                    font-size: 14px;
+                }
+
+                #navbar {
+                    width: 200px;
+                    height: 100%;
+                }
+
+                #navbar ul li a {
+                    font-size: 16px;
+                }
+
+                #navtoggle {
+                    font-size: 18px;
+                    padding: 8px 12px;
+                }
+            }
+
+
         </style>
         <body>
             <i class="twinkle one">✦</i>

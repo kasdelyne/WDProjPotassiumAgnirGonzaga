@@ -7,37 +7,37 @@
             accessory: ["/assets/accessory1.png", "/assets/accessory2.png"]
         };
 
-        const categories = Object.keys(items);
-        let currentCategoryIndex = 0;
+        const categories = Object.keys(items); // extract category names into arrays
+        let currentCategoryIndex = 0; // keep track of which category is currently selected
 
         // html elements
-        const categoryLabel = document.getElementById("categoryLabel");
+        const categoryLabel = document.getElementById("categoryLabel"); // label that shows the current category name
         const circles = [ 
-            document.getElementById("opt1"), 
-            document.getElementById("opt2"), 
-            document.getElementById("opt3") 
+            document.getElementById("opt1"), // option 1
+            document.getElementById("opt2"), // option 2
+            document.getElementById("opt3")  // option 3
         ];
 
         // update circles for current category
         function loadCategory() {
-            const category = categories[currentCategoryIndex];
-            const list = items[category];
+            const category = categories[currentCategoryIndex]; // gete current category name
+            const list = items[category]; // get the array of images from that category
 
-            categoryLabel.textContent = category.charAt(0).toUpperCase() + category.slice(1);
+            categoryLabel.textContent = category.charAt(0).toUpperCase() + category.slice(1); // display category name with first letter captitalized
 
-            circles.forEach((circle, i) => {
-                circle.innerHTML = "";
+            circles.forEach((circle, i) => { // loop through 3 option circles
+                circle.innerHTML = ""; // clear any existing content inside the circle
 
-                if (list[i]) {
+                if (list[i]) { // if theres an image in this option
                     let img = document.createElement("img");
-                    img.src = list[i];
-                    circle.appendChild(img);
+                    img.src = list[i]; 
+                    circle.appendChild(img); // add image to circle
 
-                    circle.onclick = () => {
+                    circle.onclick = () => { // when circle is clicked
                         document.getElementById(category).src = list[i];
-                    };
+                    }; // set image
                 } else {
-                    circle.onclick = null;
+                    circle.onclick = null; // no image = remove click handler
                 }
             });
         }
@@ -46,13 +46,13 @@
         document.getElementById("prevBtn").onclick = () => {
             currentCategoryIndex =
                 (currentCategoryIndex - 1 + categories.length) % categories.length;
-            loadCategory();
+            loadCategory(); // update circles for new category
         };
 
         document.getElementById("nextBtn").onclick = () => {
             currentCategoryIndex =
-                (currentCategoryIndex + 1) % categories.length;
-            loadCategory();
+                (currentCategoryIndex + 1) % categories.length; // go to next category
+            loadCategory();// update circles for new category
         };
 
         // initialize
@@ -65,7 +65,7 @@
             document.getElementById(category).src=" ";
         }
 
-        function toggleNavBar(){
+        function toggleNavBar(){ // function to open/close nav bar
             const nav=document.getElementById("navbar");
             nav.classList.toggle("open");
         }
