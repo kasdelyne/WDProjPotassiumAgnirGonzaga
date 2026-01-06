@@ -10,6 +10,8 @@
 
         <style>
             body {
+                display: flex;
+                flex-direction: column;
                 font-family: 'Yeseva One','Times New Roman', Arial, sans-serif;
                 justify-content: center;
                 align-items: center;
@@ -18,17 +20,23 @@
                 min-height: 100vh;
                 margin: 0;
                 color: #edd0a6;
-            }      
+                opacity: 0;
+                animation: fadeIn 1s ease-in forwards; 
+            }
+
+            @keyframes fadeIn {
+            from { opacity: 0; }
+            to { opacity: 1; }
+            }
+               
             
             .container{
                 background-color: rgba(255, 255, 255, 0.5);
-                padding: 10px;
-                min-height: 60px;
-                border-radius: 8px;
-                position: relative;
-                cursor: pointer;
-                border: 1px solid #f3cce0;
+                width: 90%;
+                margin: 40px auto;
+                padding: 20px;
                 color: rgba(115, 82, 146, 1);
+                border-radius: 12px;
             }
 
             .head{
@@ -39,7 +47,7 @@
                 font-size: 2.5rem;
             }
 
-                        #navtoggle {
+            #navtoggle {
                 position: fixed;
                 font-size: 20px; 
                 font-weight: bold;
@@ -268,6 +276,27 @@
                 text-shadow: 0 0 20px #fff, 0 0 30px #ff4da6, 0 0 40px #ff4da6, 0 0 50px #ff4da6, 0 0 60px #ff4da6, 0 0 70px #ff4da6, 0 0 80px #ff4da6;
             }
             }
+
+            @media (max-width: 480px) {
+                .navbar {
+                    width: 200px;
+                    height: 100%; 
+                }
+
+                #navbar ul li a {
+                    font-size: 16px;
+                }
+
+                .head h3 {
+                    font-size: 2rem;
+                }
+
+                .container{
+                    width: 90%;
+                    padding: 10px;
+                    margin: 20px auto;
+                }
+            }
         </style>
     </head>
     <i class="twinkle one">✦</i>
@@ -313,14 +342,14 @@
         
         <nav id="navbar" class="navbar">
             <ul>
-                <li> <a href="(3) dashboard.html"> Dashboard </a></li>
-                <li> <a href="(4) calendar.html"> Calendar</a></li>
-                <li> <a href="(5) activeRecall.html"> Active Recall </a></li>
-                <li> <a href="(6) memoryGame.html"> Memory Game</a></li>
-                <li> <a href="(7) dressUp.html"> Dress Up</a></li>
-                <li> <a href="(9) calculator.html"> Calculator</a></li>
-                <li> <a href="(8) settings.html"> Settings </a></li>
-                <li> <a href="(10) references.html"> References</a></li>
+                <li> <a href="/WDProjPotassiumAgnirGonzaga/public/(3) dashboard.html"> Dashboard </a></li>
+                <li> <a href="/WDProjPotassiumAgnirGonzaga/public/(4) calendar.html"> Calendar</a></li>
+                <li> <a href="/WDProjPotassiumAgnirGonzaga/public/(5) activeRecall.html"> Active Recall </a></li>
+                <li> <a href="/WDProjPotassiumAgnirGonzaga/public/(6) memoryGame.html"> Memory Game</a></li>
+                <li> <a href="/WDProjPotassiumAgnirGonzaga/public/(7) dressUp.html"> Dress Up</a></li>
+                <li> <a href="/WDProjPotassiumAgnirGonzaga/public/(9) calculator.html"> Calculator</a></li>
+                <li> <a href="/WDProjPotassiumAgnirGonzaga/public/(8) settings.html"> Settings </a></li>
+                <li> <a href="/WDProjPotassiumAgnirGonzaga/public/(10) references.html"> References </a></li>
             </ul>
         </nav>
         

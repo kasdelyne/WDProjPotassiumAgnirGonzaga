@@ -1,3 +1,9 @@
+*,
+*::before,
+*::after{
+  box-sizing: border-box;
+}
+
 body {
   background: linear-gradient(110deg, #5c3279, #d54f9fdf 100%, #f89cc8 100%);
   color: #ffeab3;
@@ -7,6 +13,7 @@ body {
   min-height: 115vh;
   text-align: center;
   position: relative;  
+  overflow-x: hidden;
 }
 
 body::before {
@@ -18,7 +25,7 @@ body::before {
   pointer-events: none; 
   z-index: -1;
 }
-
+/* info */
     header {
         padding: 60px 20px;
     }
@@ -89,13 +96,11 @@ body::before {
       color: #ffeab3;
     }
     .intro-box {
-      position: absolute;
-      top: 150px;
-      left: 50%;
-      transform: translateX(-50%);
+      position: relative;
+      top: 0;
+      height: auto;
       width: 90%;
       max-width: 900px;
-      height: 170px;
       padding: 40px;
       border-radius: 15px;
       
@@ -104,7 +109,8 @@ body::before {
       -webkit-backdrop-filter: blur(6px);
 
       box-shadow: 0 0 20px rgba(255, 234, 179, 0.3);
-      z-index: -1; 
+      z-index: 1; 
+      margin: 20px auto;
 }
     .intro-box::before {
       content: "";
@@ -137,6 +143,7 @@ body::before {
   50%  { background-position: 100% 50%; }
   100% { background-position: 0% 50%; }
 }
+/* about us cards */
 
     .about-section {
       margin-top: 20px;
@@ -262,3 +269,98 @@ body::before {
     body.mobile-view .card-container {
       flex-direction: column;
     }
+    /* to go back to Welcome Page */
+button {
+  background: none;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: opacity 0.3s ease, transform 0.3s ease; 
+  color: #ffeab3;
+  font-size: 20px;
+  position: relative;
+  top: 20px;
+  left: 20px;
+  z-index: 999;
+  font-size: 16px;
+  animation: glowPulse 2s infinite alternate; 
+  font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+  opacity: 0.8;
+}
+
+button:hover {
+  opacity: 0.8;
+  transform: scale(1.1); 
+}
+
+@keyframes glowPulse {
+  from {
+    text-shadow: 0 0 5px #ffeab3,
+                 0 0 10px #ffcc66,
+                 0 0 20px #ffeab3;
+  }
+  to {
+    text-shadow: 0 0 10px #ffd27f,
+                 0 0 20px #ffcc66,
+                 0 0 40px #ffeab3;
+  }
+}
+
+.taskonaut .bounce{
+  animation: bounce 0.6s ease infinite alternate,
+             colorGlow 2s linear infinite;
+  font-family: 'Franklin Gothic Medium', Arial, sans-serif;
+  font-size: 80px;
+  display: inline-block;
+}
+
+.taskonaut .bounce:nth-child(1) { animation-delay: 0.1s; }
+.taskonaut .bounce:nth-child(2) { animation-delay: 0.2s; }
+.taskonaut .bounce:nth-child(3) { animation-delay: 0.3s; }
+.taskonaut .bounce:nth-child(4) { animation-delay: 0.4s; }
+.taskonaut .bounce:nth-child(5) { animation-delay: 0.5s; }
+.taskonaut .bounce:nth-child(6) { animation-delay: 0.6s; }
+.taskonaut .bounce:nth-child(7) { animation-delay: 0.7s; }
+.taskonaut .bounce:nth-child(8) { animation-delay: 0.8s; }
+.taskonaut .bounce:nth-child(9) { animation-delay: 0.9s; }
+
+@media (max-width: 768px) {
+  .intro-box {
+    padding: 24px;
+    width: 95%;
+    margin: 15px auto;
+  }
+
+  .intro {
+    font-size: 16px;
+    line-height: 1.8em;
+    text-align: center;
+  }
+
+  h1 {
+    font-size: 30px;
+  }
+
+  .taskonaut .bounce {
+    font-size: 40px;
+  }
+
+  h1 .glow {
+    font-size: 26px;
+  }
+
+  .about-card {
+    width: 100%;
+  }
+
+  .about-card .extra {
+    max-height: 1000px;
+    opacity: 1;
+  }
+
+  button {
+    top: 10px;
+    left: 10px;
+    font-size: 14px;
+  }
+}
