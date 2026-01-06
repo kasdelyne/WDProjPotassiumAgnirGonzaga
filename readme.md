@@ -294,3 +294,39 @@ function upProgress(){
 * TikTok - Make your day. (n.d.). https://vt.tiktok.com/ZSyeq1U7m/
 * TikTok - Make your day. (n.d.-b). https://vt.tiktok.com/ZSyeqF9dS/
 * TikTok - Make your day. (n.d.-c). https://vt.tiktok.com/ZSyeVofaA/
+
+-----
+
+# Q3 Project Update
+INTEGRITY, EXCELLENCE, SERVICE
+> AGNIR, Kacey Adelyne &
+> GONZAGA, Germione Naj
+
+## Final Title
+
+Taskonaut
+
+## Features
+
+* Works on phones & laptops
+* Users can set deadlines, plan events, and more.
+* Music will automatically play on each website which sets the vibe/mood for the user.
+
+## Details
+
+* [ALL] Remove the "alert" popups in JavaScript and use the **dialogue demo**.
+* [ALL] Music will automatically play.
+* [WELCOME PAGE] Make sure the runaway button works.
+* [WELCOME PAGE] Apply the **container queries** to the log-in area.
+* [WELCOME PAGE] Adjust the logo to make it bigger.
+* [DASHBOARD/MAIN PAGE] Need to add the actual name the user places, not just "username".
+* [ACTIVE RECALL] Fix the device responsiveness of the Flashcards Tab.
+* [ACTIVE RECALL & DRESS UP] Adjust the CSS so everything is in the middle.
+* [CALENDAR] Can add more events/tasks instead of just one.
+* [STUDY TIMER] We will add a new website where we will apply the theme toggle + study timer.
+
+
+## Definition of Done
+
+Once we accomplish the following details that we want to fix and debug the JavaScript and CSS to make it look cleaner and improve readability. After that, we will also ask other individuals such as our classmates, friends, or upperbatches to try out our website to seek comments and criticism to improve our work in the future. 
+
