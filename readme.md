@@ -303,30 +303,55 @@ INTEGRITY, EXCELLENCE, SERVICE
 > GONZAGA, Germione Naj
 
 ## Final Title
-
 Taskonaut
 
-## Features
+## Overview
+A productivity and note-taking application designed specifically for Pisay scholars. The website aims to ensure students stay organized, manage academics efficiently, and maintain a clean, distraction-free workspace throughout the school year.
 
-* Works on phones & laptops
-* Users can set deadlines, plan events, and more.
-* Music will automatically play on each website which sets the vibe/mood for the user.
+## Features
+* The website is designed to work on both phones and laptops.
+* Users can set deadlines, plan academic events, and track tasks by using interactive tools such as calendars and to-do lists.
+* Background music will automatically play on each website which sets the vibe/mood for the user.
 
 ## Details
+**[ALL]** 
+* Remove the "alert()" popups in JavaScript and use the **dialogue demo**.
+* Add background music playback across all pages to ensure a consistent atmosphere for learning.
 
-* [ALL] Remove the "alert" popups in JavaScript and use the **dialogue demo**.
-* [ALL] Music will automatically play.
-* [WELCOME PAGE] Make sure the runaway button works.
-* [WELCOME PAGE] Apply the **container queries** to the log-in area.
-* [WELCOME PAGE] Adjust the logo to make it bigger.
-* [DASHBOARD/MAIN PAGE] Need to add the actual name the user places, not just "username".
-* [ACTIVE RECALL] Fix the device responsiveness of the Flashcards Tab.
-* [ACTIVE RECALL & DRESS UP] Adjust the CSS so everything is in the middle.
-* [CALENDAR] Can add more events/tasks instead of just one.
-* [STUDY TIMER] We will add a new website where we will apply the theme toggle + study timer.
+**[WELCOME PAGE]**
+* Make sure the runaway "Proceed" button functions correctly when the required fields are left empty.
+* Apply the **container queries** to the log-in area for better responsiveness.
+* Adjust the logo to make it bigger to make it more visually appealing.
 
+**[DASHBOARD/MAIN PAGE]**
+* Need to add the actual name the user places instead of a placeholder such as "username".
+
+**[ACTIVE RECALL]**
+* Fix the device responsiveness of the Flashcards Tab.
+* Adjust the CSS so everything is in the middle.
+
+**[CALENDAR]** 
+* Can add more events/tasks instead of just one.
+
+## Updates
+**[SETTINGS]: Will be removed due to inability of adding the changes into other websites.**
+
+**[STUDY TIMER]**
+* Will apply the theme toggle + study timer.
+
+## Proposed Webpages
+**[PAGE1]**
+* Will have a personalization form, theme preview panel, and a short introduction to what its purpose is, which allows users to configure their study environment before entering.
+
+**[PAGE2]**
+* Will be a study planner area where you can plan things, set timeline and priorities, etc.
+
+**[PAGE3]**
+* Is a study insight page where users can track their productivity patterns.
+* It shows the study time breakdown.
+* Will then show simple productivity feedback messages.
+* Will also contain the option to reset/edit the users' preferences.
 
 ## Definition of Done
 
-Once we accomplish the following details that we want to fix and debug the JavaScript and CSS to make it look cleaner and improve readability. After that, we will also ask other individuals such as our classmates, friends, or upperbatches to try out our website to seek comments and criticism to improve our work in the future. 
-
+Once we accomplish the following details that we want to fix and debug the JavaScript and CSS to make it look cleaner and improve functionality, readability, and overall user experience. The design for all webpages are polished and consistent, and the responsiveness is verified on all devices. We will also gather feedback on our project by asking fellow classmates, friends, etc. to test the website. Once the criticism is reviewed, we will incorporate/add it to enhance the project.
