@@ -337,7 +337,7 @@ A productivity and note-taking application designed specifically for Pisay schol
 **[SETTINGS]: Will be removed due to inability of adding the changes into other websites.**
 
 **[STUDY TIMER]**
-* Will apply the theme toggle + study timer.
+* Will apply study timer + its total hours of use weekly + total in seconds, minutes, and hours.
 
 ## Proposed Webpages
 **[PAGE1]**
@@ -345,6 +345,7 @@ A productivity and note-taking application designed specifically for Pisay schol
 
 **[PAGE2]**
 * Will be a study planner area where you can plan things, set timeline and priorities, etc.
+* Includes the study Timer below when you scroll down.
 
 **[PAGE3]**
 * Is a study insight page where users can track their productivity patterns.
