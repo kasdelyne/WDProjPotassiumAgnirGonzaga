@@ -353,6 +353,9 @@ A productivity and note-taking application designed specifically for Pisay schol
 * Will then show simple productivity feedback messages.
 * Will also contain the option to reset/edit the users' preferences.
 
+## Design of the Added Webpages
+Link: https://www.canva.com/design/DAG96xyvJU8/iWeRaZvK7GQHxUE4BRTaYg/edit?utm_content=DAG96xyvJU8&utm_campaign=designshare&utm_medium=link2&utm_source=sharebutton
+
 ## Definition of Done
 
 Once we accomplish the following details that we want to fix and debug the JavaScript and CSS to make it look cleaner and improve functionality, readability, and overall user experience. The design for all webpages are polished and consistent, and the responsiveness is verified on all devices. We will also gather feedback on our project by asking fellow classmates, friends, etc. to test the website. Once the criticism is reviewed, we will incorporate/add it to enhance the project.
