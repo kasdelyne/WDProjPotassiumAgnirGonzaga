@@ -1,42 +1,134 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
-    <meta charset="UTF-8"/>
-    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-    <title>✦ Welcome Page ✦</title>
-    <link rel="stylesheet" href="(1) welcomePage.css">
-    <link rel="icon" href="../assets/favicon.png">
+  <meta charset="UTF-8">
+  <link rel="stylesheet" href="(1) welcomePage.css">
+  <title>Login System</title>
 </head>
+
 <body>
 
-<div class="card1">
-  <div class="middle-bg"></div>
+<div class="container box">
 
-  <div class="header">
-    <div class="site-title">
-      <div class="small-circle"></div>
-      Task-o-naut
+    <div id="signupBox">
+      <a href="/public/(2) aboutUs.html" class="top-link">About Us</a>
+    
+        <h2>Create Account</h2>
+        <input id="signupUser" placeholder="Username">
+        <input id="signupPass" type="password" placeholder="Password">
+        <br>
+        <button id="signupBtn">Create</button>
+        <p id="message"></p>
     </div>
-    <a href="/public/(2) aboutUs.html" class="about-link">About & Creators</a>
-  </div>
+    <p class="switch">
+        Already have an account?
+        <span onclick="showLogin()">Log in!</span>
+    </p>
 
-  <div class="inner-box">
-    <div class="left-section">
-      <label for="nickname" class="nickname-label">✧ Nickname</label>
-      <input type="text" id="nickname" maxlength="10" placeholder="Maximum 10 letters..." class="nickname-input">
-      <div class="button-container">
-        <a id="proceed-btn" href="/public/(3) dashboard.html" class="proceed-btn">Click</a>
-      </div>
+    <div class="hidden" id="loginBox">
+        <h2>Log In</h2>
+        <input id="loginUser" placeholder="Username">
+        <input id="loginPass" type="password" placeholder="Password">
+        <br>
+        <button id="loginBtn">Log In</button>
+    </div>
+    <p class="switch">
+        Don’t have an account?
+        <span onclick="showSignup()">Create one!</span>
+    </p>
+
+
+    <div class="hidden" id="dashboard">
+        <h2 id="welcome"></h2>
     </div>
 
-    <div class="logo-circle">
-      <img src="/WDProjPotassiumAgnirGonzaga/assets/logo.png" alt="Logo">
-    </div>
-  </div>
 </div>
 
 <script>
+const signupBtn = document.getElementById("signupBtn");
+const loginBtn = document.getElementById("loginBtn");
 
+function runAway(btn) {
+    const x = Math.random() * 150 - 75;
+    const y = Math.random() * 150 - 75;
+    btn.style.transform = `translate(${x}px, ${y}px)`;
+}
+
+signupBtn.addEventListener("mouseover", () => {
+    if (!signupUser.value || !signupPass.value) {
+        runAway(signupBtn);
+    }
+});
+
+loginBtn.addEventListener("mouseover", () => {
+    if (!loginUser.value || !loginPass.value) {
+        runAway(loginBtn);
+    }
+});
+
+
+signupBtn.onclick = () => {
+    if (!signupUser.value || !signupPass.value) return;
+
+    localStorage.setItem("username", signupUser.value);
+    localStorage.setItem("password", signupPass.value);
+
+    document.getElementById("message").textContent =
+        "Great! Now you can log in.";
+
+    setTimeout(() => {
+        document.getElementById("signupBox").classList.add("hidden");
+        document.getElementById("loginBox").classList.remove("hidden");
+    }, 1200);
+};
+
+loginBtn.onclick = () => {
+    const storedUser = localStorage.getItem("username");
+    const storedPass = localStorage.getItem("password");
+
+    if (
+        loginUser.value === storedUser &&
+        loginPass.value === storedPass
+    ) {
+        document.getElementById("loginBox").classList.add("hidden");
+        document.getElementById("dashboard").classList.remove("hidden");
+        document.getElementById("welcome").textContent =
+            "Hello " + storedUser;
+    }
+};
+
+function showLogin() {
+    signupBox.classList.add("hidden");
+    loginBox.classList.remove("hidden");
+}
+
+function showSignup() {
+    loginBox.classList.add("hidden");
+    signupBox.classList.remove("hidden");
+}
+
+
+const username = localStorage.getItem("username");
+
+if (!username) {
+    window.location.href = "index.html";
+} else {
+    document.getElementById("welcome").textContent =
+        "Hello " + username;
+}
+
+loginBtn.onclick = () => {
+    const username = document.getElementById("loginUser").value;
+    const password = document.getElementById("loginPass").value;
+
+    const storedUser = localStorage.getItem("username");
+    const storedPass = localStorage.getItem("password");
+
+    if (username === storedUser && password === storedPass) {
+      
+        window.location.href = "/public/(3) dashboard.html";
+    }
+};
 
 document.addEventListener("DOMContentLoaded", () => {
     document.body.style.opacity = 0;

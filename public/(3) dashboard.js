@@ -105,3 +105,12 @@
         whiteboard.addEventListener('blur',() =>{ // sets up a listener for the "blur" event which occurs when the user clicks out of the whiteboard
             whiteboard.classList.remove('expanded'); // removes the expanded class so the text area returns to its original size
         });
+
+        const username = localStorage.getItem("username");
+
+        if (!username) {
+            window.location.href = "index.html";
+        } 
+        else {
+            document.getElementById("welcome").textContent = username;
+        }
