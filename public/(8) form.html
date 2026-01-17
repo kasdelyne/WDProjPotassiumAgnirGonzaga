@@ -1,0 +1,159 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Setup Form</title>
+<style>
+  body {
+    font-family: Arial, sans-serif;
+    background: #f0f4f8;
+    padding: 20px;
+  }
+  h1 {
+    text-align: center;
+  }
+  form {
+    background: #fff;
+    padding: 20px;
+    border-radius: 8px;
+    max-width: 700px;
+    margin: auto;
+    box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+  }
+  label {
+    display: block;
+    margin-top: 15px;
+    font-weight: bold;
+  }
+  input, textarea, select {
+    width: 100%;
+    padding: 8px;
+    margin-top: 5px;
+    border-radius: 4px;
+    border: 1px solid #ccc;
+  }
+  .subjects div {
+    display: flex;
+    gap: 10px;
+    margin-top: 5px;
+  }
+  .subjects input[type="text"] {
+    flex: 2;
+  }
+  .subjects input[type="number"] {
+    flex: 1;
+  }
+  button {
+    margin-top: 20px;
+    padding: 10px 15px;
+    border: none;
+    background: #0077ff;
+    color: #fff;
+    font-size: 16px;
+    border-radius: 4px;
+    cursor: pointer;
+  }
+  button:hover {
+    background: #005fcc;
+  }
+</style>
+</head>
+    <body>
+
+        <h1>Set Up Your Week</h1>
+            <form id="setupForm">
+              <label for="name">Name:</label>
+              <input type="text" id="name" required>
+
+              <label for="week">Week Starting Date:</label>
+              <input type="date" id="week" required>
+
+              <label for="goals">Weekly Goals:</label>
+              <textarea id="goals" rows="3" placeholder="What do you want to accomplish this week?"></textarea>
+
+              <label>Subjects / Focus Subjects:</label>
+              <div class="subjects" id="subjects">
+                <div>
+                  <input type="text" placeholder="Subject Name" class="subject">
+                  <input type="number" placeholder="Estimated Hours" class="hours">
+                  <button type="button" class="removeSubject">-</button>
+                </div>
+              </div>
+              <button type="button" id="addSubject">+ Add Subject</button>
+
+              <label for="sessionLength">Preferred Study Session Length (minutes):</label>
+              <input type="number" id="sessionLength" min="10" max="180" value="50">
+
+              <label for="breakLength">Preferred Break Length (minutes):</label>
+              <input type="number" id="breakLength" min="5" max="60" value="10">
+
+              <label for="productivityTime">Most Productive Time:</label>
+              <select id="productivityTime">
+                <option>Morning</option>
+                <option>Afternoon</option>
+                <option>Night</option>
+              </select>
+
+              <label for="studyStyle">Preferred Study Style:</label>
+              <select id="studyStyle">
+                <option>Solo</option>
+                <option>Group</option>
+                <option>Mixed</option>
+              </select>
+
+              <label for="distractionLevel">Focus Level (1-5):</label>
+              <input type="number" id="distractionLevel" min="1" max="5" value="3">
+
+              <label for="journal">Journal Notes (optional):</label>
+              <textarea id="journal" rows="3"></textarea>
+
+          <button type="submit">Submit & Go to Planner</button>
+    </form>
+
+<script>
+
+      document.getElementById('addSubject').addEventListener('click', () => {
+        const div = document.createElement('div');
+        div.innerHTML = `
+          <input type="text" placeholder="Subject Name" class="subject">
+          <input type="number" placeholder="Estimated Hours" class="hours">
+          <button type="button" class="removeSubject">-</button>
+        `;
+        document.getElementById('subjects').appendChild(div);
+      });
+
+
+      document.getElementById('subjects').addEventListener('click', (e) => {
+        if (e.target.classList.contains('removeSubject')) {
+          e.target.parentElement.remove();
+        }
+      });
+
+      document.getElementById('setupForm').addEventListener('submit', (e) => {
+        e.preventDefault();
+
+        const data = {
+          name: document.getElementById('name').value,
+          week: document.getElementById('week').value,
+          goals: document.getElementById('goals').value,
+          subjects: Array.from(document.querySelectorAll('.subject')).map((s, i) => ({
+            name: s.value,
+            hours: document.querySelectorAll('.hours')[i].value
+          })),
+          sessionLength: document.getElementById('sessionLength').value,
+          breakLength: document.getElementById('breakLength').value,
+          productivityTime: document.getElementById('productivityTime').value,
+          studyStyle: document.getElementById('studyStyle').value,
+          distractionLevel: document.getElementById('distractionLevel').value,
+          journal: document.getElementById('journal').value
+        };
+
+        localStorage.setItem('productivitySetup', JSON.stringify(data));
+
+        window.location.href = '/public/(8.1) studyPlanner.html';
+      });
+</script>
+
+</body>
+</html>
