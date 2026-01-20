@@ -384,20 +384,20 @@
             opacity: 0.8;
 }
 
-.yummmy:hover {
-  transform: scale(1.1); 
-}
+        .yummmy:hover {
+        transform: scale(1.1); 
+        }
 
-@keyframes glowPulse {
-  from {
-    text-shadow: 0 0 5px #ffeab3,
-                 0 0 10px #ffcc66,
-                 0 0 20px #ffeab3;
-  }
-  to {
-    text-shadow: 0 0 10px #ffd27f,
-                 0 0 20px #ffcc66,
-                 0 0 40px #ffeab3;
-  }
-}
+        @keyframes glowPulse {
+        from {
+            text-shadow: 0 0 5px #ffeab3,
+                        0 0 10px #ffcc66,
+                        0 0 20px #ffeab3;
+        }
+        to {
+            text-shadow: 0 0 10px #ffd27f,
+                        0 0 20px #ffcc66,
+                        0 0 40px #ffeab3;
+        }
+        }
 

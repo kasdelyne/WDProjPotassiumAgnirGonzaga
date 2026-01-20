@@ -4,7 +4,42 @@
                 document.getElementById('navbar').classList.toggle('open');
             }
 
-            // Progress Bar
+            function saveTasks() {
+                const tasks = [];
+                document.querySelectorAll("#todo-list li").forEach(li => {
+                    const text = li.textContent.slice(0, -1).trim(); 
+                    const done = li.querySelector("input[type='checkbox']").checked;
+                    tasks.push({ text, done });
+                });
+                localStorage.setItem("todoTasks", JSON.stringify(tasks));
+            }
+
+            function loadTasks() {
+                const tasks = JSON.parse(localStorage.getItem("todoTasks") || "[]");
+                tasks.forEach(task => {
+                    const li = document.createElement("li");
+
+                    const checkbox = document.createElement("input");
+                    checkbox.type = "checkbox";
+                    checkbox.checked = task.done;
+                    checkbox.onchange = () => { updateP(); saveTasks(); };
+
+                    const deleteButton = document.createElement("button");
+                    deleteButton.textContent = "X";
+                    deleteButton.onclick = () => { li.remove(); updateP(); saveTasks(); };
+
+                    li.appendChild(checkbox);
+                    li.append(" " + task.text);
+                    li.appendChild(deleteButton);
+
+                    document.getElementById("todo-list").appendChild(li);
+                });
+                updateP();
+            }
+
+
+            loadTasks();
+                        // Progress Bar
             let progress=0;
 
             function moreProgress(){
@@ -54,6 +89,7 @@
 
                 input.value="";
                 updateP();
+                saveTasks();
             }
 
             // Spotify Link
@@ -96,6 +132,13 @@
         // Whiteboard
         const whiteboard = document.getElementById('whiteboard');
 
+        whiteboard.value=localStorage.getItem("whiteboardContent") || "";
+
+        whiteboard.addEventListener ("input", ()=>{
+            localStorage.setItem("whiteboardContent", whiteboard.value);
+        });
+
+
         // Expands the whiteboard when clicked
         whiteboard.addEventListener('focus', () => { // sets up a listener for the "focus" event which occurs when the user clicks inside the text area
             whiteboard.classList.add('expanded'); // adds the class expanded to the text area. In CSS, we designed it to make the whiteboard bigger, increasing the height
@@ -114,3 +157,5 @@
         else {
             document.getElementById("welcome").textContent = username;
         }
+
+        
