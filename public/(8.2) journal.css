@@ -1,0 +1,124 @@
+body {
+      font-family: 'Quicksand', sans-serif;
+      background: linear-gradient(110deg, #5c3279, #d54f9f 50%, #f2e291 100%);
+      background-size: 200% 200%;
+      animation: gradientFlow 12s ease infinite;
+      margin: 0;
+      padding: 40px;
+      color: #ffeab3;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      text-align: center;
+    }
+    @keyframes gradientFlow {
+      0%   { background-position: 0% 50%; }
+      50%  { background-position: 100% 50%; }
+      100% { background-position: 0% 50%; }
+    }
+    body::before {
+      content: "";
+      position: absolute;
+      inset: 0;
+      background: url('https://i.pinimg.com/1200x/5a/67/9b/5a679bc4d2bc5a2547b4e83594a5277f.jpg') center/cover no-repeat;
+      opacity: 0.25;    
+      pointer-events: none; 
+      z-index: -1;         
+    }
+
+    h1 {
+      color: #f2e291;
+      text-shadow: 0 0 10px #f2e291, 0 0 20px #d54f9f, 0 0 30px #5c3279;
+      animation: glowPulse 3s ease-in-out infinite;
+      font-family:Georgia, 'Times New Roman', Times, serif;
+    }
+
+    @keyframes glowPulse {
+      0% { text-shadow: 0 0 10px #f2e291, 0 0 20px #d54f9f, 0 0 30px #5c3279; }
+      50% { text-shadow: 0 0 20px #fff6d0, 0 0 30px #f2e291, 0 0 40px #d54f9f; }
+      100% { text-shadow: 0 0 10px #f2e291, 0 0 20px #d54f9f, 0 0 30px #5c3279; }
+    }
+
+    .journal-container {
+      max-width: 800px;
+      width: 100%;
+      background: rgba(255, 196, 236, 0.50);
+      border-radius: 16px;
+      box-shadow: 0 0 20px rgba(0,0,0,0.3);
+      padding: 20px;
+      backdrop-filter: blur(6px);
+      margin-top: 20px;
+    }
+
+    input, textarea {
+      width: 100%;
+      border-radius: 8px;
+      border: 1px solid #d54f9f;
+      padding: 10px;
+      font-family: inherit;
+      margin-bottom: 10px;
+    }
+
+    textarea { height: 100px; }
+
+    button {
+      padding: 8px 16px;
+      border: none;
+      border-radius: 8px;
+      background-color: #d54f9f;
+      color: #fff;
+      cursor: pointer;
+      font-weight: bold;
+      margin: 5px;
+    }
+    .entry {
+      background: #a95ec0;
+      border-radius: 10px;
+      padding: 10px;
+      margin: 10px 0;
+      text-align: left;
+      cursor: pointer;
+      transition: background 0.3s;
+    }
+    
+    .entry:hover { background: #cd73dd; }
+    .entry h3 { margin: 0; color: #4f286a; }
+    .entry small { display: block; color: #da7ff6; margin-bottom: 5px; }
+    .entry p { margin: 5px 0; color: #ffdcf1; display: none; }
+    .entry.open p, .entry.open .actions, .entry.open .edited, .entry.open .original { display: block; }
+    .actions {
+      display: none;
+      margin-top: 10px;
+    }
+    .actions button {
+      background-color: #5c3279;
+      font-size: 0.9em;
+      font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+    }
+    .actions button.delete { 
+      background-color: #d24b4b; 
+      color: rgb(135, 37, 37);
+      font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+    }
+    .edited {
+      display: none;
+      font-size: 0.8em;
+      color: #862263;
+      margin-top: 5px;
+    }
+    .original {
+      display: none;
+      font-size: 0.8em;
+      color: #333;
+      margin-top: 5px;
+      padding: 5px;
+      background: #5c3279;
+      border-radius: 6px;
+    }
+    .edit-fields {
+      display: none;
+      margin-top: 10px;
+    }
+    .edit-fields input, .edit-fields textarea {
+      margin-bottom: 5px;
+    }
