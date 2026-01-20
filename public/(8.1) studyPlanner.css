@@ -365,3 +365,126 @@ select.priority {
 }
 
 
+.navbar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background-color: #6e3159;
+    padding: 0.5rem 1rem;
+    position: relative;
+}
+
+.logo {
+    color: #fff;
+    font-size: 1.5rem;
+    font-weight: bold;
+}
+
+.nav-links {
+    list-style: none;
+    display: flex;
+    gap: 1rem;
+}
+
+.nav-links li a {
+    color: #fff;
+    text-decoration: none;
+    font-size: 1rem;
+    transition: color 0.3s;
+}
+
+.nav-links li a:hover {
+    color: #e854cd;
+    background: #f2e291;
+}
+
+#nav-toggle {
+    display: none;
+    font-size: 1.5rem;
+    color: #fff;
+    cursor: pointer;
+}
+
+
+@media (max-width: 768px) {
+    #nav-toggle {
+        display: block;
+    }
+    .nav-links {
+        position: absolute;
+        top: 60px;
+        right: 0;
+        flex-direction: column;
+        background-color: #6e3159;
+        width: 100%;
+        display: none;
+    }
+    .nav-links.active {
+        display: flex;
+    }
+    body {
+        padding: 20px 10px;
+    }
+    .journal-container {
+        padding: 15px;
+        margin-top: 15px;
+        width: 100%;
+    }
+    input, textarea, button {
+        font-size: 0.9rem;
+    }
+    h1 {
+        font-size: 1.8rem;
+    }
+}
+
+@media (min-width: 769px) {
+    .navbar {
+        position: static;
+        display: flex;
+        flex-direction: row;
+        justify-content: flex-start;
+        width: 100%;
+        height: auto;
+        background-color: #6e3159;
+        padding: 0.5rem 1rem;
+        box-shadow: none;
+        left: 0;
+        top: 0;
+    }
+
+    .navbar ul {
+        display: flex;
+        flex-direction: row;
+        gap: 1rem;
+    }
+
+    .navbar ul li {
+        margin: 0;
+    }
+
+    .navbar ul li a {
+        color: #fff;
+        font-size: 1rem;
+        padding: 5px 10px;
+    }
+
+    #navtoggle {
+        display: none;
+    }
+}
+
+@media (max-width: 768px) {
+    .navbar {
+        width: 200px;
+        left: -200px;
+        position: fixed;
+        height: 100%;
+        top: 0;
+        transition: left 0.3s ease;
+    }
+
+    .navbar.open { left: 0; }
+
+    #navtoggle { display: block; }
+}

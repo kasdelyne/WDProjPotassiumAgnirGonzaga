@@ -109,7 +109,7 @@ body {
     .original {
       display: none;
       font-size: 0.8em;
-      color: #333;
+      color: #6e3159;
       margin-top: 5px;
       padding: 5px;
       background: #5c3279;
@@ -127,7 +127,7 @@ body {
     display: flex;
     justify-content: space-between;
     align-items: center;
-    background-color: #333;
+    background-color: #6e3159;
     padding: 0.5rem 1rem;
     position: relative;
 }
@@ -152,7 +152,8 @@ body {
 }
 
 .nav-links li a:hover {
-    color: #ff9800;
+    color: #e854cd;
+    background: #f2e291;
 }
 
 #nav-toggle {
@@ -172,7 +173,7 @@ body {
         top: 60px;
         right: 0;
         flex-direction: column;
-        background-color: #333;
+        background-color: #6e3159;
         width: 100%;
         display: none;
     }
@@ -203,7 +204,7 @@ body {
         justify-content: flex-start;
         width: 100%;
         height: auto;
-        background-color: #333;
+        background-color: #6e3159;
         padding: 0.5rem 1rem;
         box-shadow: none;
         left: 0;
