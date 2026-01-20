@@ -7,93 +7,97 @@
   <title>Study Planner & Timer</title>
 <body>
   
+<body>
   <div class="planner">
     <h2>Weekly Study Planner</h2>
 
     <div class="content-layout">
+  
       <div class="left-sidebar">
         <div class="top-section">
-          <label for="date-range-start">Select Date Range:</label>
-          <div class="date-range">
-            <input type="date" id="date-range-start" />
-            <span>to</span>
-            <input type="date" id="date-range-end" />
+          <div>
+            <label>Select Range of Date:</label>
+            <div class="date-range">
+              <input type="date" id="startDate" />
+              <span>to</span>
+              <input type="date" id="endDate" />
+            </div>
+          </div>
+          <div>
+            <label>Week:</label>
+            <input type="text" id="weekDisplay" readonly />
+          </div>
+        </div>
+
+        <div class="sidebar">
+          <div>
+            <label>Focus:</label>
+            <div class="entry-group">
+              <input type="text" placeholder="Subject" />
+              <button>+</button>
+            </div>
+          </div>
+          <div>
+            <label>Goals:</label>
+            <div class="entry-group">
+              <input type="text" placeholder="Goal" />
+              <button>+</button>
+            </div>
           </div>
         </div>
       </div>
-        <label>Week:</label>
-        <input type="text" id="weekDisplay" readonly/>
-    </div>
-  </div>
-    
-  <div class="sidebar">
-    <div>
-      <label>Focus Subject/s:</label>
-      <div class="entry-group">
-        <input type="text" placeholder="Subject" />
-        <button>+</button>
-      </div>
-    </div>
-    <div>
-      <label>Goal/s:</label>
-      <div class="entry-group">
-        <input type="text" placeholder="Subject" />
-        <button>+</button>
-      </div>
-    </div>
-  </div>
 
-  <div class="task-area">
-    <table id="taskTable">
-      <thead>
-        <tr>
-          <th>Tasks</th>
-          <th>Deadline</th>
-          <th>Priority</th>
-          <th></th>
-        </tr>
-      </thead>
-      <tbody>
-        <tr>
-          <td><input type="text" placeholder="Task 1" /></td>
-          <td><input type="date" /></td>
-          <td>
-            <select class="priority">
-              <option value="low">Low</option>
-              <option value="medium">Medium</option>
-              <option value="high">High</option>
-            </select>
-          </td>
-          <td><button class="delete-btn">Delete</button></td>
-        </tr>
-      </tbody>
-    </table>
-    <button id="addTaskBtn" onclick="addRow()">Add Task</button>
+      <div class="task-area">
+        <table id="taskTable">
+          <thead>
+            <tr>
+              <th>Tasks</th>
+              <th>Deadline</th>
+              <th>Priority</th>
+              <th></th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td><input type="text" placeholder="Task 1" /></td>
+              <td><input type="date" /></td>
+              <td>
+                <select class="priority">
+                  <option class="priority-low">Low</option>
+                  <option class="priority-medium">Medium</option>
+                  <option class="priority-high">High</option>
+                </select>
+              </td>
+              <td><button class="complete-btn">Complete</button></td>
+            </tr>
+          </tbody>
+        </table>
+        <button class="add-task-btn" onclick="addRow()">+ Add Task</button>
+      </div>
+    </div>
   </div>
 
   <div class="study-timer">
     <h2>Study Timer</h2>
-      <div class="timer-layout">
-        <div class="timer-left">
-          <div class="timer-display" id="mainTimer">00:00:00</div>
-          <div class="timer-controls">
+    <div class="timer-layout">
+      <div class="timer-left">
+        <div class="timer-display" id="mainTimer">00:00:00</div>
+        <div class="timer-controls">
           <button onclick="startTimer()">Start</button>
           <button onclick="pauseTimer()">Pause</button>
           <button onclick="resetTimer()">Reset</button>
-          </div>
         </div>
-
-        <div class="timer-right">
-          <h3>Total Time Breakdown</h3>
-            <div class="total-boxes">
-              <div><span id="sec">00</span><br>seconds</div>
-              <div><span id="min">00</span><br>minutes</div>
-              <div><span id="hr">00</span><br>hours</div>
+      </div>
+      <div class="timer-right">
+        <h3>Total Time Breakdown</h3>
+        <div class="total-boxes">
+          <div><span id="sec">00</span><br>seconds</div>
+          <div><span id="min">00</span><br>minutes</div>
+          <div><span id="hr">00</span><br>hours</div>
         </div>
       </div>
     </div>
   </div>
-</div>
-
+<script src="(8.1) studyPlanner.js"></script>
 </body>
 </html>
