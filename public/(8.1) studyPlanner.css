@@ -1,14 +1,30 @@
 body {
-  margin: 0;
+  margin: 75px;
   font-family: 'Quicksand', sans-serif;
-  background: linear-gradient(to bottom right, #fceff9, #e0f7fa);
   color: #333;
+  background: linear-gradient(110deg, #5c3279, #d54f9f 50%, #f2e291 100%);
+  background-size: 200% 200%;
+  animation: gradientFlow 12s ease infinite;
+}
+@keyframes gradientFlow {
+  0%   { background-position: 0% 50%; }
+  50%  { background-position: 100% 50%; }
+  100% { background-position: 0% 50%; }
+}
+body::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: url('https://i.pinimg.com/1200x/5a/67/9b/5a679bc4d2bc5a2547b4e83594a5277f.jpg') center/cover no-repeat;
+  opacity: 0.25;     
+  pointer-events: none;
+  z-index: -1;       
 }
 
 .planner {
   max-width: 1100px;
   margin: 10px auto;
-  background: white;
+  background: #ffcaf1;
   border-radius: 16px;
   box-shadow: 0 0 20px rgba(0,0,0,0.1);
   padding: 10px;
@@ -16,8 +32,27 @@ body {
 
 h2 {
   text-align: center;
-  color: #6a4fb3;
+  color: #f2e291;
   margin-bottom: 1rem;
+  text-shadow: 0 0 10px #ffe45c, 0 0 20px #d54f9f, 0 0 30px #5c3279;
+  animation: glowPulse 3s ease-in-out infinite;
+  font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+  font-size: 30px;
+}
+
+@keyframes glowPulse {
+  0% {
+    text-shadow: 0 0 10px #ffe45c, 0 0 20px #ff60bf, 0 0 30px #9353c1;
+    transform: scale(1);
+  }
+  50% {
+    text-shadow: 0 0 20px #ea98fc, 0 0 30px #ffe45c, 0 0 40px #ff60c0;
+    transform: scale(1.05);
+  }
+  100% {
+    text-shadow: 0 0 10px #ffe45c, 0 0 20px #fa5ebb, 0 0 30px #8b4db7;
+    transform: scale(1);
+  }
 }
 
 .content-layout {
@@ -42,18 +77,22 @@ h2 {
 .left-sidebar .top-section label {
   font-weight: bold;
   margin-bottom: 0.2rem;
+  color: #9e61ca;
+  font-family:'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
 }
 
 .date-range {
   display: flex;
   align-items: center;
   gap: 0.5rem;
+  color: #9e61ca;
+  font-family:'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
 }
 
 .date-range input {
   padding: 0.4rem;
   border-radius: 6px;
-  border: 1px solid #ccc;
+  border: 3px solid #f2e291;
 }
 
 .left-sidebar .sidebar {
@@ -65,13 +104,16 @@ h2 {
 .left-sidebar .sidebar label {
   font-weight: bold;
   margin-bottom: 0.2rem;
+  color: #9e61ca;
+  font-family:'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
 }
 
 .left-sidebar .sidebar input {
   padding: 0.4rem;
   border-radius: 6px;
-  border: 1px solid #ccc;
+  border: 3px solid #f2e291;
   width: calc(100% - 40px);
+  font-family:'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
 }
 
 .left-sidebar .entry-group {
@@ -84,7 +126,7 @@ h2 {
   padding: 0.4rem;
   border: none;
   border-radius: 6px;
-  background-color: #d1c4e9;
+  background-color: #f2e291;
   cursor: pointer;
 }
 
@@ -96,16 +138,20 @@ table {
   width: 100%;
   border-collapse: collapse;
   margin-top: 1rem;
+  background-color: #ffffff;
+  font-family:'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+  color:#9e61ca;
 }
 
 th, td {
-  border: 1px solid #ddd;
+  border: 3px solid #f2e291;
   padding: 0.5rem;
   text-align: center;
+  font-family:'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
 }
 
 th {
-  background-color: #f3e5f5;
+  background-color: #fff9c4;
 }
 
 select.priority {
@@ -114,31 +160,35 @@ select.priority {
   border: 1px solid #ccc;
 }
 
-.priority-low { background-color: #c8e6c9; }
-.priority-medium { background-color: #fff9c4; }
-.priority-high { background-color: #ffcdd2; }
+.priority-low { background-color: #95f498; }
+.priority-medium { background-color: #faf097; }
+.priority-high { background-color: #f2969f; }
 
 .complete-btn {
-  background-color: #b39ddb;
+  background-color: #d1c4e9;
+  color:#9e61ca;
   border: none;
   padding: 0.4rem 0.8rem;
   border-radius: 6px;
   cursor: pointer;
+  font-family:'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
 }
 
 .add-task-btn {
   margin-top: 1rem;
   background-color: #d1c4e9;
+  color:#9e61ca;
   border: none;
   padding: 0.5rem 1rem;
   border-radius: 8px;
   cursor: pointer;
+  font-family:'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
 }
 
 .study-timer {
   margin: 10px auto;
   max-width: 1100px;
-  background: white;
+  background: #ffcaf1;
   border-radius: 16px;
   box-shadow: 0 0 20px rgba(0,0,0,0.1);
   padding: 10px;
@@ -146,7 +196,7 @@ select.priority {
 }
 
 .study-timer h2 {
-  color: #6a4fb3;
+  color: #f2e291;
   margin-bottom: 1rem;
   text-align: center;
 }
@@ -156,6 +206,12 @@ select.priority {
   justify-content: space-between;
   align-items: flex-start;
   gap: 2rem;
+  font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+}
+
+#mainTimer {
+  font-family: 'Lucida Console', 'Courier New', monospace;
+  color: #9e61ca;
 }
 
 .timer-left {
@@ -170,7 +226,7 @@ select.priority {
 
 .timer-display {
   font-size: 2rem;
-  background-color: #f3e5f5;
+  background-color: #ffa6ed;
   padding: 1rem 2rem;
   border-radius: 12px;
   margin-bottom: 1rem;
@@ -186,9 +242,12 @@ select.priority {
   font-weight: bold;
   border: none;
   border-radius: 8px;
-  background-color: #ce93d8;
+  background-color: #ebaff6;
+  color: #9e61ca;
   cursor: pointer;
   margin: 0 0.5rem;
+  font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+
 }
 
 .total-boxes {
@@ -196,13 +255,19 @@ select.priority {
   justify-content: center;
   gap: 1rem;
   margin-top: 0.5rem;
+  
+}
+ h3 {
+  color: #9e61ca;
+  font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
 }
 
 .total-boxes div {
-  background-color: #e1bee7;
+  background-color: #ebaff6;
   padding: 0.5rem;
   border-radius: 8px;
   width: 80px;
   text-align: center;
   font-weight: bold;
+  color: #9e61ca;
 }

@@ -172,53 +172,44 @@
 
         <h1>Set Up Your Week</h1>
             <form id="setupForm">
-              <label for="name">Name:</label>
-              <input type="text" id="name" required>
+               <label for="name">Name:</label>
+        <input type="text" id="name" required>
 
-              <label for="week">Week Starting Date:</label>
-              <input type="date" id="week" required>
+        <label for="week">Week Starting Date:</label>
+        <input type="date" id="week" required>
 
-              <label for="goals">Weekly Goals:</label>
-              <textarea id="goals" rows="3" placeholder="What do you want to accomplish this week?"></textarea>
+        <label for="goals">Weekly Goals:</label>
+        <textarea id="goals" rows="3" placeholder="What do you want to accomplish this week?"></textarea>
 
-              <label>Subjects / Focus Subjects:</label>
-              <div class="subjects" id="subjects">
-                <div>
-                  <input type="text" placeholder="Subject Name" class="subject">
-                  <input type="number" placeholder="Estimated Hours" class="hours">
-                  <button type="button" class="removeSubject">-</button>
-                </div>
-              </div>
-              <button type="button" id="addSubject">+ Add Subject</button>
+        <label>Subjects / Focus Subjects:</label>
+        <div class="subjects" id="subjects">
+          <div>
+            <input type="text" placeholder="Subject Name" class="subject">
+            <input type="number" placeholder="Estimated Hours" class="hours">
+            <button type="button" class="removeSubject">-</button>
+          </div>
+        </div>
+        <button type="button" id="addSubject">+ Add Subject</button>
 
-              <label for="sessionLength">Preferred Study Session Length (minutes):</label>
-              <input type="number" id="sessionLength" min="10" max="180" value="50">
+        <label for="sessionLength">Preferred Study Session Length (minutes):</label>
+        <input type="number" id="sessionLength" min="10" max="180" value="50">
 
-              <label for="breakLength">Preferred Break Length (minutes):</label>
-              <input type="number" id="breakLength" min="5" max="60" value="10">
+        <label for="breakLength">Preferred Break Length (minutes):</label>
+        <input type="number" id="breakLength" min="5" max="60" value="10">
 
-              <label for="productivityTime">Most Productive Time:</label>
-              <select id="productivityTime">
-                <option>Morning</option>
-                <option>Afternoon</option>
-                <option>Night</option>
-              </select>
+        <label for="productivityTime">Most Productive Time:</label>
+        <select id="productivityTime">
+          <option>Morning</option>
+          <option>Afternoon</option>
+          <option>Night</option>
+        </select>
 
-              <label for="studyStyle">Preferred Study Style:</label>
-              <select id="studyStyle">
-                <option>Solo</option>
-                <option>Group</option>
-                <option>Mixed</option>
-              </select>
+        <label for="journal">Journal Notes (optional):</label>
+        <textarea id="journal" rows="3"></textarea>
 
-              <label for="distractionLevel">Focus Level (1-5):</label>
-              <input type="number" id="distractionLevel" min="1" max="5" value="3">
+        <button type="submit">Submit & Go to Planner</button>
+        </form>
 
-              <label for="journal">Journal Notes (optional):</label>
-              <textarea id="journal" rows="3"></textarea>
-
-          <button type="submit">Submit & Go to Planner</button>
-    </form>
 
 <script>
 
@@ -253,8 +244,6 @@
           sessionLength: document.getElementById('sessionLength').value,
           breakLength: document.getElementById('breakLength').value,
           productivityTime: document.getElementById('productivityTime').value,
-          studyStyle: document.getElementById('studyStyle').value,
-          distractionLevel: document.getElementById('distractionLevel').value,
           journal: document.getElementById('journal').value
         };
 
@@ -262,6 +251,11 @@
 
         window.location.href = '/public/(8.1) studyPlanner.html';
       });
+
+      function toggleNavBar() {
+    const navbar = document.getElementById('navbar');
+    navbar.classList.toggle('open');
+}
 </script>
 </body>
 </html>
