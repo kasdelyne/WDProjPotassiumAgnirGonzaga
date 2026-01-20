@@ -8,10 +8,25 @@
 body {
     margin: 0;
     font-family: 'Quicksand', sans-serif;
-    background: linear-gradient(to bottom right, #fceff9, #e0f7fa);
+    background: linear-gradient(110deg, #5c3279, #d54f9fdf 100%, #f89cc8 100%);
     color: #333;
+    animation: gradientFlow 10s ease infinite;
 }
-
+@keyframes gradientFlow {
+  0%   { background-position: 0% 50%; }
+  50%  { background-position: 100% 50%; }
+  100% { background-position: 0% 50%; }
+            }
+body::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: url('https://i.pinimg.com/1200x/5a/67/9b/5a679bc4d2bc5a2547b4e83594a5277f.jpg') no-repeat center/cover;
+  background-size: 100%;
+  opacity: 0.25;        
+  pointer-events: none; 
+  z-index: -1;
+}
 .planner {
     max-width: 1100px;
     margin: 10px auto;
@@ -261,7 +276,6 @@ select.priority {
     </div>
   </div>
 </div>
-
 
 </body>
 </html>
