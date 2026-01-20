@@ -171,3 +171,9 @@ function saveEdit(index, headingEl, contentEl, newTitle, newText, editedLabel, o
   }
 }
  
+const navToggle = document.getElementById('nav-toggle');
+const navLinks = document.querySelector('.nav-links');
+
+navToggle.addEventListener('click', () => {
+    navLinks.classList.toggle('active');
+});
