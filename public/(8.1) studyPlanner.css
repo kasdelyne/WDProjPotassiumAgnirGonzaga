@@ -24,7 +24,9 @@ body::before {
 .planner {
   max-width: 1100px;
   margin: 10px auto;
-  background: #ffcaf1;
+  background-image: url('https://i.pinimg.com/736x/1e/30/76/1e3076423e7433a96fc6ee4c1ba961dd.jpg');
+  background-size: cover;
+  background-position: center;
   border-radius: 16px;
   box-shadow: 0 0 20px rgba(0,0,0,0.1);
   padding: 10px;
@@ -32,9 +34,9 @@ body::before {
 
 h2 {
   text-align: center;
-  color: #f2e291;
+  color: #ed8dc8;
   margin-bottom: 1rem;
-  text-shadow: 0 0 10px #ffe45c, 0 0 20px #d54f9f, 0 0 30px #5c3279;
+  text-shadow: 0 0 10px #ffa8de, 0 0 20px #d54f9f, 0 0 30px #79325e;
   animation: glowPulse 3s ease-in-out infinite;
   font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
   font-size: 30px;
@@ -42,15 +44,15 @@ h2 {
 
 @keyframes glowPulse {
   0% {
-    text-shadow: 0 0 10px #ffe45c, 0 0 20px #ff60bf, 0 0 30px #9353c1;
+    text-shadow: 0 0 10px #9d557f, 0 0 20px #c970a5, 0 0 30px #ffa1d5;
     transform: scale(1);
   }
   50% {
-    text-shadow: 0 0 20px #ea98fc, 0 0 30px #ffe45c, 0 0 40px #ff60c0;
+    text-shadow: 0 0 20px #ffa1d5, 0 0 30px #9d557f, 0 0 40px #c970a5;
     transform: scale(1.05);
   }
   100% {
-    text-shadow: 0 0 10px #ffe45c, 0 0 20px #fa5ebb, 0 0 30px #8b4db7;
+    text-shadow: 0 0 10px #9d557f, 0 0 20px #ffa4da, 0 0 30px #ffa1d5;
     transform: scale(1);
   }
 }
@@ -77,7 +79,7 @@ h2 {
 .left-sidebar .top-section label {
   font-weight: bold;
   margin-bottom: 0.2rem;
-  color: #9e61ca;
+  color: #6f3b97;
   font-family:'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
 }
 
@@ -85,7 +87,7 @@ h2 {
   display: flex;
   align-items: center;
   gap: 0.5rem;
-  color: #9e61ca;
+  color: #6f3b97;
   font-family:'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
 }
 
@@ -104,7 +106,7 @@ h2 {
 .left-sidebar .sidebar label {
   font-weight: bold;
   margin-bottom: 0.2rem;
-  color: #9e61ca;
+  color: #6f3b97;
   font-family:'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
 }
 
@@ -140,7 +142,7 @@ table {
   margin-top: 1rem;
   background-color: #ffffff;
   font-family:'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
-  color:#9e61ca;
+  color:#6f3b97;
 }
 
 th, td {
@@ -188,7 +190,9 @@ select.priority {
 .study-timer {
   margin: 10px auto;
   max-width: 1100px;
-  background: #ffcaf1;
+  background-image: url('https://i.pinimg.com/736x/1e/30/76/1e3076423e7433a96fc6ee4c1ba961dd.jpg');
+  background-size: cover;
+  background-position: center;
   border-radius: 16px;
   box-shadow: 0 0 20px rgba(0,0,0,0.1);
   padding: 10px;
@@ -196,7 +200,7 @@ select.priority {
 }
 
 .study-timer h2 {
-  color: #f2e291;
+  color: #ed8dc8;
   margin-bottom: 1rem;
   text-align: center;
 }
@@ -211,7 +215,7 @@ select.priority {
 
 #mainTimer {
   font-family: 'Lucida Console', 'Courier New', monospace;
-  color: #9e61ca;
+  color: #fff9c4;
 }
 
 .timer-left {
@@ -226,7 +230,7 @@ select.priority {
 
 .timer-display {
   font-size: 2rem;
-  background-color: #ffa6ed;
+  background-color: #f2e291;
   padding: 1rem 2rem;
   border-radius: 12px;
   margin-bottom: 1rem;
@@ -366,16 +370,19 @@ select.priority {
 
 
 .navbar {
-    display: flex;
+    max-width: 1090px;
+    margin-left: 120px;
     justify-content: space-between;
+    background-color: #95469f;
+
     align-items: center;
-    background-color: #6e3159;
     padding: 0.5rem 1rem;
     position: relative;
+    border-radius: 8px;
 }
 
 .logo {
-    color: #fff;
+    color: #f2e291;
     font-size: 1.5rem;
     font-weight: bold;
 }
@@ -387,7 +394,7 @@ select.priority {
 }
 
 .nav-links li a {
-    color: #fff;
+    color: #fef4c6;
     text-decoration: none;
     font-size: 1rem;
     transition: color 0.3s;
@@ -396,6 +403,7 @@ select.priority {
 .nav-links li a:hover {
     color: #e854cd;
     background: #f2e291;
+    border-radius: 8px;
 }
 
 #nav-toggle {
@@ -415,7 +423,7 @@ select.priority {
         top: 60px;
         right: 0;
         flex-direction: column;
-        background-color: #6e3159;
+        background-color: #95469f;
         width: 100%;
         display: none;
     }
@@ -446,7 +454,7 @@ select.priority {
         justify-content: flex-start;
         width: 100%;
         height: auto;
-        background-color: #6e3159;
+        background-color: #95469f;
         padding: 0.5rem 1rem;
         box-shadow: none;
         left: 0;
@@ -464,7 +472,7 @@ select.priority {
     }
 
     .navbar ul li a {
-        color: #fff;
+        color: #fef4c6;
         font-size: 1rem;
         padding: 5px 10px;
     }
@@ -487,4 +495,12 @@ select.priority {
     .navbar.open { left: 0; }
 
     #navtoggle { display: block; }
+}
+h1 {
+    margin-left: 1160px;
+    color: #f2e291;
+    text-shadow: 0 0 10px #f2e291, 0 0 20px #d54f9f, 0 0 30px #5c3279;
+    font-family: Georgia, 'Times New Roman', Times, serif;
+    font-size: 20px;
+    
 }
