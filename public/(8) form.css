@@ -37,17 +37,54 @@ body::before {
     z-index: -1;
 }
 
-
 h1 {
-    text-align: center;
-    color: #3b1d44;
-    font-family: Georgia, 'Times New Roman', Times, serif;
-    margin-top: 0;
-    margin-bottom: 20px;
+  text-align: center;
+  font-family: Georgia, 'Times New Roman', Times, serif;
+  margin-top: 0;
+  margin-bottom: 20px;
+  font-size: 3rem;
+  font-weight: bold;
+
+  background: linear-gradient(90deg, #e72e81, #7733a8, #ffe876);
+  background-size: 300% 300%;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+
+  animation: popUpGlow 6s ease-in-out infinite;
+}
+
+@keyframes popUpGlow {
+  0% {
+    transform: scale(1) translateY(0);
+    background-position: 0% 50%;
+    text-shadow: 0 0 5px #ff7eb9, 0 0 10px #853fb7, 0 0 20px #ffe876;
+  }
+  25% {
+    transform: scale(1.2) translateY(-10px);
+    background-position: 50% 50%;
+    text-shadow: 0 0 15px #853fb7, 0 0 25px #ffe876, 0 0 35px #ff7eb9;
+  }
+  50% {
+    transform: scale(1) translateY(0);
+    background-position: 100% 50%;
+    text-shadow: 0 0 10px #ffe876, 0 0 20px #ff7eb9, 0 0 30px #853fb7;
+  }
+  75% {
+    transform: scale(1.15) translateY(-6px);
+    background-position: 50% 50%;
+    text-shadow: 0 0 18px #ff7eb9, 0 0 28px #853fb7, 0 0 38px #ffe876;
+  }
+  100% {
+    transform: scale(1) translateY(0);
+    background-position: 0% 50%;
+    text-shadow: 0 0 5px #853fb7, 0 0 15px #ffe876, 0 0 25px #ff7eb9;
+  }
 }
 
 form{
-    background: #ffeab3;
+    background-image: url('https://i.pinimg.com/1200x/be/bb/90/bebb9006c4b9f737cf6ca643b92b4fdc.jpg');
+    background-size: cover;
+    background-position: center;
     padding: 20px;
     border-radius: 8px;
     max-width: 90%;
@@ -73,8 +110,9 @@ button {
     margin-top: 20px;
     padding: 10px 15px;
     border: none;
-    background: #da89ff;
-    color: #ffc2f5;
+    background: #894bb5;
+    color: #ff7fea;
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
     font-size: 16px;
     border-radius: 4px;
     cursor: pointer;
