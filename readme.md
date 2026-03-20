@@ -362,6 +362,7 @@ Once we accomplish the following details that we want to fix and debug the JavaS
 
 # FINAL MODIFICATION PROPOSAL
 * All data shall be stored inside of localStorage in JSON format
+* CRUD operations will be applied to only some of the pages now as most of them already contain it.
 
 ## Updated Wireframes:
 **Log-In/Sign-Up**
@@ -376,8 +377,44 @@ const storedUser = localStorage.getItem("username");
 const storedPass = localStorage.getItem("password");
 
 if(username === storedUser && password === storedPass){
-window.location.href = "/public.(3) dashboard.html";
+    window.location.href = "/public.(3) dashboard.html";
 }
 }
 ```
+**Dashboard**
+* Will add an edit button, most of the criteria has already been checked.
+```
+const editBtn = document.createElement("button");
+editBtn.textContent = "Edit";
+
+editBtn.onclick = () => {
+    const newText = prompt("Edit task:", taskText);
+    if(newText){
+        li.childNodes[1].textContent = " " + newText;
+        saveTasks();
+}
+}
+```
+
+**Calendar**
+* Will also add an edit button.
+```
+const editBtn = document.createElement("button");
+editBtn.textContent = "Edit";
+
+editBtn.onclick = () => {
+    e.stopPropagation();
+    const newText = prompt("Edit event:", eventText);
+    if(newText){
+        events[index] = newText;
+        localStorage.setItem(dataKey, JSON.stringify(events));
+        theCalendar();
+}
+}
+```
++
+```
+eventDiv.append(span, editBtn,del);
+```
+
 
