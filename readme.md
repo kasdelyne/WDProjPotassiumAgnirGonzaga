@@ -452,7 +452,7 @@ function editFlashcard(i){
 **Memory Game** - Already completed the criteria.
 
 **Form**
-* Lacks a resset button
+* Lacks a reset button
 ```
 function resetSetup(){
     localStorage.removeItem('productivitySetup');
@@ -483,8 +483,8 @@ function savePlannerTasks(){
 
 **Journal** - Already completed the criteria
 
-**Calculator** - Not really required for CRUD. Will not change anything anymore/
+**Calculator** - Not really required for CRUD. Will not change anything anymore.
 
-## Sumamry
+## Summary
 * Add UPDATE to: Dashboard (mainly to-do list portion on the left side), Calendar, Active Recall.
 * Add localStorage to: Active Recall, Study Planner (tasks portion).
