@@ -359,3 +359,10 @@ Link: https://www.canva.com/design/DAG96xyvJU8/iWeRaZvK7GQHxUE4BRTaYg/edit?utm_c
 ## Definition of Done
 
 Once we accomplish the following details that we want to fix and debug the JavaScript and CSS to make it look cleaner and improve functionality, readability, and overall user experience. The design for all webpages are polished and consistent, and the responsiveness is verified on all devices. We will also gather feedback on our project by asking fellow classmates, friends, etc. to test the website. Once the criticism is reviewed, we will incorporate/add it to enhance the project.
+
+# FINAL MODIFICATION PROPOSAL
+* All data shall be stored inside of localStorage in JSON format
+
+## Updated Wireframes:
+**Main Dashboard**
+* To-do List : 
