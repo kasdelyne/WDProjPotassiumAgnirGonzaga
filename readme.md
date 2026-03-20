@@ -364,5 +364,20 @@ Once we accomplish the following details that we want to fix and debug the JavaS
 * All data shall be stored inside of localStorage in JSON format
 
 ## Updated Wireframes:
-**Main Dashboard**
-* To-do List : 
+**Log-In/Sign-Up**
+* Small fixes: duplicate loginBtn.onclick(), so one overrides the other
+* Lacks update/delete user account. Using CRUD, users can change their username/password or delete their account.
+```
+loginBtn.onclick = () => {
+const username = document.getElementById("loginUser").value;
+const password = document.getElementById("loginPass").value;
+
+const storedUser = localStorage.getItem("username");
+const storedPass = localStorage.getItem("password");
+
+if(username === storedUser && password === storedPass){
+window.location.href = "/public.(3) dashboard.html";
+}
+}
+```
+
