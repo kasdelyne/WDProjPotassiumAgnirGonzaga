@@ -412,9 +412,79 @@ editBtn.onclick = () => {
 }
 }
 ```
-+
++++
 ```
 eventDiv.append(span, editBtn,del);
 ```
 
+**Active Recall**
+* Lacks localStorage. To fix that:
+```
+function saveFlashcards(){
+    localStorage.setItem("flashcards", JSON.stringify(flashcards));
+}
 
+function loadFlashcards(){
+    flashcards = JSON.parse(localStorage.getItem("flashcards")) || [];
+    renderFlashcards();
+}
+
+loadFlashcards();
+```
+* Will add an update feature to edit the flashcard.
+```
+<button onclick = "editFlashcard(${i})">Edit</button>
+
+function editFlashcard(i){
+    const newQ = prompt("Edit question:", flashcards[i].question);
+    const newA = prompt("Edit answer:", flashcards[i].answer);
+
+    if(newQ && newA){
+        flashcards[i] = {
+            question: newQ,
+            answer: newA
+};
+        saveFlashcards();
+        renderFlashcards();
+}
+}
+```
+**Memory Game** - Already completed the criteria.
+
+**Form**
+* Lacks a resset button
+```
+function resetSetup(){
+    localStorage.removeItem('productivitySetup');
+}
+```
+
+**Study Planner**
+* Tasks are not saved. It lacks CRUD. Will apply this after "savePlannerTasks();"
+```
+function savePlannerTasks(){
+    const rows = document.querySelectorAll("taskTable tbody tr");
+    const tasks = [];
+
+    rows.forEach(row => {
+        const task = row.cells[0].querySelector("input").value;
+        const date = row.cells[1].querySelector("input").value;
+        const priority = row.cells[2].querySelector("select").value;
+
+        tasks.push({
+        task,
+        date,
+        priority
+        });
+});
+    localStorage.setItem("plannerTasks", JSON.stringify(tasks));
+}
+```
+
+**Journal** - Already completed the criteria
+
+**Calculator** - Not really required for CRUD. Will not change anything anymore/
+
+## Sumamry
+* Add UPDATE to: Dashboard (mainly to-do list portion on the left side), Calendar, Active Recall.
+* Add localStorage to: Active Recall, Study Planner (tasks portion).
