@@ -132,19 +132,6 @@ if (!username) {
         "Hello " + username;
 }
 
-loginBtn.onclick = () => {
-    const username = document.getElementById("loginUser").value;
-    const password = document.getElementById("loginPass").value;
-
-    const storedUser = localStorage.getItem("username");
-    const storedPass = localStorage.getItem("password");
-
-    if (username === storedUser && password === storedPass) {
-      
-        window.location.href = "/public/(3) dashboard.html";
-    }
-};
-
 document.addEventListener("DOMContentLoaded", () => {
     document.body.style.opacity = 0;
     document.body.style.transition = "opacity 1.5s ease";

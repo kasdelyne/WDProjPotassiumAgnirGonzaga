@@ -3,6 +3,7 @@
             function toggleNavBar(){ // the function that opens or closes the navigation bar
                 document.getElementById('navbar').classList.toggle('open');
             }
+            
 
             function saveTasks() {
                 const tasks = [];
