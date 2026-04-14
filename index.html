@@ -12,11 +12,11 @@
 
     <div id="signupBox">
       <a href="/public/(2) aboutUs.html" class="top-link">About Us</a>
-    
+
         <h2>
             <span>C</span>
             <span>r</span>
-            <span>e</span> 
+            <span>e</span>
             <span>a</span>
             <span>t</span>
             <span>e</span>
@@ -29,12 +29,14 @@
             <span>n</span>
             <span>t</span>
         </h2>
+
         <input id="signupUser" placeholder="Username">
         <input id="signupPass" type="password" placeholder="Password">
         <br>
         <button id="signupBtn">Create</button>
         <p id="message"></p>
     </div>
+
     <p class="switch">
         Already have an account?
         <span onclick="showLogin()">Log in!</span>
@@ -42,19 +44,18 @@
 
     <div class="hidden" id="loginBox">
         <h2>Log In</h2>
+
         <input id="loginUser" placeholder="Username">
         <input id="loginPass" type="password" placeholder="Password">
         <br>
+
         <button id="loginBtn">Log In</button>
     </div>
+
     <p class="switch">
         Don’t have an account?
         <span onclick="showSignup()">Create one!</span>
     </p>
-
-
-    <div class="hidden" id="dashboard">
-    </div>
 
 </div>
 
@@ -62,10 +63,15 @@
 const signupBtn = document.getElementById("signupBtn");
 const loginBtn = document.getElementById("loginBtn");
 
+const signupUser = document.getElementById("signupUser");
+const signupPass = document.getElementById("signupPass");
+const loginUser = document.getElementById("loginUser");
+const loginPass = document.getElementById("loginPass");
+
 function runAway(btn) {
     const x = Math.random() * 150 - 75;
     const y = Math.random() * 150 - 75;
-    btn.style.transform = translate(${x}px, ${y}px);
+    btn.style.transform = `translate(${x}px, ${y}px)`;
 }
 
 signupBtn.addEventListener("mouseover", () => {
@@ -79,7 +85,6 @@ loginBtn.addEventListener("mouseover", () => {
         runAway(loginBtn);
     }
 });
-
 
 signupBtn.onclick = () => {
     if (!signupUser.value || !signupPass.value) return;
@@ -96,6 +101,7 @@ signupBtn.onclick = () => {
     }, 1200);
 };
 
+
 loginBtn.onclick = () => {
     const storedUser = localStorage.getItem("username");
     const storedPass = localStorage.getItem("password");
@@ -104,30 +110,23 @@ loginBtn.onclick = () => {
         loginUser.value === storedUser &&
         loginPass.value === storedPass
     ) {
-      
-      localStorage.setItem("loggedIn", "true");
-      window.location.href = "/public/(3) dashboard.html"
-    } else{
-      
-      alert("Invalid username and/or password");
+        localStorage.setItem("loggedIn", "true");
+
+        window.location.href = "/public/(3) dashboard.html";
+    } else {
+        alert("Invalid username and/or password");
     }
 };
 
+
 function showLogin() {
-    signupBox.classList.add("hidden");
-    loginBox.classList.remove("hidden");
+    document.getElementById("signupBox").classList.add("hidden");
+    document.getElementById("loginBox").classList.remove("hidden");
 }
 
 function showSignup() {
-    loginBox.classList.add("hidden");
-    signupBox.classList.remove("hidden");
-}
-
-
-const username = localStorage.getItem("username");
-
-if (!username) {
-    window.location.href = "index.html";
+    document.getElementById("loginBox").classList.add("hidden");
+    document.getElementById("signupBox").classList.remove("hidden");
 }
 
 document.addEventListener("DOMContentLoaded", () => {
