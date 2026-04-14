@@ -65,7 +65,7 @@ const loginBtn = document.getElementById("loginBtn");
 function runAway(btn) {
     const x = Math.random() * 150 - 75;
     const y = Math.random() * 150 - 75;
-    btn.style.transform = `translate(${x}px, ${y}px)`;
+    btn.style.transform = translate(${x}px, ${y}px);
 }
 
 signupBtn.addEventListener("mouseover", () => {
@@ -104,10 +104,12 @@ loginBtn.onclick = () => {
         loginUser.value === storedUser &&
         loginPass.value === storedPass
     ) {
-        document.getElementById("loginBox").classList.add("hidden");
-        document.getElementById("dashboard").classList.remove("hidden");
-        document.getElementById("welcome").textContent =
-            "Hello " + storedUser;
+      
+      localStorage.setItem("loggedIn", "true");
+      window.location.href = "/public/(3) dashboard.html"
+    } else{
+      
+      alert("Invalid username and/or password");
     }
 };
 
@@ -126,9 +128,6 @@ const username = localStorage.getItem("username");
 
 if (!username) {
     window.location.href = "index.html";
-} else {
-    document.getElementById("welcome").textContent =
-        "Hello " + username;
 }
 
 document.addEventListener("DOMContentLoaded", () => {
