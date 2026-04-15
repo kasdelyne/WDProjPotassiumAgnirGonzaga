@@ -73,8 +73,13 @@
 
                 const checkbox=document.createElement("input");
                 checkbox.type="checkbox";
-                checkbox.onchange=updateP; // event handler so that when the checkbox is checked/unchecked, updateP()is called to update the progress bar
+                checkbox.onchange= () => {
+                            updateP();
+                            saveTasks();
+                }; // event handler so that when the checkbox is checked/unchecked, updateP()is called to update the progress bar
 
+                const span = document.createElement("button");
+                editBtn
                 const deleteButton=document.createElement("button");
                 deleteButton.textContent = "X"; // creates a delete button
                 deleteButton.style.marginLeft = "10px";
