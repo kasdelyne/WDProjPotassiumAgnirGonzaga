@@ -400,4 +400,14 @@
                         0 0 40px #ffeab3;
         }
         }
+        .footer-container {
+  text-align: center;
+  padding: 10px;
+  background-color: rgba(255, 255, 255, 0.5);
+  color: #746c7f;
+  border-radius: 8px;
+  margin: 20px;
+  font-family: 'Yeseva One', serif;
+  font-size: 14px;
+}
 
