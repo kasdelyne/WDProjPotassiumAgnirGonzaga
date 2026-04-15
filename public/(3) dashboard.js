@@ -8,7 +8,7 @@
             function saveTasks() {
                 const tasks = [];
                 document.querySelectorAll("#todo-list li").forEach(li => {
-                    const text = li.textContent.slice(0, -1).trim(); 
+                    const text = li.querySelector("span").textContent.trim();
                     const done = li.querySelector("input[type='checkbox']").checked;
                     tasks.push({ text, done });
                 });
@@ -23,14 +23,36 @@
                     const checkbox = document.createElement("input");
                     checkbox.type = "checkbox";
                     checkbox.checked = task.done;
-                    checkbox.onchange = () => { updateP(); saveTasks(); };
+                    checkbox.onchange = () => { 
+                                updateP(); 
+                                saveTasks(); 
+                    };
+
+                            const span = document.createElement("span");
+                            span.textContent = " " + task.text;
+
+                            const editBtn = document.createElement("button");
+                            editBtn.textContent = "Edit";
+
+                            editBtn.onclick = () => {
+                                        const newText = prompt("Edit task:", span.textContent.trim());
+                                        if(newText){
+                                                    span.textContent = " " + newText;
+                                                    saveTasks();
+                                        }
+                            };
 
                     const deleteButton = document.createElement("button");
                     deleteButton.textContent = "X";
-                    deleteButton.onclick = () => { li.remove(); updateP(); saveTasks(); };
+                    deleteButton.onclick = () => { 
+                                li.remove(); 
+                                updateP(); 
+                                saveTasks(); 
+                    };
 
                     li.appendChild(checkbox);
-                    li.append(" " + task.text);
+                    li.appendChild(span);
+                    li.appendChild(editBtn);
                     li.appendChild(deleteButton);
 
                     document.getElementById("todo-list").appendChild(li);
@@ -78,17 +100,32 @@
                             saveTasks();
                 }; // event handler so that when the checkbox is checked/unchecked, updateP()is called to update the progress bar
 
-                const span = document.createElement("button");
-                editBtn
+                const span = document.createElement("span");
+                span.textContent = " " + taskText;
+
+                const editBtn = document.createElement("button");
+                editBtn.textContent = "Edit";
+                editBtn.style.marginLeft = "10px";
+
+                editBtn.onclick = () = {
+                            editBtn.textContent = prompt("Edit task:", span.textContent.trim());
+                            if(newText){
+                                        span.textContent = " " + newText;
+                                        saveTasks();
+                            }
+                };
+                        
                 const deleteButton=document.createElement("button");
                 deleteButton.textContent = "X"; // creates a delete button
                 deleteButton.style.marginLeft = "10px";
                 deleteButton.onclick = () => {
                     li.remove();
                     updateP();
+                    saveTasks();
                 }
                 li.appendChild(checkbox);
-                li.append(" " + taskText);
+                li.appendChild(span);
+                li.appendChild(editBtn);
                 li.appendChild(deleteButton);
 
                 document.getElementById("todo-list").appendChild(li);
