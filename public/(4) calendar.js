@@ -54,15 +54,31 @@ function theCalendar() {
       const del = document.createElement("button");
       del.className = "delete-btn";
       del.textContent = "X";
-
+      
       del.onclick = (e) => {
         e.stopPropagation();
         events.splice(index, 1);
         localStorage.setItem(dateKey, JSON.stringify(events));
         theCalendar();
       };
+      
+      const editBtn = document.createElement("button");
+      editBtn.className = "delete-btn";
+      editBtn.textContent = "✎";
 
-      eventDiv.append(span, del);
+      editBtn.onclick = (e) => {
+        e.stopPropagation();
+
+        const newText = prompt("Edit event:", eventText);
+
+        if(newText !== null && newText.trim() !== ""){
+          events[index] = newText.trim();
+          localStorage.setItem(dateKey,JSON.stringify(events));
+          theCalendar();
+        }
+      }      
+
+      eventDiv.append(span, editBtn, del);
       box.appendChild(eventDiv);
     });
 
