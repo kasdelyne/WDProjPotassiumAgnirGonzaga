@@ -371,14 +371,13 @@ select.priority {
 
 
 .navbar {
-    max-width: 1090px;
-    margin-left: 120px;
+    width: 100%;
+    margin: 0;
+    display: flex;
     justify-content: space-between;
-    background-color: #95469f;
-
     align-items: center;
+    background-color: #95469f;
     padding: 0.5rem 1rem;
-    position: relative;
     border-radius: 8px;
 }
 
@@ -409,9 +408,6 @@ select.priority {
 
 #nav-toggle {
     display: none;
-    font-size: 1.5rem;
-    color: #fff;
-    cursor: pointer;
 }
 
 
@@ -498,7 +494,8 @@ select.priority {
     #navtoggle { display: block; }
 }
 h1 {
-    margin-left: 1160px;
+    margin: 10px 0;
+    text-align: left;
     color: #f2e291;
     text-shadow: 0 0 10px #f2e291, 0 0 20px #d54f9f, 0 0 30px #5c3279;
     font-family: Georgia, 'Times New Roman', Times, serif;
