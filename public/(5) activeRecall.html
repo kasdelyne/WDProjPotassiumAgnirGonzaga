@@ -5,7 +5,7 @@
         <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
         <link href="https://fonts.googleapis.com/css2?family=Yeseva+One&display=swap" rel="stylesheet">
         <link rel="icon" href="../assets/favicon.png">
-        <link rel="stylesheet" href="(5) activeRecall.css">
+        <link rel="stylesheet" href="styles.css">
         <title>✦ Active Recall ✦</title>
 
 <style>
@@ -327,8 +327,9 @@
     </div>
 </div>
 
+
 <div class="thumbs">
-    <button class="up" onclick="thumbUp()"> ✧ദ്ദി( ˶^ᗜ^˶ ) </button>
+    <button class="up" onclick="thumbUp()"> ✧ദ ˶^ᗜ^˶</button>
     <button class="down" onclick="thumbDown()">¯\_(ツ)_/¯</button>
 </div>
 <footer class="site-footer">
@@ -351,6 +352,7 @@ function addFlashcard() {
 
     flashcards.push({ question: q, answer: a });
     renderFlashcards();
+    saveFlashcards();
 
     document.getElementById("question").value = "";
     document.getElementById("answerInput").value = "";
@@ -359,6 +361,7 @@ function addFlashcard() {
 function deleteFlashcard(i) {
     flashcards.splice(i, 1);
     renderFlashcards();
+    saveFlashcards();
 }
 
 function renderFlashcards() {
@@ -369,6 +372,7 @@ function renderFlashcards() {
         container.innerHTML += `
         <div class="flashcard">
             <div class="delete-btn" onclick="deleteFlashcard(${i})">×</div>
+            <div class = "edit-btn" onclick="editFlashcard(${i})">✎</div>
             <p><strong>Q:</strong> ${fc.question}</p>
             <p><strong>A:</strong> ${fc.answer}</p>
         </div>`;
@@ -407,16 +411,6 @@ function nextCard() {
     };
 }
 
-function saveFlashcards(){
-    localStorage.setItem("flashcards", JSON.stringify(flashcards));
-}
-
-function loadFlashcards(){
-    flashcards = JSON.parse(localStorage.getItem("flashcards")) || [];
-    renderFlashcards();
-}
-
-loadFlashcards();
 function thumbUp() {
     nextCard();
 }
@@ -430,7 +424,34 @@ function toggleNavBar(){
     const nav=document.getElementById("navbar");
     nav.classList.toggle("open");
 }
+
+function editFlashcard(i){
+  const newQ = prompt("Edit question: ", flashcards[i].question);
+  const newA = prompt("Edit answer: ", flashcards[i].answer);
+  
+  if(newQ && newA){
+    flashcards[i] = {
+      question: newQ,
+      answer: newA
+    };
+    saveFlashcards();
+    renderFlashcards();
+  }
+}
+
+function saveFlashcards(){
+    localStorage.setItem("flashcards", JSON.stringify(flashcards));
+}
+
+function loadFlashcards(){
+    flashcards = JSON.parse(localStorage.getItem("flashcards")) || [];
+    renderFlashcards();
+}
+
+
+loadFlashcards();
 </script>
 
 </body>
 </html>
+
