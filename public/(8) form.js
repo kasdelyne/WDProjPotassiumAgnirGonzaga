@@ -38,7 +38,12 @@
         window.location.href = '/public/(8.1) studyPlanner.html';
       });
 
-      function toggleNavBar() {
+      function resetSetup(){
+    localStorage.removeItem('productivitySetup');
+}
+
+function toggleNavBar() {
     const navbar = document.getElementById('navbar');
     navbar.classList.toggle('open');
 }
+      
