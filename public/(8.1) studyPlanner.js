@@ -27,14 +27,19 @@ function savePlannerTasks(){
     localStorage.setItem("plannerTasks", JSON.stringify(tasks));
 }
 
-function loadPlannerTasks(){
-  const saved = JSON.parse(localStorage.getItem("plannerTasks")) || [];
-  const table = document.querySelector("#taskTable tbody");
+function loadPlannerTasks() {
+const saved = JSON.parse(localStorage.getItem("plannerTasks")) || [];
+const table = document.querySelector("#taskTable tbody");
 
-  table.innerHTMl = "";
+table.innerHTML = "";
 
-  saved.forEach(t => {
-    constconst priorityCell = row.insertCell(2);
+saved.forEach(t => {
+    const row = table.insertRow();
+
+    row.insertCell(0).innerHTML = `<input type="text" value="${t.task}">`;
+    row.insertCell(1).innerHTML = `<input type="date" value="${t.date}">`;
+
+    const priorityCell = row.insertCell(2);
     const select = document.createElement("select");
     select.className = "priority";
 
@@ -43,13 +48,22 @@ function loadPlannerTasks(){
         option.textContent = opt;
         if(opt === t.priority) option.selected = true;
         select.appendChild(option);
-      row = table.insertRow();
+    });
 
-    row.insertCell(0).innerHTML = `<input type="text" value = "${t.task}">`;
-    row.insertCell(1).innerHTML = `<input type="date" value = "${t.date}">`;
+    priorityCell.appendChild(select);
 
-    
-  };
+    const actionCell = row.insertCell(3);
+    const btn = document.createElement("button");
+    btn.textContent = "Complete";
+    btn.className = "complete-btn";
+    btn.onclick = () => {
+        row.remove();
+        savePlannerTasks();
+    };
+
+    actionCell.appendChild(btn);
+});
+
 }
 
 function calculateWeek() {
