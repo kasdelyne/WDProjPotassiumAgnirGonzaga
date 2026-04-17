@@ -35,7 +35,7 @@
 
         localStorage.setItem('productivitySetup', JSON.stringify(data));
 
-        window.location.href = '/public/(8.1) studyPlanner.html';
+        window.location.href = '(8.1) studyPlanner.html';
       });
 
       function resetSetup(){
