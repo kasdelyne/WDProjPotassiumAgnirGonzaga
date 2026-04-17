@@ -107,7 +107,7 @@
                 editBtn.textContent = "Edit";
                 editBtn.style.marginLeft = "10px";
 
-                editBtn.onclick = () = {
+                editBtn.onclick = () => {
                             editBtn.textContent = prompt("Edit task:", span.textContent.trim());
                             if(newText){
                                         span.textContent = " " + newText;
